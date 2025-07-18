@@ -47,10 +47,12 @@ export default new NativeFunction({
     const ext = ctx.client.getExtension("ForgeSocial") as ForgeSocial
     const username = await ext?.getUsername()
     if (!username) return this.customError("No Reddit username found.")
+    const token = await ext?.getAccessToken()
+    if (!token) return this.customError("No Reddit access token found.")
 
     limit = typeof limit === "number" ? Math.max(1, Math.min(limit, 25)) : 5
 
-    const json = await redditFetch(`r/${subreddit}/${filter ?? ""}.json`, username)
+    const json = await redditFetch(`r/${subreddit}/${filter ?? ""}.json`, token, username)
 
     const posts = json.data.children.slice(0, limit).map((item: any) => {
       const post = item.data

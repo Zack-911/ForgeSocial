@@ -22,9 +22,11 @@ export default new NativeFunction({
   async execute(ctx, [user]) {
     const ext = ctx.client.getExtension("ForgeSocial") as ForgeSocial
     const username = await ext?.getUsername()
-    if (!username) return this.customError("No Reddit username found at index file.")
+    if (!username) return this.customError("No Reddit username found.")
+    const token = await ext?.getAccessToken()
+    if (!token) return this.customError("No Reddit access token found.")
 
-    let json = await redditFetch(`user/${user}/overview.json`, username)
+    let json = await redditFetch(`user/${user}/overview.json`, token, username)
     return this.success(JSON.stringify(json, null, 2))
   }
 })
