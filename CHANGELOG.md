@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](///compare/v1.0.3...v1.1.0) (2025-07-18)
+
+
+### Features
+
+* Refactor Reddit API calls to utilize access token for authentication and update related functions f5cdbbe
+* Update Reddit API calls to include access token for authentication 58acd23
+
 ### [1.0.3](///compare/v1.0.2...v1.0.3) (2025-07-18)
 
 
