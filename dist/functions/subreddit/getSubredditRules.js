@@ -23,7 +23,10 @@ exports.default = new forgescript_1.NativeFunction({
         const username = await ext?.getUsername();
         if (!username)
             return this.customError("No Reddit username found.");
-        const json = await (0, redditFetch_1.redditFetch)(`r/${subreddit}/about/rules.json`, username);
+        const token = await ext?.getAccessToken();
+        if (!token)
+            return this.customError("No Reddit access token found.");
+        const json = await (0, redditFetch_1.redditFetch)(`r/${subreddit}/about/rules.json`, token, username);
         if (!json.rules)
             return this.customError("No rules found for this subreddit.");
         return this.success(JSON.stringify(json.rules, null, 2));

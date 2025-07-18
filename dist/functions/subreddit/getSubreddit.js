@@ -23,7 +23,10 @@ exports.default = new forgescript_1.NativeFunction({
         const username = await ext?.getUsername();
         if (!username)
             return this.customError("No Reddit username found at index file.");
-        let json = await (0, redditFetch_1.redditFetch)(`r/${subreddit}/about.json`, username);
+        const token = await ext?.getAccessToken();
+        if (!token)
+            return this.customError("No Reddit access token found.");
+        let json = await (0, redditFetch_1.redditFetch)(`r/${subreddit}/about.json`, token, username);
         json = {
             name: json.data.display_name_prefixed,
             title: json.data.title,

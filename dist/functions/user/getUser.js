@@ -22,8 +22,11 @@ exports.default = new forgescript_1.NativeFunction({
         const ext = ctx.client.getExtension("ForgeSocial");
         const username = await ext?.getUsername();
         if (!username)
-            return this.customError("No Reddit username found at index file.");
-        let json = await (0, redditFetch_1.redditFetch)(`user/${user}/about.json`, username);
+            return this.customError("No Reddit username found.");
+        const token = await ext?.getAccessToken();
+        if (!token)
+            return this.customError("No Reddit access token found.");
+        let json = await (0, redditFetch_1.redditFetch)(`user/${user}/about.json`, token, username);
         return this.success(JSON.stringify(json, null, 2));
     }
 });

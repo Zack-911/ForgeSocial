@@ -1,1 +1,1 @@
-{"version":3,"file":"redditFetch.d.ts","sourceRoot":"","sources":["../../src/utils/redditFetch.ts"],"names":[],"mappings":"AAIA,wBAAsB,WAAW,CAAC,IAAI,EAAE,MAAM,EAAE,cAAc,EAAE,MAAM,GAAG,OAAO,CAAC,GAAG,CAAC,CA2BpF;AAED,wBAAsB,gBAAgB,CAAC,IAAI,EAAE,MAAM,EAAE,WAAW,EAAE,MAAM,EAAE,cAAc,EAAE,MAAM,GAAG,OAAO,CAAC,GAAG,CAAC,CAgC9G"}
+{"version":3,"file":"redditFetch.d.ts","sourceRoot":"","sources":["../../src/utils/redditFetch.ts"],"names":[],"mappings":"AA6FA,wBAAgB,WAAW,CAAC,IAAI,EAAE,MAAM,EAAE,WAAW,EAAE,MAAM,EAAE,cAAc,EAAE,MAAM,GAAG,OAAO,CAAC,GAAG,CAAC,CAoBnG"}
