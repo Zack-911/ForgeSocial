@@ -1,0 +1,41 @@
+{
+  "name": "ForgeSocial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepublishOnly": "tsc",
+    "docgen": "tsc && node dist/docgen",
+    "test": "tsc && node __tests__/client.test.js",
+    "prepare": "husky install",
+    "release": "standard-version --release-as patch --changelog-filename=CHANGELOCK.md"
+  },
+  "keywords": [
+    "reddit",
+    "forge",
+    "forgescript",
+    "bdfdreddit",
+    "ForgeSocial",
+    "aoijsreddit"
+  ],
+  "author": "Zack-911",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "tiny-typed-emitter": "^2.1.0",
+    "undici": "^7.11.0",
+    "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@tryforge/forgescript": "^2.3.0",
+    "@types/node": "^20.10.6",
+    "@types/xml2js": "^0.4.14",
+    "commitlint": "^19.8.1",
+    "dotenv": "^16.3.1",
+    "husky": "^9.1.7",
+    "standard-version": "^9.5.0",
+    "typescript": "^5.3.3"
+  }
+}
