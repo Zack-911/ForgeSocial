@@ -1,0 +1,67 @@
+[
+  {
+    "name": "r/Home",
+    "title": "Home",
+    "description": "",
+    "nsfw": false,
+    "subscribers": 341255,
+    "createdAt": "2009-01-25T02:25:57.000Z",
+    "icon": null,
+    "banner": null,
+    "type": "public",
+    "lang": "en",
+    "url": "https://reddit.com/r/Home/"
+  },
+  {
+    "name": "r/AskReddit",
+    "title": "Ask Reddit...",
+    "description": "r/AskReddit is the place to ask and answer thought-provoking questions.",
+    "nsfw": false,
+    "subscribers": 56595582,
+    "createdAt": "2008-01-25T03:52:15.000Z",
+    "icon": "https://b.thumbs.redditmedia.com/LSHrisQApf1H5F8nWShTx3_KjTOMc3R_ss3kx3XAyXQ.png",
+    "banner": "https://styles.redditmedia.com/t5_2qh1i/styles/bannerBackgroundImage_fs33xogq946f1.png?width=4000&amp;s=460f7387ea96fb4707fad8acaa81643df40f19a9",
+    "type": "public",
+    "lang": "es",
+    "url": "https://reddit.com/r/AskReddit/"
+  },
+  {
+    "name": "r/NoStupidQuestions",
+    "title": "No such thing as stupid questions",
+    "description": "Ask away!\n\nDisclaimer: This is an anonymous forum so answers may not be correct",
+    "nsfw": false,
+    "subscribers": 6481021,
+    "createdAt": "2013-02-02T08:52:24.000Z",
+    "icon": "https://b.thumbs.redditmedia.com/xDPX3Hq8IYJPpEdTsDGDJ_LZCnABwL13cg0DE78HU-w.png",
+    "banner": "https://styles.redditmedia.com/t5_2w844/styles/bannerBackgroundImage_k7ndz0eykl191.jpg?width=4000&amp;s=6ffc54d4a94c6573fbbe5a8f7f82e79519fee7f4",
+    "type": "public",
+    "lang": "en",
+    "url": "https://reddit.com/r/NoStupidQuestions/"
+  },
+  {
+    "name": "r/BaldursGate3",
+    "title": "Baldur's Gate 3",
+    "description": "A community all about Baldur's Gate III, the role-playing video game by Larian Studios. BG3 is the third main game in the Baldur's Gate series. Baldur's Gate III is based on a modified version of the Dungeons &amp; Dragons 5th edition (D&amp;D 5e) tabletop RPG ruleset.\n\nGather your party and venture forth!",
+    "nsfw": false,
+    "subscribers": 3181650,
+    "createdAt": "2019-05-30T14:35:38.000Z",
+    "icon": "https://styles.redditmedia.com/t5_12967t/styles/communityIcon_rh7ocpigb9t51.png?width=256&amp;s=fc8ce762012139f5f4bb3fe341ec1676e175e7b3",
+    "banner": "https://styles.redditmedia.com/t5_12967t/styles/bannerBackgroundImage_ygkze629sv6c1.png?width=4000&amp;s=ad8cf22d3cf91fafcdfc82b21f2d8c41ae08e3f6",
+    "type": "public",
+    "lang": "en",
+    "url": "https://reddit.com/r/BaldursGate3/"
+  },
+  {
+    "name": "r/facepalm",
+    "title": "now double verified",
+    "description": "/r/facepalm - please sir can I have some more?",
+    "nsfw": false,
+    "subscribers": 8111293,
+    "createdAt": "2009-08-28T08:49:50.000Z",
+    "icon": "https://b.thumbs.redditmedia.com/ZtyFTkHcUhfrWh6_lKa9FYYv9dCdl6p4kwv-X43voME.png",
+    "banner": "https://styles.redditmedia.com/t5_2r5rp/styles/bannerBackgroundImage_xjz99n5qt8p61.png?width=4000&amp;s=2b8ed87d76b7a6854c822e2da2c79fbc01cec92e",
+    "type": "public",
+    "lang": "en",
+    "url": "https://reddit.com/r/facepalm/"
+  }
+]
