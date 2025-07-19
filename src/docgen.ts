@@ -1,5 +1,6 @@
 import { generateMetadata } from "@tryforge/forgescript"
 import { ForgeSocialEventManagerName } from "./constants"
+import { generateAllMarkdownDocs } from "./generateMarkdownDocs"
 
 generateMetadata(
     __dirname + "/functions",
@@ -9,3 +10,5 @@ generateMetadata(
     undefined,
     __dirname + "/events"
 )
+
+generateAllMarkdownDocs()
