@@ -3,10 +3,11 @@ const { ForgeSocial} = require('../dist')
 
 const reddit = new ForgeSocial({
   events: [
-      "error"
+      "error",
+      "newRedditPost"
   ],
-  clientID: "CSCkqDQqyvDlqwkfD64cww",
-  clientSecret: "yczbGCeGA6aAEGp8VoFaRmteDhkv-g",
+  clientID: "",
+  clientSecret: "",
   redditUsername: "Pure_Panda_8291",
 })
 
@@ -15,7 +16,7 @@ const client = new ForgeClient({
     reddit
   ],
   events: [
-    'messageCreate'
+    'messageCreate',
   ],
   intents: [
     'Guilds',
@@ -25,6 +26,13 @@ const client = new ForgeClient({
   prefixes: ['.']
 })
 
+reddit.commands.add({
+  type: "newRedditPost",
+  code: `
+    $log[$newSubredditJson]
+  `
+})
+
 client.commands.load('./__tests__/commands')
 
-client.login('MTMzOTYyMTMzNjc3NDg3MzA4OA.GkuFAh.ZZx49e_rWR_ft-6cTiGV6pRK9zDZs-biqb4jDQ')
+client.login('')

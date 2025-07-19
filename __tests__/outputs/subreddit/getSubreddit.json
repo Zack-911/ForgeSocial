@@ -1,0 +1,14 @@
+{
+  "name": "r/funny",
+  "title": "funny",
+  "description": "Reddit's largest humor depository",
+  "nsfw": false,
+  "subscribers": 66802108,
+  "activeUsers": 1490,
+  "createdAt": "2008-01-25T06:35:56.000Z",
+  "icon": "https://a.thumbs.redditmedia.com/kIpBoUR8zJLMQlF8azhN-kSBsjVUidHjvZNLuHDONm8.png",
+  "banner": "https://a.thumbs.redditmedia.com/9zfV0uAe-z008QZ0NJnHQ34o30cmLCN9-qBCgAZGcc0.png",
+  "type": "public",
+  "lang": "en",
+  "url": "https://reddit.com/r/funny/"
+}
