@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](///compare/v1.1.0...v1.2.0) (2025-07-19)
+
+
+### Features
+
+* Add new event for new Reddit posts cccfc8e
+* added jsDocs, polling support and a bunch more 1527349
+* Implement functions for tracking and managing Reddit subreddits fb6f484
+* new event support 8125080
+
+
+### Bug Fixes
+
+* replace pnpm with npm so github actions work 5e22d9c
+
+
+### Tests
+
+* Add new command for handling new Reddit posts and update client configuration 4391cc6
+
+
+### Chores
+
+* Enhance redditFetch utility with comprehensive error handling, rate limit management, and detailed documentation 072f9bb
+* mostly organisations 5c3f05f
+
 ## [1.1.0](///compare/v1.0.3...v1.1.0) (2025-07-18)
 
 
