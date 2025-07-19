@@ -1,15 +1,15 @@
 import { ArgType, NativeFunction } from "@tryforge/forgescript"
-import { redditFetch } from "../../utils/redditFetch"
-import { ForgeSocial } from "../.."
+import { redditFetch } from "../../../utils/redditFetch"
+import { ForgeSocial } from "../../.."
 
 export default new NativeFunction({
-  name: "$getUserOverview",
+  name: "$getWiki",
   version: "1.0.0",
-  description: "Get the users overview",
+  description: "Get the subreddit wiki index page of the name you gave",
   args: [
     {
-      name: "username",
-      description: "The username to get the overview of (without u/)",
+      name: "subreddit",
+      description: "The subreddit to get the wiki index page of",
       type: ArgType.String,
       rest: true,
       required: true,
@@ -19,14 +19,14 @@ export default new NativeFunction({
   unwrap: true,
   output: ArgType.Json,
 
-  async execute(ctx, [user]) {
+  async execute(ctx, [subreddit]) {
     const ext = ctx.client.getExtension("ForgeSocial") as ForgeSocial
     const username = await ext?.getUsername()
     if (!username) return this.customError("No Reddit username found.")
     const token = await ext?.getAccessToken()
     if (!token) return this.customError("No Reddit access token found.")
 
-    let json = await redditFetch(`user/${user}/overview.json`, token, username)
+    let json = await redditFetch(`r/${subreddit}/wiki/index.json`, token, username)
     return this.success(JSON.stringify(json, null, 2))
   }
 })

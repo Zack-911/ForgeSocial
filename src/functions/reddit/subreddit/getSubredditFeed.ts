@@ -1,6 +1,6 @@
 import { ArgType, NativeFunction } from "@tryforge/forgescript"
-import { redditFetch } from "../../utils/redditFetch"
-import { ForgeSocial } from "../.."
+import { redditFetch } from "../../../utils/redditFetch"
+import { ForgeSocial } from "../../.."
 
 enum filterType {
   best,

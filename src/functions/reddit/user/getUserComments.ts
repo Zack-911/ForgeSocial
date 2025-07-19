@@ -1,15 +1,15 @@
 import { ArgType, NativeFunction } from "@tryforge/forgescript"
-import { redditFetch } from "../../utils/redditFetch"
-import { ForgeSocial } from "../.."
+import { redditFetch } from "../../../utils/redditFetch"
+import { ForgeSocial } from "../../.."
 
 export default new NativeFunction({
-  name: "$getUserSubmissions",
+  name: "$getUserComments",
   version: "1.0.0",
-  description: "Get the users submissions page of the name you gave",
+  description: "Get the users comments page of the name you gave",
   args: [
     {
       name: "username",
-      description: "The username to get the submissions of (without u/)",
+      description: "The username to get the comments of (without u/)",
       type: ArgType.String,
       rest: true,
       required: true,
@@ -26,7 +26,7 @@ export default new NativeFunction({
     const token = await ext?.getAccessToken()
     if (!token) return this.customError("No Reddit access token found.")
 
-    let json = await redditFetch(`user/${user}/submitted.json`, token, username)
+    let json = await redditFetch(`user/${user}/comments.json`, token, username)
     return this.success(JSON.stringify(json, null, 2))
   }
 })
