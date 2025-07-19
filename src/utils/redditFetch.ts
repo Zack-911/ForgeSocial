@@ -1,11 +1,31 @@
+/**
+ * Provides a utility for making authenticated requests to the Reddit API with built-in rate limit, retry, and error handling.
+ * Handles JSON and HTML error responses, rate limiting, and network retries.
+ */
 import https from "https"
 import fs from "fs"
 import path from "path"
 import { Logger } from "@tryforge/forgescript"
-
 import { parse as parseHtml } from "node-html-parser"
 
-export function redditFetch(pathStr: string, accessToken: string, redditUsername: string): Promise<any> {
+const MAX_RETRIES = 3
+
+/**
+ * Makes an authenticated GET request to the Reddit API, handling rate limits, retries, and HTML error responses.
+ *
+ * @param pathStr - The API path (e.g., "/r/all/new?limit=5").
+ * @param accessToken - OAuth access token for Reddit API.
+ * @param redditUsername - Reddit username for user-agent header.
+ * @param retries - (Internal) Number of retry attempts so far.
+ * @returns Promise resolving to the parsed JSON response, or an HTML error object if Reddit returns HTML.
+ *
+ * Handles:
+ *   - 429 and x-ratelimit headers (waits and retries as needed)
+ *   - Network errors (retries up to MAX_RETRIES)
+ *   - HTML error pages (parses and returns as object)
+ *   - Logs invalid JSON responses to logs/redditFetch-error.log
+ */
+export function redditFetch(pathStr: string, accessToken: string, redditUsername: string, retries = 0): Promise<any> {
   return new Promise((resolve, reject) => {
     const options = {
       method: "GET",
@@ -21,54 +41,49 @@ export function redditFetch(pathStr: string, accessToken: string, redditUsername
       let data = ""
       res.on("data", (chunk) => (data += chunk))
       res.on("end", async () => {
-        // Handle 429 rate limit
-        if (res.statusCode === 429) {
+        const status = res.statusCode || 0
+
+        // 429 - Rate limit exceeded
+        if (status === 429) {
           const retryHeader = res.headers["retry-after"]
           const retry = parseInt(Array.isArray(retryHeader) ? retryHeader[0] : retryHeader || "10") * 1000
-          Logger.warn(`[Reddit API] 429 – retrying in ${retry / 1000}s`)
-          await new Promise(resume => setTimeout(resume, retry))
-          try {
-            const result = await redditFetch(pathStr, accessToken, redditUsername)
-            return resolve(result)
-          } catch (err) {
-            return reject(err)
-          }
+          Logger.warn(`[Reddit API] 429 Too Many Requests – retrying in ${retry / 1000}s`)
+          await new Promise(r => setTimeout(r, retry))
+          return resolve(redditFetch(pathStr, accessToken, redditUsername, retries + 1))
         }
 
-        // Handle Reddit API rate limit headers
+        // x-ratelimit check
         const remainingHeader = res.headers["x-ratelimit-remaining"]
         const resetHeader = res.headers["x-ratelimit-reset"]
         const remaining = parseFloat(Array.isArray(remainingHeader) ? remainingHeader[0] : remainingHeader || "0")
         const reset = parseFloat(Array.isArray(resetHeader) ? resetHeader[0] : resetHeader || "0")
-        if (remaining <= 0) {
-          const wait = reset > 0 ? reset * 1000 : 200
-          Logger.warn(`[Reddit API] Out of quota, sleeping for ${wait / 1000}s`)
-          await new Promise(resume => setTimeout(resume, wait))
+        if (!isNaN(remaining) && remaining <= 0) {
+          const wait = isNaN(reset) ? 5000 : reset * 1000
+          Logger.warn(`[Reddit API] Rate quota exhausted – sleeping for ${wait / 1000}s`)
+          await new Promise(r => setTimeout(r, wait))
         }
 
+        // HTML fallback (Reddit sometimes returns HTML error page)
         const contentType = res.headers["content-type"]
+        let isHtml = false
 
-        // Check if content is HTML (usually error page)
-        let looksLikeHtml = false
         if (contentType && contentType.includes("text/html")) {
-          looksLikeHtml = true
-        } else if (/^\s*<(!doctype|html|head|body|div|span|p|a|script|style)[\s>]/i.test(data)) {
-          looksLikeHtml = true
+          isHtml = true
+        } else if (/^\s*<(html|head|body|div|script)/i.test(data)) {
+          isHtml = true
         }
 
-        if (looksLikeHtml) {
+        if (isHtml) {
           try {
             const root = parseHtml(data)
-            // Convert HTML to a simple JSON structure
             const htmlJson = {
               tag: root.tagName,
               attrs: root.rawAttrs,
               text: root.text,
               childNodes: root.childNodes.map((node: any) => node.toString())
             }
-            // Try to extract error code/message from HTML if possible
-            let errorInfo: any = { html: htmlJson }
-            // Look for error code in title or h1/h2
+
+            const errorInfo: any = { html: htmlJson }
             const title = root.querySelector("title")
             if (title) errorInfo.title = title.text
             const h1 = root.querySelector("h1")
@@ -82,22 +97,36 @@ export function redditFetch(pathStr: string, accessToken: string, redditUsername
           }
         }
 
-        // Try to parse as JSON
         try {
           const parsed = JSON.parse(data)
-          if (parsed.error) return reject(Logger.error(parsed.message || "Unknown error"))
-          resolve(parsed)
-        } catch {
+          if (parsed.error) {
+            const message = parsed.message || `Reddit API error code ${parsed.error}`
+            Logger.error(`[Reddit API] ${message}`)
+            return reject(new Error(message))
+          }
+          return resolve(parsed)
+        } catch (e) {
           const logDir = path.join(process.cwd(), "logs")
           if (!fs.existsSync(logDir)) fs.mkdirSync(logDir)
           const logPath = path.join(logDir, `redditFetch-error.log`)
           fs.writeFileSync(logPath, data)
-          reject(new Error(`Invalid JSON, saved to logs/redditFetch-error.log`))
+          return reject(new Error("Invalid JSON, saved to logs/redditFetch-error.log"))
         }
       })
     })
 
-    req.on("error", reject)
+    req.on("error", async (err) => {
+      if (retries < MAX_RETRIES) {
+        const delay = 1000 * (retries + 1)
+        Logger.warn(`[Reddit API] Network error: ${err.message} – retrying in ${delay / 1000}s`)
+        await new Promise(r => setTimeout(r, delay))
+        return resolve(redditFetch(pathStr, accessToken, redditUsername, retries + 1))
+      } else {
+        Logger.error(`[Reddit API] Failed after ${MAX_RETRIES} retries`)
+        reject(err)
+      }
+    })
+
     req.end()
   })
 }
