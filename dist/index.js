@@ -8,7 +8,11 @@ const forgescript_1 = require("@tryforge/forgescript");
 const constants_1 = require("./constants");
 const ForgeSocialCommandManager_1 = require("./structures/ForgeSocialCommandManager");
 const tiny_typed_emitter_1 = require("tiny-typed-emitter");
+const pollSubreddit_1 = require("./natives/pollSubreddit");
 const https_1 = __importDefault(require("https"));
+/**
+ * ForgeSocial extension for ForgeScript. Provides Reddit integration, subreddit tracking, and event emission.
+ */
 class ForgeSocial extends forgescript_1.ForgeExtension {
     options;
     name = "ForgeSocial";
@@ -20,25 +24,69 @@ class ForgeSocial extends forgescript_1.ForgeExtension {
     tokenExpiresAt = 0;
     tokenRefreshInterval = null;
     commands;
+    /**
+     * Constructs a new ForgeSocial extension instance.
+     * @param options - Configuration options for the extension
+     */
     constructor(options) {
         super();
         this.options = options;
     }
+    /**
+     * Initializes the extension, loads events, commands, and tracked subreddits, refreshes the Reddit token, and starts polling.
+     * @param client - The ForgeClient instance
+     */
     async init(client) {
         this.client = client;
         this.commands = new ForgeSocialCommandManager_1.ForgeSocialCommandManager(client);
         forgescript_1.EventManager.load(constants_1.ForgeSocialEventManagerName, __dirname + `/events`);
         this.load(__dirname + `/functions`);
+        (0, pollSubreddit_1.loadTrackedSubredditsFromFile)();
         if (this.options.events?.length)
             this.client.events.load(constants_1.ForgeSocialEventManagerName, this.options.events);
         await this.refreshToken();
+        await this.startPolling();
     }
+    /**
+     * Gets the current Reddit OAuth access token.
+     * @returns The access token string
+     */
     async getAccessToken() {
         return this.accessToken;
     }
+    /**
+     * Emits a new subreddit post event.
+     * @param event - The event name
+     * @param args - The event arguments (post data)
+     */
+    async newSubredditPost(event, args) {
+        return this.emitter.emit(event, args);
+    }
+    /**
+     * Gets the configured Reddit username.
+     * @returns The Reddit username string
+     */
     async getUsername() {
         return this.options.redditUsername;
     }
+    /**
+     * Starts polling for all tracked subreddits and emits new posts as events.
+     * Safe to call after init. Does nothing if already polling.
+     * @returns Promise<void>
+     */
+    async startPolling() {
+        if (this._pollingStarted)
+            return;
+        this._pollingStarted = true;
+        await (0, pollSubreddit_1.startPollingTrackedSubreddits)(this.accessToken, this.options.redditUsername, (post) => this.newSubredditPost("newRedditPost", post));
+        console.log("Started Polling");
+    }
+    _pollingStarted = false;
+    /**
+     * Refreshes the Reddit OAuth access token and schedules periodic refreshes.
+     * Logs warnings if configuration is missing.
+     * @private
+     */
     async refreshToken() {
         const { clientID, clientSecret, redditUsername } = this.options;
         if (!clientID || !clientSecret) {
