@@ -1,5 +1,1 @@
-{
-  "type": ["link", "comment", "sr", "user", "all"],
-  "sort": ["new", "hot", "top", "relevance", "comments"],
-  "filterType": ["popular", "new"]
-}
+{"type":["link","comment","sr","user","all"],"sort":["new","hot","top","relevance","comments"],"filterType":["popular","new"],"UploadDate":["All","Hour","Today","Week","Month","Year"],"Duration":["All","Short","Medium","Long"],"SortBy":["Relevance","Rating","UploadDate","ViewCount"],"Features":["HD","Subtitles","FourK","Live","ThreeSixty","ThreeD","HDR","CC","VR180"]}

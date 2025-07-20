@@ -1,12 +1,1 @@
-[
-  {
-    "name": "error",
-    "version": "1.0.0",
-    "description": "This event is called when an error occurs"
-  },
-  {
-    "name": "newRedditPost",
-    "version": "1.0.0",
-    "description": "This event is called when an error occurs"
-  }
-]
+[{"name":"error","version":"1.0.0","description":"This event is called when an error occurs"},{"name":"newRedditPost","version":"1.0.0","description":"This event is called when an error occurs"},{"name":"newYoutubeSubscriber","version":"1.0.0","description":"This event is called when a tracked youtube channel gains new subscribers"},{"name":"newYoutubeVideo","version":"1.0.0","description":"This event is called when a tracked youtube channel uploads a video"}]
