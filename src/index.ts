@@ -8,6 +8,7 @@ import {
   startPollingTrackedSubreddits,
 } from './natives/pollSubreddit';
 import https from 'https';
+import { Innertube, Log } from 'youtubei.js';
 
 /**
  * Options for configuring the ForgeSocial extension.
@@ -39,7 +40,8 @@ export class ForgeSocial extends ForgeExtension {
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   version = require('../package.json').version;
 
-  private client!: ForgeClient;
+  public client!: ForgeClient;
+  public youtube?: Innertube;
   private emitter = new TypedEmitter<TransformEvents<IForgeSocialEvents>>();
 
   private accessToken: string = '';
@@ -63,6 +65,9 @@ export class ForgeSocial extends ForgeExtension {
   async init(client: ForgeClient) {
     this.client = client;
     this.commands = new ForgeSocialCommandManager(client);
+    this.youtube = await Innertube.create();
+    Log.setLevel(Log.Level.DEBUG);
+    client.youtube = this.youtube;
 
     EventManager.load(ForgeSocialEventManagerName, __dirname + `/events`);
     this.load(__dirname + `/functions`);
