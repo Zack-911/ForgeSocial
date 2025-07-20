@@ -3,9 +3,9 @@ import { ForgeSocial } from '..';
 
 export interface IForgeSocialEvents {
   error: [Error];
-  newRedditPost: {
-    name: string;
-  };
+  newRedditPost: JSON;
+  newYoutubeVideo: JSON;
+  newYoutubeSubscriber: JSON;
 }
 
 export class ForgeSocialEventHandler<T extends keyof IForgeSocialEvents> extends BaseEventHandler<
