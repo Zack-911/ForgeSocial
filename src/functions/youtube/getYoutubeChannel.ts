@@ -2,7 +2,7 @@ import { ArgType, NativeFunction } from '@tryforge/forgescript';
 import { ForgeSocial } from '../..';
 
 export default new NativeFunction({
-  name: '$getChannelInfo',
+  name: '$getYoutubeChannel',
   version: '1.0.0',
   description: 'Gets info about a YouTube channel by ID or handle.',
   brackets: true,
