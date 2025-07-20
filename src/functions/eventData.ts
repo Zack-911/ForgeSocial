@@ -1,9 +1,9 @@
 import { NativeFunction, ArgType } from '@tryforge/forgescript';
 
 export default new NativeFunction({
-  name: '$newSubreddit',
+  name: '$socialEventData',
   version: '1.0.0',
-  description: 'Returns new subreddits json',
+  description: 'Returns event data for any forgesocial events',
   unwrap: false,
   output: ArgType.Json,
   async execute(ctx) {
