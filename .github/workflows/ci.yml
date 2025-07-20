@@ -11,6 +11,9 @@ on:
       - main
       - dev
 
+permissions:
+  contents: write
+
 jobs:
   build_and_docgen:
     runs-on: ubuntu-latest
