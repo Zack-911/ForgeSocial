@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](///compare/v1.2.0...v1.3.0) (2025-07-20)
+
+
+### Features
+
+* add $searchYoutube command for enhanced YouTube video search functionality c1a8930
+* integrate youtubei.js for enhanced video functionality 2bdc733
+
+
+### Chores
+
+* add GitHub Actions workflows for formatting, linting, and security checks 569aaef
+* add Prettier and ESLint configuration files for code formatting and linting 717a756
+* Create youtube related enums d58c846
+
 ## [1.2.0](///compare/v1.1.0...v1.2.0) (2025-07-19)
 
 ### Features
