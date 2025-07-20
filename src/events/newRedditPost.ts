@@ -6,7 +6,7 @@ export default new ForgeSocialEventHandler({
   name: 'newRedditPost',
   version: '1.0.0',
   description: 'This event is called when an error occurs',
-  listener(name) {
+  listener(json) {
     const commands = this.getExtension(ForgeSocial, true).commands.get('newRedditPost');
 
     for (const command of commands) {
@@ -15,7 +15,7 @@ export default new ForgeSocialEventHandler({
         client: this,
         command,
         data: command.compiled.code,
-        extras: name,
+        extras: json,
       });
     }
   },
