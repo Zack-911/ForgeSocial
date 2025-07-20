@@ -5,8 +5,7 @@ import { UploadDate, Duration, SortBy, Features } from '../../utils/youtubeEnums
 export default new NativeFunction({
   name: '$searchYoutube',
   version: '1.3.0',
-  description:
-    'Searches YouTube and returns the top videos in JSON format with execution time. Supports filters.',
+  description: 'Searches YouTube and returns the top videos in JSON format. Supports filters.',
   brackets: true,
   unwrap: true,
   args: [
