@@ -1,1 +1,1 @@
-export const ForgeSocialEventManagerName = "ForgeSocialEvents"
+export const ForgeSocialEventManagerName = 'ForgeSocialEvents';

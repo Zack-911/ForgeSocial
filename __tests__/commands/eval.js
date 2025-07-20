@@ -1,7 +1,7 @@
 module.exports = {
-  name: "ev",
-  type: "messageCreate",
+  name: 'ev',
+  type: 'messageCreate',
   code: `
     $eval[$message]
-  `
+  `,
 };

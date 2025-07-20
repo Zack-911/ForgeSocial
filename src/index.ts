@@ -1,10 +1,13 @@
-import { EventManager, ForgeClient, ForgeExtension, Logger } from "@tryforge/forgescript"
-import { ForgeSocialEventManagerName } from "./constants"
-import { ForgeSocialCommandManager } from "./structures/ForgeSocialCommandManager"
-import { IForgeSocialEvents } from "./structures/ForgeSocialEventHandlers"
-import { TypedEmitter } from "tiny-typed-emitter"
-import { loadTrackedSubredditsFromFile, startPollingTrackedSubreddits } from "./natives/pollSubreddit"
-import https from "https"
+import { EventManager, ForgeClient, ForgeExtension, Logger } from '@tryforge/forgescript';
+import { ForgeSocialEventManagerName } from './constants';
+import { ForgeSocialCommandManager } from './structures/ForgeSocialCommandManager';
+import { IForgeSocialEvents } from './structures/ForgeSocialEventHandlers';
+import { TypedEmitter } from 'tiny-typed-emitter';
+import {
+  loadTrackedSubredditsFromFile,
+  startPollingTrackedSubreddits,
+} from './natives/pollSubreddit';
+import https from 'https';
 
 /**
  * Options for configuring the ForgeSocial extension.
@@ -14,42 +17,43 @@ import https from "https"
  * @property {string} redditUsername - Reddit username for user-agent and API requests (required).
  */
 export interface IForgeSocialOptions {
-  events?: Array<keyof IForgeSocialEvents>
-  clientID: string
-  clientSecret: string
-  redditUsername: string
+  events?: Array<keyof IForgeSocialEvents>;
+  clientID: string;
+  clientSecret: string;
+  redditUsername: string;
 }
 
 /**
  * Utility type to transform event signatures for TypedEmitter.
  */
 export type TransformEvents<T> = {
-  [P in keyof T]: T[P] extends any[] ? (...args: T[P]) => any : never
-}
+  [P in keyof T]: T[P] extends unknown[] ? (...args: T[P]) => void : never;
+};
 
 /**
  * ForgeSocial extension for ForgeScript. Provides Reddit integration, subreddit tracking, and event emission.
  */
 export class ForgeSocial extends ForgeExtension {
-  name = "ForgeSocial"
-  description = "An extension that lets you interact with reddit."
-  version = require("../package.json").version
+  name = 'ForgeSocial';
+  description = 'An extension that lets you interact with reddit.';
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  version = require('../package.json').version;
 
-  private client!: ForgeClient
-  private emitter = new TypedEmitter<TransformEvents<IForgeSocialEvents>>()
+  private client!: ForgeClient;
+  private emitter = new TypedEmitter<TransformEvents<IForgeSocialEvents>>();
 
-  private accessToken: string = ""
-  private tokenExpiresAt: number = 0
-  private tokenRefreshInterval: NodeJS.Timeout | null = null
+  private accessToken: string = '';
+  private tokenExpiresAt: number = 0;
+  private tokenRefreshInterval: NodeJS.Timeout | null = null;
 
-  public commands!: ForgeSocialCommandManager
+  public commands!: ForgeSocialCommandManager;
 
   /**
    * Constructs a new ForgeSocial extension instance.
    * @param options - Configuration options for the extension
    */
   public constructor(private readonly options: IForgeSocialOptions) {
-    super()
+    super();
   }
 
   /**
@@ -57,24 +61,24 @@ export class ForgeSocial extends ForgeExtension {
    * @param client - The ForgeClient instance
    */
   async init(client: ForgeClient) {
-    this.client = client
-    this.commands = new ForgeSocialCommandManager(client)
+    this.client = client;
+    this.commands = new ForgeSocialCommandManager(client);
 
-    EventManager.load(ForgeSocialEventManagerName, __dirname + `/events`)
-    this.load(__dirname + `/functions`)
-    loadTrackedSubredditsFromFile()
+    EventManager.load(ForgeSocialEventManagerName, __dirname + `/events`);
+    this.load(__dirname + `/functions`);
+    loadTrackedSubredditsFromFile();
 
     if (this.options.events?.length)
-      this.client.events.load(ForgeSocialEventManagerName, this.options.events)
-    await this.refreshToken()
-    await this.startPolling()
+      this.client.events.load(ForgeSocialEventManagerName, this.options.events);
+    await this.refreshToken();
+    await this.startPolling();
   }
   /**
    * Gets the current Reddit OAuth access token.
    * @returns The access token string
    */
   public async getAccessToken(): Promise<string> {
-    return this.accessToken
+    return this.accessToken;
   }
 
   /**
@@ -82,8 +86,9 @@ export class ForgeSocial extends ForgeExtension {
    * @param event - The event name
    * @param args - The event arguments (post data)
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public async newSubredditPost(event: keyof IForgeSocialEvents, args: any) {
-    return this.emitter.emit(event, args )
+    return this.emitter.emit(event, args);
   }
 
   /**
@@ -91,7 +96,7 @@ export class ForgeSocial extends ForgeExtension {
    * @returns The Reddit username string
    */
   public async getUsername(): Promise<string> {
-    return this.options.redditUsername
+    return this.options.redditUsername;
   }
 
   /**
@@ -100,17 +105,15 @@ export class ForgeSocial extends ForgeExtension {
    * @returns Promise<void>
    */
   public async startPolling(): Promise<void> {
-    if (this._pollingStarted) return
-    this._pollingStarted = true
-    await startPollingTrackedSubreddits(
-      this.accessToken,
-      this.options.redditUsername,
-      (post) => this.newSubredditPost("newRedditPost", post)
-    )
-    console.log("Started Polling")
+    if (this._pollingStarted) return;
+    this._pollingStarted = true;
+    await startPollingTrackedSubreddits(this.accessToken, this.options.redditUsername, (post) =>
+      this.newSubredditPost('newRedditPost', post),
+    );
+    console.log('Started Polling');
   }
 
-  private _pollingStarted = false
+  private _pollingStarted = false;
 
   /**
    * Refreshes the Reddit OAuth access token and schedules periodic refreshes.
@@ -118,61 +121,67 @@ export class ForgeSocial extends ForgeExtension {
    * @private
    */
   private async refreshToken() {
-    const { clientID, clientSecret, redditUsername } = this.options
+    const { clientID, clientSecret, redditUsername } = this.options;
 
     if (!clientID || !clientSecret) {
-      Logger.warn("ForgeSocial: Skipping token refresh. Client ID or Secret not provided.This may result in some functions like $getSubredditMods to not work due to reddit requiring authentication for it.")
-      return
+      Logger.warn(
+        'ForgeSocial: Skipping token refresh. Client ID or Secret not provided.This may result in some functions like $getSubredditMods to not work due to reddit requiring authentication for it.',
+      );
+      return;
     }
 
     if (!redditUsername) {
-      Logger.error("ForgeSocial: Missing redditUsername field in index file. This will result in almost all functions not working. This is required so it can be sent to reddit via user-agent because reddit requires it.")
-      return
+      Logger.error(
+        'ForgeSocial: Missing redditUsername field in index file. This will result in almost all functions not working. This is required so it can be sent to reddit via user-agent because reddit requires it.',
+      );
+      return;
     }
 
-    const body = new URLSearchParams({ grant_type: "client_credentials" })
-    const creds = Buffer.from(`${clientID}:${clientSecret}`).toString("base64")
+    const body = new URLSearchParams({ grant_type: 'client_credentials' });
+    const creds = Buffer.from(`${clientID}:${clientSecret}`).toString('base64');
 
-    const tokenData = await new Promise<{ access_token: string; expires_in: number }>((resolve, reject) => {
-      const req = https.request(
-        {
-          method: "POST",
-          hostname: "www.reddit.com",
-          path: "/api/v1/access_token",
-          headers: {
-            Authorization: `Basic ${creds}`,
-            "Content-Type": "application/x-www-form-urlencoded",
-            "Content-Length": body.toString().length,
-            "User-Agent": `web:forge.reddit-extension:1.0.0 (discord bot by /u/${this.options.redditUsername})`
-          }
-        },
-        res => {
-          let data = ""
-          res.on("data", chunk => (data += chunk))
-          res.on("end", () => {
-            try {
-              resolve(JSON.parse(data))
-            } catch (err) {
-              reject(err)
-            }
-          })
-        }
-      )
-      req.on("error", reject)
-      req.write(body.toString())
-      req.end()
-    })
+    const tokenData = await new Promise<{ access_token: string; expires_in: number }>(
+      (resolve, reject) => {
+        const req = https.request(
+          {
+            method: 'POST',
+            hostname: 'www.reddit.com',
+            path: '/api/v1/access_token',
+            headers: {
+              Authorization: `Basic ${creds}`,
+              'Content-Type': 'application/x-www-form-urlencoded',
+              'Content-Length': body.toString().length,
+              'User-Agent': `web:forge.reddit-extension:1.0.0 (discord bot by /u/${this.options.redditUsername})`,
+            },
+          },
+          (res) => {
+            let data = '';
+            res.on('data', (chunk) => (data += chunk));
+            res.on('end', () => {
+              try {
+                resolve(JSON.parse(data));
+              } catch (err) {
+                reject(err);
+              }
+            });
+          },
+        );
+        req.on('error', reject);
+        req.write(body.toString());
+        req.end();
+      },
+    );
 
-    this.accessToken = tokenData.access_token
-    this.tokenExpiresAt = Date.now() + tokenData.expires_in * 1000
-    Logger.info("ForgeSocial: Access token refreshed.:\n" + this.accessToken)
+    this.accessToken = tokenData.access_token;
+    this.tokenExpiresAt = Date.now() + tokenData.expires_in * 1000;
+    Logger.info('ForgeSocial: Access token refreshed.:\n' + this.accessToken);
 
-    if (this.tokenRefreshInterval) clearInterval(this.tokenRefreshInterval)
+    if (this.tokenRefreshInterval) clearInterval(this.tokenRefreshInterval);
 
     this.tokenRefreshInterval = setInterval(() => {
       if (Date.now() >= this.tokenExpiresAt - 5 * 60 * 1000) {
-        this.refreshToken().catch(console.error)
+        this.refreshToken().catch(console.error);
       }
-    }, 60 * 1000)
+    }, 60 * 1000);
   }
 }

@@ -2,9 +2,9 @@
  * Provides utilities for tracking, polling, and persisting new Reddit posts from multiple subreddits.
  * Handles batching, deduplication, and persistent storage of tracked subreddits and their newest post IDs.
  */
-import { redditFetch } from "../utils/redditFetch"
-import { promises as fs } from "fs"
-import * as path from "path"
+import { redditFetch } from '../utils/redditFetch';
+import { promises as fs } from 'fs';
+import * as path from 'path';
 
 /**
  * Tracks state for polling subreddits for new posts.
@@ -14,18 +14,18 @@ import * as path from "path"
  * @property newest - Map of subreddit to newest post ID seen.
  */
 type Tracker = {
-  seen: string[]
-  subreddits: string[]
-  groupIndex: number
-  newest: Record<string, string | null>
-}
+  seen: string[];
+  subreddits: string[];
+  groupIndex: number;
+  newest: Record<string, string | null>;
+};
 
 const tracker: Tracker = {
   seen: [],
   subreddits: [],
   groupIndex: 0,
-  newest: {}
-}
+  newest: {},
+};
 
 /**
  * Splits an array into groups of a given size.
@@ -34,11 +34,11 @@ const tracker: Tracker = {
  * @returns Array of grouped arrays.
  */
 function getGroups(arr: string[], size: number): string[][] {
-  const groups: string[][] = []
+  const groups: string[][] = [];
   for (let i = 0; i < arr.length; i += size) {
-    groups.push(arr.slice(i, i + size))
+    groups.push(arr.slice(i, i + size));
   }
-  return groups
+  return groups;
 }
 
 /**
@@ -48,9 +48,9 @@ function getGroups(arr: string[], size: number): string[][] {
  */
 export async function trackNewPosts(subreddit: string): Promise<void> {
   if (!tracker.subreddits.includes(subreddit)) {
-    tracker.subreddits.push(subreddit)
-    tracker.newest[subreddit] = null
-    await saveTrackedSubredditsToFile()
+    tracker.subreddits.push(subreddit);
+    tracker.newest[subreddit] = null;
+    await saveTrackedSubredditsToFile();
   }
 }
 
@@ -59,7 +59,7 @@ export async function trackNewPosts(subreddit: string): Promise<void> {
  * @returns Array of tracked subreddit names.
  */
 export function getAllTrackedSubreddits(): string[] {
-  return [...tracker.subreddits]
+  return [...tracker.subreddits];
 }
 
 /**
@@ -68,14 +68,14 @@ export function getAllTrackedSubreddits(): string[] {
  * @returns Promise resolving to true if removed, false if not found
  */
 export async function removeSubreddit(subreddit: string): Promise<boolean> {
-  const idx = tracker.subreddits.indexOf(subreddit)
+  const idx = tracker.subreddits.indexOf(subreddit);
   if (idx !== -1) {
-    tracker.subreddits.splice(idx, 1)
-    delete tracker.newest[subreddit]
-    await saveTrackedSubredditsToFile()
-    return true
+    tracker.subreddits.splice(idx, 1);
+    delete tracker.newest[subreddit];
+    await saveTrackedSubredditsToFile();
+    return true;
   }
-  return false
+  return false;
 }
 
 /**
@@ -89,57 +89,58 @@ export async function removeSubreddit(subreddit: string): Promise<boolean> {
 export async function startPollingTrackedSubreddits(
   accessToken: string,
   redditUsername: string,
-  onNewPost: (post: any) => void
+  onNewPost: (post: Record<string, unknown>) => void,
 ): Promise<void> {
-  if (tracker.subreddits.length === 0) return
+  if (tracker.subreddits.length === 0) return;
 
-  const groups = getGroups(tracker.subreddits, 25)
+  const groups = getGroups(tracker.subreddits, 25);
 
   async function pollGroup() {
-    if (groups.length === 0) return
+    if (groups.length === 0) return;
 
-    const currentGroup = groups[tracker.groupIndex % groups.length]
-    tracker.groupIndex++
+    const currentGroup = groups[tracker.groupIndex % groups.length];
+    tracker.groupIndex++;
 
     for (let i = 0; i < currentGroup.length; i += 3) {
-      const subs = currentGroup.slice(i, i + 3)
-      const path = `/r/${subs.join("+")}/new?limit=50`
+      const subs = currentGroup.slice(i, i + 3);
+      const path = `/r/${subs.join('+')}/new?limit=50`;
 
       try {
-        const res = await redditFetch(path, accessToken, redditUsername)
-        const posts = res?.data?.children || []
+        const res = await redditFetch(path, accessToken, redditUsername);
+        const posts = res?.data?.children || [];
 
         for (const sub of subs) {
           const batch = posts
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             .map((p: any) => p.data)
-            .filter((d: { subreddit: string }) => d.subreddit.toLowerCase() === sub.toLowerCase())
+            .filter((d: { subreddit: string }) => d.subreddit.toLowerCase() === sub.toLowerCase());
 
           if (tracker.newest[sub] === null && batch.length) {
-            tracker.newest[sub] = batch[0].id
-            batch.forEach((d: { id: string }) => tracker.seen.push(d.id))
-            continue
+            tracker.newest[sub] = batch[0].id;
+            batch.forEach((d: { id: string }) => tracker.seen.push(d.id));
+            continue;
           }
 
           for (const p of batch) {
             if (!tracker.seen.includes(p.id)) {
               if (tracker.newest[sub] && p.id !== tracker.newest[sub]) {
-                onNewPost(p)
+                onNewPost(p);
               }
-              tracker.seen.push(p.id)
-              if (tracker.seen.length > 1000) tracker.seen.shift()
+              tracker.seen.push(p.id);
+              if (tracker.seen.length > 1000) tracker.seen.shift();
             }
           }
         }
       } catch (err) {
-        console.error(`[TRACKER] Error polling ${subs.join(",")}:`, err)
+        console.error(`[TRACKER] Error polling ${subs.join(',')}:`, err);
       }
     }
   }
 
-  setInterval(pollGroup, 15000)
+  setInterval(pollGroup, 15000);
 }
 
-const TRACKED_FILE = path.resolve(__dirname, "../../tracked_subreddits.json")
+const TRACKED_FILE = path.resolve(__dirname, '../../tracked_subreddits.json');
 
 /**
  * Saves all tracked subreddits and their newest post IDs to a JSON file.
@@ -148,9 +149,9 @@ const TRACKED_FILE = path.resolve(__dirname, "../../tracked_subreddits.json")
 export async function saveTrackedSubredditsToFile(): Promise<void> {
   const data = {
     subreddits: tracker.subreddits,
-    newest: tracker.newest
-  }
-  await fs.writeFile(TRACKED_FILE, JSON.stringify(data, null, 2), "utf-8")
+    newest: tracker.newest,
+  };
+  await fs.writeFile(TRACKED_FILE, JSON.stringify(data, null, 2), 'utf-8');
 }
 
 /**
@@ -159,18 +160,18 @@ export async function saveTrackedSubredditsToFile(): Promise<void> {
  */
 export async function loadTrackedSubredditsFromFile(): Promise<void> {
   try {
-    const raw = await fs.readFile(TRACKED_FILE, "utf-8")
-    const data = JSON.parse(raw)
+    const raw = await fs.readFile(TRACKED_FILE, 'utf-8');
+    const data = JSON.parse(raw);
     if (Array.isArray(data.subreddits)) {
       for (const sub of data.subreddits) {
         if (!tracker.subreddits.includes(sub)) {
-          tracker.subreddits.push(sub)
+          tracker.subreddits.push(sub);
         }
       }
     }
-    if (data.newest && typeof data.newest === "object") {
+    if (data.newest && typeof data.newest === 'object') {
       for (const [sub, id] of Object.entries(data.newest)) {
-        tracker.newest[sub] = id as string | null
+        tracker.newest[sub] = id as string | null;
       }
     }
   } catch {}

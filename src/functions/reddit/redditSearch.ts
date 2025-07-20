@@ -1,13 +1,13 @@
-import { ArgType, NativeFunction } from "@tryforge/forgescript"
-import { redditFetch } from "../../utils/redditFetch"
-import { ForgeSocial } from "../.."
+import { ArgType, NativeFunction } from '@tryforge/forgescript';
+import { redditFetch } from '../../utils/redditFetch';
+import { ForgeSocial } from '../..';
 
 enum type {
   link,
   comment,
   sr,
   user,
-  all
+  all,
 }
 
 enum sort {
@@ -15,62 +15,68 @@ enum sort {
   hot,
   top,
   relevance,
-  comments
+  comments,
 }
 
 export default new NativeFunction({
-  name: "$searchReddit",
-  version: "1.0.0",
-  description: "Search Reddit for posts, comments, users, or subreddits",
+  name: '$searchReddit',
+  version: '1.0.0',
+  description: 'Search Reddit for posts, comments, users, or subreddits',
   args: [
     {
-      name: "query",
-      description: "The search query string",
+      name: 'query',
+      description: 'The search query string',
       type: ArgType.String,
       required: true,
-      rest: false
+      rest: false,
     },
     {
-      name: "type",
-      description: "Type of result to return: link, comment, sr, user, or all",
+      name: 'type',
+      description: 'Type of result to return: link, comment, sr, user, or all',
       type: ArgType.Enum,
       required: false,
       rest: false,
-      enum: type
+      enum: type,
     },
     {
-      name: "limit",
-      description: "Maximum number of results (default: 25)",
+      name: 'limit',
+      description: 'Maximum number of results (default: 25)',
       type: ArgType.Number,
       required: false,
-      rest: false
+      rest: false,
     },
     {
-      name: "sort",
-      description: "Sorting method (relevance, hot, new, top, comments)",
+      name: 'sort',
+      description: 'Sorting method (relevance, hot, new, top, comments)',
       type: ArgType.Enum,
       required: false,
       rest: false,
-      enum: sort
-    }
+      enum: sort,
+    },
   ],
   brackets: true,
   unwrap: true,
   output: ArgType.Json,
 
-  async execute(ctx, [query, type = "link", limit = 25, sort = "relevance"]) {
-    const ext = ctx.client.getExtension("ForgeSocial") as ForgeSocial
-    const username = await ext?.getUsername()
-    if (!username) return this.customError("No Reddit username found.")
-    const token = await ext?.getAccessToken()
-    if (!token) return this.customError("No Reddit access token found.")
+  async execute(ctx, [query, type = 'link', limit = 25, sort = 'relevance']) {
+    const ext = ctx.client.getExtension('ForgeSocial') as ForgeSocial;
+    const username = await ext?.getUsername();
+    if (!username) return this.customError('No Reddit username found.');
+    const token = await ext?.getAccessToken();
+    if (!token) return this.customError('No Reddit access token found.');
 
-    const encodedQuery = encodeURIComponent(query)
-    const url = `search.json?q=${encodedQuery}&type=${type}&limit=${limit}&sort=${sort}`
+    const encodedQuery = encodeURIComponent(query);
+    const url = `search.json?q=${encodedQuery}&type=${type}&limit=${limit}&sort=${sort}`;
 
-    const json = await redditFetch(url, token, username)
-    if (!json?.data?.children?.length) return this.customError("No results found.")
+    const json = await redditFetch(url, token, username);
+    if (!json?.data?.children?.length) return this.customError('No results found.');
 
-    return this.success(JSON.stringify(json.data.children.map((c: any) => c.data), null, 2))
-  }
-})
+    return this.success(
+      JSON.stringify(
+        json.data.children.map((c: typeof json) => c.data),
+        null,
+        2,
+      ),
+    );
+  },
+});

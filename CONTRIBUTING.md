@@ -42,7 +42,7 @@ See [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) for details.
 ```bash
 git clone https://github.com/your-org/forgereddit.git
 cd forgereddit
-````
+```
 
 ### 2. Install Dependencies
 
@@ -62,15 +62,15 @@ npm run dev
 
 We follow a strict `main`/`dev` split:
 
-* `main`: Always stable and production-ready.
-* `dev`: Active development. **All pull requests must target `dev`**.
+- `main`: Always stable and production-ready.
+- `dev`: Active development. **All pull requests must target `dev`**.
 
 ## Code Standards
 
-* Use modern JavaScript / TypeScript.
-* Prefer **clarity over cleverness**.
-* Include **JSDoc** for exported functions and non-trivial logic.
-* Follow our configured ESLint and Prettier rules:
+- Use modern JavaScript / TypeScript.
+- Prefer **clarity over cleverness**.
+- Include **JSDoc** for exported functions and non-trivial logic.
+- Follow our configured ESLint and Prettier rules:
 
   ```bash
   npm run lint
@@ -95,14 +95,14 @@ docs: update README with setup steps
 
 ### Bug Reports
 
-* Describe the issue clearly.
-* Include steps to reproduce.
-* Mention browser, OS, or Node version if relevant.
+- Describe the issue clearly.
+- Include steps to reproduce.
+- Mention browser, OS, or Node version if relevant.
 
 ### Feature Requests
 
-* Explain the need and use case.
-* Link related discussions or issues if available.
+- Explain the need and use case.
+- Link related discussions or issues if available.
 
 ---
 
@@ -116,6 +116,7 @@ docs: update README with setup steps
    npm run lint
    npm test
    ```
+
 4. Open a PR **into `dev`** with a clear title and description.
 5. Link related issues in the description (e.g. `Closes #12`).
 
@@ -133,7 +134,7 @@ Instead, email me at: [muhammadbinasim471@gmail.com](mailto:muhammadbinasim471@g
 
 ## Community
 
-* 💬 [GitHub Discussions](https://github.com/your-org/forgereddit/discussions)
-* 🐛 [Issue Tracker](https://github.com/your-org/forgereddit/issues)
+- 💬 [GitHub Discussions](https://github.com/your-org/forgereddit/discussions)
+- 🐛 [Issue Tracker](https://github.com/your-org/forgereddit/issues)
 
 We're glad you're here. Thanks for helping build Forgereddit!

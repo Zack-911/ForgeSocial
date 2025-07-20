@@ -9,7 +9,11 @@
     "docgen": "tsc && node dist/docgen",
     "test": "tsc && node __tests__/client.test.js",
     "prepare": "husky install",
-    "release": "standard-version --changelog-filename=CHANGELOCK.md"
+    "release": "standard-version --changelog-filename=CHANGELOCK.md",
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
+    "lint": "eslint . --ext .ts --ignore-pattern dist/",
+    "lint:fix": "eslint . --ext .ts --ignore-pattern dist/ --fix"
   },
   "keywords": [
     "reddit",
@@ -33,9 +37,15 @@
     "@tryforge/forgescript": "^2.3.0",
     "@types/node": "^20.10.6",
     "@types/xml2js": "^0.4.14",
+    "@typescript-eslint/eslint-plugin": "^8.37.0",
+    "@typescript-eslint/parser": "^8.37.0",
     "commitlint": "^19.8.1",
     "dotenv": "^16.3.1",
+    "eslint": "^9.31.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.3",
     "husky": "^9.1.7",
+    "prettier": "^3.6.2",
     "standard-version": "^9.5.0",
     "typescript": "^5.3.3"
   }

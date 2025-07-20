@@ -1,38 +1,27 @@
-const { ForgeClient } = require('@tryforge/forgescript')
-const { ForgeSocial} = require('../dist')
+const { ForgeClient } = require('@tryforge/forgescript');
+const { ForgeSocial } = require('../dist');
 
 const reddit = new ForgeSocial({
-  events: [
-      "error",
-      "newRedditPost"
-  ],
-  clientID: "",
-  clientSecret: "",
-  redditUsername: "Pure_Panda_8291",
-})
+  events: ['error', 'newRedditPost'],
+  clientID: '',
+  clientSecret: '',
+  redditUsername: 'Pure_Panda_8291',
+});
 
 const client = new ForgeClient({
-  extensions: [
-    reddit
-  ],
-  events: [
-    'messageCreate',
-  ],
-  intents: [
-    'Guilds',
-    'GuildMessages',
-    'MessageContent'
-  ],
-  prefixes: ['.']
-})
+  extensions: [reddit],
+  events: ['messageCreate'],
+  intents: ['Guilds', 'GuildMessages', 'MessageContent'],
+  prefixes: ['.'],
+});
 
 reddit.commands.add({
-  type: "newRedditPost",
+  type: 'newRedditPost',
   code: `
     $log[$newSubredditJson]
-  `
-})
+  `,
+});
 
-client.commands.load('./__tests__/commands')
+client.commands.load('./__tests__/commands');
 
-client.login('')
+client.login('');
