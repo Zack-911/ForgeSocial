@@ -1,5 +1,12 @@
 # Functions
 
+## $socialEventData
+
+- **Version:** 1.0.0
+- **Description:** Returns event data for any forgesocial events
+- **Output:** Json
+- **Unwrap:** false
+
 ## $searchReddit
 
 - **Version:** 1.0.0
@@ -65,14 +72,6 @@
 
 - **Version:** 1.0.0
 - **Description:** Returns all active tracked subreddits
-- **Category:** subreddit
-- **Output:** Json
-- **Unwrap:** false
-
-## $newSubreddit
-
-- **Version:** 1.0.0
-- **Description:** Returns new subreddits json
 - **Category:** subreddit
 - **Output:** Json
 - **Unwrap:** false
