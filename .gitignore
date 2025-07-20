@@ -4,5 +4,4 @@ node_modules
 \.env
 act.exe
 PUBLISHING.md
-dist
 tracked_youtube_channels.json
