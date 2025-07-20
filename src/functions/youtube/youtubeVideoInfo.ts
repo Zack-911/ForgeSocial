@@ -63,6 +63,7 @@ export default new NativeFunction({
           gameTitle: info?.game_info?.title?.text ?? null,
           merchandise: info?.merchandise ?? null,
           comments: filteredComments,
+          music: info?.music_tracks,
           url: `https://youtube.com/watch?v=${id}`,
         },
         null,
