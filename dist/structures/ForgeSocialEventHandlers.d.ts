@@ -1,4 +1,4 @@
-import { BaseEventHandler, ForgeClient } from "@tryforge/forgescript";
+import { BaseEventHandler, ForgeClient } from '@tryforge/forgescript';
 export interface IForgeSocialEvents {
     error: [Error];
     newRedditPost: {

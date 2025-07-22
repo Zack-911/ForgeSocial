@@ -15,12 +15,13 @@ const https_1 = __importDefault(require("https"));
  */
 class ForgeSocial extends forgescript_1.ForgeExtension {
     options;
-    name = "ForgeSocial";
-    description = "An extension that lets you interact with reddit.";
-    version = require("../package.json").version;
+    name = 'ForgeSocial';
+    description = 'An extension that lets you interact with reddit.';
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    version = require('../package.json').version;
     client;
     emitter = new tiny_typed_emitter_1.TypedEmitter();
-    accessToken = "";
+    accessToken = '';
     tokenExpiresAt = 0;
     tokenRefreshInterval = null;
     commands;
@@ -59,6 +60,7 @@ class ForgeSocial extends forgescript_1.ForgeExtension {
      * @param event - The event name
      * @param args - The event arguments (post data)
      */
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     async newSubredditPost(event, args) {
         return this.emitter.emit(event, args);
     }
@@ -78,8 +80,8 @@ class ForgeSocial extends forgescript_1.ForgeExtension {
         if (this._pollingStarted)
             return;
         this._pollingStarted = true;
-        await (0, pollSubreddit_1.startPollingTrackedSubreddits)(this.accessToken, this.options.redditUsername, (post) => this.newSubredditPost("newRedditPost", post));
-        console.log("Started Polling");
+        await (0, pollSubreddit_1.startPollingTrackedSubreddits)(this.accessToken, this.options.redditUsername, (post) => this.newSubredditPost('newRedditPost', post));
+        console.log('Started Polling');
     }
     _pollingStarted = false;
     /**
@@ -90,30 +92,30 @@ class ForgeSocial extends forgescript_1.ForgeExtension {
     async refreshToken() {
         const { clientID, clientSecret, redditUsername } = this.options;
         if (!clientID || !clientSecret) {
-            forgescript_1.Logger.warn("ForgeSocial: Skipping token refresh. Client ID or Secret not provided.This may result in some functions like $getSubredditMods to not work due to reddit requiring authentication for it.");
+            forgescript_1.Logger.warn('ForgeSocial: Skipping token refresh. Client ID or Secret not provided.This may result in some functions like $getSubredditMods to not work due to reddit requiring authentication for it.');
             return;
         }
         if (!redditUsername) {
-            forgescript_1.Logger.error("ForgeSocial: Missing redditUsername field in index file. This will result in almost all functions not working. This is required so it can be sent to reddit via user-agent because reddit requires it.");
+            forgescript_1.Logger.error('ForgeSocial: Missing redditUsername field in index file. This will result in almost all functions not working. This is required so it can be sent to reddit via user-agent because reddit requires it.');
             return;
         }
-        const body = new URLSearchParams({ grant_type: "client_credentials" });
-        const creds = Buffer.from(`${clientID}:${clientSecret}`).toString("base64");
+        const body = new URLSearchParams({ grant_type: 'client_credentials' });
+        const creds = Buffer.from(`${clientID}:${clientSecret}`).toString('base64');
         const tokenData = await new Promise((resolve, reject) => {
             const req = https_1.default.request({
-                method: "POST",
-                hostname: "www.reddit.com",
-                path: "/api/v1/access_token",
+                method: 'POST',
+                hostname: 'www.reddit.com',
+                path: '/api/v1/access_token',
                 headers: {
                     Authorization: `Basic ${creds}`,
-                    "Content-Type": "application/x-www-form-urlencoded",
-                    "Content-Length": body.toString().length,
-                    "User-Agent": `web:forge.reddit-extension:1.0.0 (discord bot by /u/${this.options.redditUsername})`
-                }
-            }, res => {
-                let data = "";
-                res.on("data", chunk => (data += chunk));
-                res.on("end", () => {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Content-Length': body.toString().length,
+                    'User-Agent': `web:forge.reddit-extension:1.0.0 (discord bot by /u/${this.options.redditUsername})`,
+                },
+            }, (res) => {
+                let data = '';
+                res.on('data', (chunk) => (data += chunk));
+                res.on('end', () => {
                     try {
                         resolve(JSON.parse(data));
                     }
@@ -122,13 +124,13 @@ class ForgeSocial extends forgescript_1.ForgeExtension {
                     }
                 });
             });
-            req.on("error", reject);
+            req.on('error', reject);
             req.write(body.toString());
             req.end();
         });
         this.accessToken = tokenData.access_token;
         this.tokenExpiresAt = Date.now() + tokenData.expires_in * 1000;
-        forgescript_1.Logger.info("ForgeSocial: Access token refreshed.:\n" + this.accessToken);
+        forgescript_1.Logger.info('ForgeSocial: Access token refreshed.:\n' + this.accessToken);
         if (this.tokenRefreshInterval)
             clearInterval(this.tokenRefreshInterval);
         this.tokenRefreshInterval = setInterval(() => {

@@ -1,6 +1,6 @@
-import { ForgeClient, ForgeExtension } from "@tryforge/forgescript";
-import { ForgeSocialCommandManager } from "./structures/ForgeSocialCommandManager";
-import { IForgeSocialEvents } from "./structures/ForgeSocialEventHandlers";
+import { ForgeClient, ForgeExtension } from '@tryforge/forgescript';
+import { ForgeSocialCommandManager } from './structures/ForgeSocialCommandManager';
+import { IForgeSocialEvents } from './structures/ForgeSocialEventHandlers';
 /**
  * Options for configuring the ForgeSocial extension.
  * @property {Array<keyof IForgeSocialEvents>=} events - List of event names to load for the extension.
@@ -18,7 +18,7 @@ export interface IForgeSocialOptions {
  * Utility type to transform event signatures for TypedEmitter.
  */
 export type TransformEvents<T> = {
-    [P in keyof T]: T[P] extends any[] ? (...args: T[P]) => any : never;
+    [P in keyof T]: T[P] extends unknown[] ? (...args: T[P]) => void : never;
 };
 /**
  * ForgeSocial extension for ForgeScript. Provides Reddit integration, subreddit tracking, and event emission.
