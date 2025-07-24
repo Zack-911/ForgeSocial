@@ -26,6 +26,8 @@
   "author": "Zack-911",
   "license": "GPL-3.0",
   "dependencies": {
+    "axios": "^1.11.0",
+    "fast-xml-parser": "^5.2.5",
     "node-html-parser": "^7.0.1",
     "tiny-typed-emitter": "^2.1.0",
     "undici": "^7.11.0",
@@ -36,7 +38,8 @@
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@tryforge/forgescript": "^2.3.0",
-    "@types/node": "^20.10.6",
+    "@types/axios": "^0.9.36",
+    "@types/node": "^20.19.9",
     "@types/xml2js": "^0.4.14",
     "@typescript-eslint/eslint-plugin": "^8.37.0",
     "@typescript-eslint/parser": "^8.37.0",
