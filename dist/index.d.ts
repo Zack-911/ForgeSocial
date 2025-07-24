@@ -55,7 +55,7 @@ export declare class ForgeSocial extends ForgeExtension {
     /**
      * Emits a new subreddit or YouTube post event.
      */
-    newSubredditPost(event: keyof IForgeSocialEvents, args: any): Promise<boolean>;
+    newPost(event: keyof IForgeSocialEvents, args: any): Promise<boolean>;
     /**
      * Gets the configured Reddit username.
      */

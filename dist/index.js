@@ -79,7 +79,7 @@ class ForgeSocial extends forgescript_1.ForgeExtension {
      * Emits a new subreddit or YouTube post event.
      */
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    async newSubredditPost(event, args) {
+    async newPost(event, args) {
         return this.emitter.emit(event, args);
     }
     /**
@@ -104,10 +104,10 @@ class ForgeSocial extends forgescript_1.ForgeExtension {
         this._pollingStarted = true;
         // Reddit polling
         if (this.accessToken && this.options.redditUsername) {
-            await (0, pollSubreddit_1.startPollingTrackedSubreddits)(this.accessToken, this.options.redditUsername, (post) => this.newSubredditPost('newRedditPost', post));
+            await (0, pollSubreddit_1.startPollingTrackedSubreddits)(this.accessToken, this.options.redditUsername, (post) => this.newPost('newRedditPost', post));
         }
         // YouTube polling
-        await (0, pollYoutube_1.startPollingTrackedChannels)(this, (video) => this.newSubredditPost('newYoutubeVideo', video));
+        await (0, pollYoutube_1.startPollingTrackedChannels)(this, (video) => this.newPost('newYoutubeVideo', video));
     }
     /**
      * Refreshes the Reddit OAuth access token and schedules periodic refreshes.
