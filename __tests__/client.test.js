@@ -25,7 +25,7 @@ reddit.commands.add({
 reddit.commands.add({
   type: 'newYoutubeVideo',
   code: `
-    $log[$newSubredditJson]
+    $log[This is the command uwu. $newSubredditJson]
   `,
 });
 
