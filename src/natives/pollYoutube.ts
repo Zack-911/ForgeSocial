@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { promises as fs } from 'fs';
 import * as path from 'path';
-import { ForgeSocial } from '..';
+import axios from 'axios';
+import { XMLParser } from 'fast-xml-parser';
 
 /**
  * Tracks state for polling YouTube channels for new videos.
@@ -9,27 +10,21 @@ import { ForgeSocial } from '..';
 type YoutubeTracker = {
   seen: Set<string>;
   channels: string[];
-  groupIndex: number;
   newest: Record<string, string | null>;
 };
 
 const tracker: YoutubeTracker = {
   seen: new Set(),
   channels: [],
-  groupIndex: 0,
   newest: {},
 };
 
-// Per-channel cooldown timer (ms timestamp)
-const errorCooldowns: Record<string, number> = {};
+// RSS polling cooldown state
+const pollCooldowns: Record<string, number> = {};
+const parser = new XMLParser();
 
-function getGroups(arr: string[], size: number): string[][] {
-  const groups: string[][] = [];
-  for (let i = 0; i < arr.length; i += size) {
-    groups.push(arr.slice(i, i + size));
-  }
-  return groups;
-}
+const POLL_SPACING_MS = 0; // For dev use — instant loop
+const CHANNEL_COOLDOWN_MS = 30 * 60 * 1000;
 
 export async function trackNewVideos(channelId: string): Promise<void> {
   if (!tracker.channels.includes(channelId)) {
@@ -55,73 +50,69 @@ export async function removeChannel(channelId: string): Promise<boolean> {
 }
 
 /**
- * Starts polling for all currently tracked channels.
- * Fetches only the latest uploads per channel.
+ * Starts sequential polling using RSS.
  */
 export async function startPollingTrackedChannels(
-  ext: any,
-  onNewVideo: (video: Record<string, unknown>) => void,
-  pollIntervalMs = 300_000, // 5 minutes
+  _ext: any,
+  onNewVideo: (video: Record<string, unknown>) => void
 ): Promise<void> {
-  if (tracker.channels.length === 0) return;
+  async function pollLoop(): Promise<void> {
+    while (true) {
+      const now = Date.now();
 
-  const groups = getGroups(tracker.channels, 10);
+      for (const channelId of tracker.channels) {
+        const lastPolled = pollCooldowns[channelId] || 0;
+        if (now - lastPolled < CHANNEL_COOLDOWN_MS) continue;
 
-  async function pollGroup() {
-    const now = Date.now();
-    const group = groups[tracker.groupIndex % groups.length];
-    tracker.groupIndex++;
+        try {
+          const url = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
+          const { data } = await axios.get<string>(url, { responseType: 'text' });
 
-    for (const channelId of group) {
-      if (errorCooldowns[channelId] > now) continue;
+          const feed = parser.parse(data);
+          const rawEntry = feed.feed?.entry;
+          if (!rawEntry) continue;
 
-      try {
-        const channel = await ext.youtube?.getChannel(channelId);
-        function isFeedWithItems(obj: unknown): obj is { items: any[] } {
-          return typeof obj === 'object' && obj !== null && Array.isArray((obj as any).items);
-        }
-        const videosTab = await channel?.getVideos();
+          const entries = Array.isArray(rawEntry) ? rawEntry : [rawEntry];
 
-        if (!isFeedWithItems(videosTab)) continue;
+          const latest = entries[0];
+          const videoId = latest['yt:videoId'];
 
-        const latestVideos = videosTab.items.filter((item: any) => item?.type === 'Video');
+          if (tracker.newest[channelId] == null) {
+            tracker.newest[channelId] = videoId;
+            tracker.seen.add(videoId);
+            await saveTrackedChannelsToFile();
+          } else if (!tracker.seen.has(videoId)) {
+            const video = {
+              id: videoId,
+              title: latest.title,
+              published: latest.published,
+              url: latest.link?.['@_href'] || `https://www.youtube.com/watch?v=${videoId}`,
+            };
 
-        if (latestVideos.length === 0) continue;
+            onNewVideo(video);
+            tracker.seen.add(videoId);
+            tracker.newest[channelId] = videoId;
 
-        // First-ever poll: seed newest + seen
-        if (tracker.newest[channelId] == null) {
-          tracker.newest[channelId] = latestVideos[0].id;
-          latestVideos.forEach((v: any) => tracker.seen.add(v.id));
-          continue;
-        }
-
-        // Notify for truly new videos
-        for (const vid of latestVideos) {
-          if (!tracker.seen.has(vid.id)) {
-            // Only notify until latest known
-            if (vid.id !== tracker.newest[channelId]) {
-              onNewVideo(vid);
-            }
-            tracker.seen.add(vid.id);
-            // Kap oldest entries
+            // Cap memory usage
             if (tracker.seen.size > 1000) {
-              const o = tracker.seen.values().next().value;
-              tracker.seen.delete(o as string);
+              const first = tracker.seen.values().next().value;
+              if (first !== undefined) tracker.seen.delete(first);
             }
+
+            await saveTrackedChannelsToFile(); // ✅ Save new state after update
           }
+
+          pollCooldowns[channelId] = Date.now();
+        } catch (err) {
+          pollCooldowns[channelId] = Date.now(); // apply cooldown even on failure
         }
 
-        // Update newest pointer
-        tracker.newest[channelId] = latestVideos[0].id;
-      } catch (err) {
-        console.error(`[YOUTUBE POLL] Error on ${channelId}:`, err);
-        errorCooldowns[channelId] = Date.now() + pollIntervalMs;
+        await new Promise(res => setTimeout(res, POLL_SPACING_MS));
       }
     }
   }
 
-  // Kick off polling loop
-  setInterval(pollGroup, pollIntervalMs);
+  pollLoop();
 }
 
 const TRACKED_FILE = path.resolve(__dirname, '../../tracked_youtube_channels.json');

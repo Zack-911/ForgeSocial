@@ -110,7 +110,7 @@ export class ForgeSocial extends ForgeExtension {
    * Emits a new subreddit or YouTube post event.
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  public async newSubredditPost(event: keyof IForgeSocialEvents, args: any) {
+  public async newPost(event: keyof IForgeSocialEvents, args: any) {
     return this.emitter.emit(event, args);
   }
 
@@ -140,13 +140,13 @@ export class ForgeSocial extends ForgeExtension {
     // Reddit polling
     if (this.accessToken && this.options.redditUsername) {
       await startPollingTrackedSubreddits(this.accessToken, this.options.redditUsername, (post) =>
-        this.newSubredditPost('newRedditPost', post),
+        this.newPost('newRedditPost', post),
       );
     }
 
     // YouTube polling
     await startPollingTrackedChannels(this, (video) =>
-      this.newSubredditPost('newYoutubeVideo', video),
+      this.newPost('newYoutubeVideo', video),
     );
   }
 
