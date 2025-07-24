@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](///compare/v1.3.0...v1.4.0) (2025-07-24)
+
+
+### Features
+
+* add $extractVideoID command to extract YouTube video IDs from URLs or strings f977d37
+* add $getChannelInfo command to retrieve information about a YouTube channel by ID or handle cc1bcd9
+* add $getYoutubeVideo command to retrieve detailed information about a YouTube video, including comments and statistics ac7c17e
+* add $searchYoutubeChannel command to enable searching for YouTube channels and returning results in JSON format be291a2
+* add $searchYoutubeMusic command to enable searching for YouTube Music and returning results in JSON format 64f5a1b
+* add $searchYoutubePlaylist command to enable searching for YouTube playlists with various filters 699c1e0
+* add commands for tracking and managing YouTube channels, including $trackYoutubeChannel and $unTrackYoutubeChannel ec894a5
+* add new event handlers for YouTube subscriber and video uploads b955774
+* add polling 454ddfb
+* integrate YouTube channel polling and enhance ForgeSocial options for improved event handling 6aaa683
+* update ForgeSocial to handle new YouTube video events and add corresponding command 8bc5641
+
+
+### Bug Fixes
+
+* added some bugs 02dadf9
+* i lied in the command description ca9592a
+* update $searchYoutube command to improve error handling and response structure a349504
+
+
+### Chores
+
+* add music tracks to video info fcd7e66
+* balls a37b1b4
+* fix extras name in newRedditPost event 1e921ba
+* update .gitignore and CI workflow to include metadata and support dev branch 2208fb7
+* update CI workflow to add write permissions for contents 0aa8c74
+
 ## [1.3.0](///compare/v1.2.0...v1.3.0) (2025-07-20)
 
 
