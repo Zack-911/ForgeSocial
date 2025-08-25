@@ -10,7 +10,7 @@ import {
 import { loadTrackedChannelsFromFile, startPollingTrackedChannels } from './natives/pollYoutube';
 import https from 'https';
 import { Innertube, Log } from 'youtubei.js';
-
+import { Octokit } from '@octokit/rest';
 /**
  * Options for configuring the ForgeSocial extension.
  * @property {Array<keyof IForgeSocialEvents>=} events - List of event names to load for the extension.
@@ -20,9 +20,18 @@ import { Innertube, Log } from 'youtubei.js';
  */
 export interface IForgeSocialOptions {
   events?: Array<keyof IForgeSocialEvents>;
-  clientID?: string;
-  clientSecret?: string;
-  redditUsername?: string;
+  reddit?: {
+    clientID: string;
+    clientSecret: string;
+    redditUsername: string;
+  };
+  github?: {
+    token: string;
+    log?: boolean;
+  };
+  youtube?: {
+    enabled: boolean;
+  };
 }
 
 /**
@@ -43,6 +52,7 @@ export class ForgeSocial extends ForgeExtension {
 
   public client!: ForgeClient;
   public youtube?: Innertube;
+  public github?: Octokit;
   private emitter = new TypedEmitter<TransformEvents<IForgeSocialEvents>>();
 
   private accessToken: string = '';
@@ -73,9 +83,45 @@ export class ForgeSocial extends ForgeExtension {
     this.youtube = await Innertube.create();
     Log.setLevel(Log.Level.NONE);
     client.youtube = this.youtube;
+    if (this.options.github) {
+      this.load(__dirname + `/functions/github`);
+      const shouldLog = this.options.github?.log ?? true;
+      try {
+        this.github = new Octokit({
+          auth: this.options.github.token,
+          userAgent: `forge.social-extension:${this.version} (Discord bot)`,
+          log: shouldLog
+            ? {
+                debug: (msg) => Logger.debug(msg),
+                info: (msg) => Logger.info(msg),
+                warn: (msg) => Logger.warn(msg),
+                error: (msg) => Logger.error(msg),
+              }
+            : {
+                debug: () => {},
+                info: () => {},
+                warn: () => {},
+                error: () => {},
+              },
+        });
+        const user = await this.github.rest.users.getAuthenticated();
+        Logger.info(
+          `ForgeSocial: GitHub client initialized successfully Authenticated as ${user.data.login}`,
+        );
+      } catch (err) {
+        Logger.error('ForgeSocial: Failed to initialize GitHub client:', err);
+      }
+    } else {
+      Logger.warn('ForgeSocial: Missing GitHub token. Skipping GitHub initialization.');
+    }
+    if (this.options.youtube?.enabled) {
+      this.load(__dirname + `/functions/youtube`);
+    }
+    if (this.options.reddit) {
+      this.load(__dirname + `/functions/reddit`);
+    }
 
     EventManager.load(ForgeSocialEventManagerName, __dirname + `/events`);
-    this.load(__dirname + `/functions`);
 
     await loadTrackedSubredditsFromFile();
     await loadTrackedChannelsFromFile();
@@ -91,9 +137,9 @@ export class ForgeSocial extends ForgeExtension {
    * Gets the current Reddit OAuth access token.
    */
   public async getAccessToken(): Promise<string | null> {
-    const { clientID, clientSecret, redditUsername } = this.options;
-    const allProvided = !!clientID && !!clientSecret && !!redditUsername;
-    const allNull = !clientID && !clientSecret && !redditUsername;
+    const { reddit } = this.options;
+    const allProvided = !!reddit?.clientID && !!reddit?.clientSecret && !!reddit?.redditUsername;
+    const allNull = !reddit?.clientID && !reddit?.clientSecret && !reddit?.redditUsername;
     if (!allProvided && !allNull) {
       Logger.error(
         'ForgeSocial: If one of clientID, clientSecret, or redditUsername is provided, all must be provided. Returning null for access token.',
@@ -119,16 +165,16 @@ export class ForgeSocial extends ForgeExtension {
    * Gets the configured Reddit username.
    */
   public async getUsername(): Promise<string | null> {
-    const { clientID, clientSecret, redditUsername } = this.options;
-    const allProvided = !!clientID && !!clientSecret && !!redditUsername;
-    const allNull = !clientID && !clientSecret && !redditUsername;
+    const { reddit } = this.options;
+    const allProvided = !!reddit?.clientID && !!reddit?.clientSecret && !!reddit?.redditUsername;
+    const allNull = !reddit?.clientID && !reddit?.clientSecret && !reddit?.redditUsername;
     if (!allProvided && !allNull) {
       Logger.error(
         'ForgeSocial: If one of clientID, clientSecret, or redditUsername is provided, all must be provided. Returning null for username.',
       );
       return null;
     }
-    return redditUsername || null;
+    return reddit?.redditUsername || null;
   }
 
   /**
@@ -139,8 +185,8 @@ export class ForgeSocial extends ForgeExtension {
     this._pollingStarted = true;
 
     // Reddit polling
-    if (this.accessToken && this.options.redditUsername) {
-      startPollingTrackedSubreddits(this.accessToken, this.options.redditUsername, (post) =>
+    if (this.accessToken && this.options.reddit?.redditUsername) {
+      startPollingTrackedSubreddits(this.accessToken, this.options.reddit?.redditUsername, (post) =>
         this.newPost('newRedditPost', post),
       );
     }
@@ -153,9 +199,9 @@ export class ForgeSocial extends ForgeExtension {
    * Refreshes the Reddit OAuth access token and schedules periodic refreshes.
    */
   private async refreshToken() {
-    const { clientID, clientSecret, redditUsername } = this.options;
-    const allProvided = !!clientID && !!clientSecret && !!redditUsername;
-    const allNull = !clientID && !clientSecret && !redditUsername;
+    const { reddit } = this.options;
+    const allProvided = !!reddit?.clientID && !!reddit?.clientSecret && !!reddit?.redditUsername;
+    const allNull = !reddit?.clientID && !reddit?.clientSecret && !reddit?.redditUsername;
     if (!allProvided && !allNull) {
       Logger.error(
         'ForgeSocial: If one of clientID, clientSecret, or redditUsername is provided, all must be provided. Skipping token refresh.',
@@ -167,7 +213,7 @@ export class ForgeSocial extends ForgeExtension {
       return;
     }
 
-    if (!redditUsername) {
+    if (!reddit?.redditUsername) {
       Logger.error(
         'ForgeSocial: Missing redditUsername. This will break most functionality as Reddit requires it in the user-agent.',
       );
@@ -175,7 +221,7 @@ export class ForgeSocial extends ForgeExtension {
     }
 
     const body = new URLSearchParams({ grant_type: 'client_credentials' });
-    const creds = Buffer.from(`${clientID}:${clientSecret}`).toString('base64');
+    const creds = Buffer.from(`${reddit?.clientID}:${reddit?.clientSecret}`).toString('base64');
 
     const tokenData = await new Promise<{ access_token: string; expires_in: number }>(
       (resolve, reject) => {
@@ -188,7 +234,7 @@ export class ForgeSocial extends ForgeExtension {
               Authorization: `Basic ${creds}`,
               'Content-Type': 'application/x-www-form-urlencoded',
               'Content-Length': body.toString().length,
-              'User-Agent': `web:forge.reddit-extension:1.0.0 (discord bot by /u/${redditUsername})`,
+              'User-Agent': `web:forge.social-extension:${this.version} (discord bot by /u/${reddit?.redditUsername})`,
             },
           },
           (res) => {
