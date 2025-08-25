@@ -7,6 +7,645 @@
 - **Output:** Json
 - **Unwrap:** false
 
+## $githubAddRunnerLabelsRepo
+
+- **Version:** 1.5.0
+- **Description:** Adds custom labels to a self-hosted runner for a repository
+- **Category:** actions
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  runnerId (Number, required) - The ID of the self-hosted runner
+  -  labels (String, required) - Array of label names to add (comma-separated)
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubApproveWorkflow
+
+- **Version:** 1.5.0
+- **Description:** Approves a workflow run that is waiting for review
+- **Category:** actions
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  runId (Number, required) - The ID of the workflow run
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubCancelWorkflowRun
+
+- **Version:** 1.5.0
+- **Description:** Cancels a workflow run for a GitHub repository
+- **Category:** actions
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  runId (Number, required) - The ID of the workflow run
+  -  force (Boolean) - Force cancel the workflow run
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubDeleteArtifact
+
+- **Version:** 1.5.0
+- **Description:** Deletes an artifact from a GitHub repository
+- **Category:** actions
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  artifactId (Number, required) - The ID of the artifact to delete
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubDeleteWorkflowLogs
+
+- **Version:** 1.5.0
+- **Description:** Deletes all logs for a workflow run
+- **Category:** actions
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  runId (Number, required) - The ID of the workflow run
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubDispatchWorkflow
+
+- **Version:** 1.5.0
+- **Description:** Dispatches a workflow run for a GitHub repository
+- **Category:** actions
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  workflowId (String, required) - The ID or filename of the workflow, e.g., main.yml
+  -  ref (String, required) - The git ref (branch or tag) to run the workflow on
+  -  inputs (String) - Optional JSON string of inputs for the workflow run
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubDownloadArtifact
+
+- **Version:** 1.5.0
+- **Description:** Downloads an artifact for a GitHub repository
+- **Category:** actions
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  artifactId (Number, required) - The ID of the artifact
+  -  path (String, required) - The path to save the artifact
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubDownloadJobLogs
+
+- **Version:** 1.5.0
+- **Description:** Downloads the logs for a specific job in a workflow run
+- **Category:** actions
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  jobId (Number, required) - The ID of the job
+  -  perPage (Number) - Results per page (max 100)
+  -  page (Number) - Page number of the results to fetch
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubDownloadWorkflowRunLogs
+
+- **Version:** 1.5.0
+- **Description:** Downloads the logs for a workflow run
+- **Category:** actions
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  runId (Number, required) - The ID of the workflow run
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubGetArtifact
+
+- **Version:** 1.5.0
+- **Description:** Gets an artifact for a GitHub repository
+- **Category:** actions
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  artifactId (Number, required) - The ID of the artifact
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubGetWorkflowJob
+
+- **Version:** 1.5.0
+- **Description:** Gets a specific job from a workflow run
+- **Category:** actions
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  jobId (Number, required) - The ID of the job
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubGetWorkflowRun
+
+- **Version:** 1.5.0
+- **Description:** Gets a workflow run for a GitHub repository
+- **Category:** actions
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  runId (Number, required) - The ID of the workflow run
+  -  excludePullRequests (Boolean) - Excludes pull requests from the list of runs.
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubListArtifacts
+
+- **Version:** 1.5.0
+- **Description:** Lists artifacts for a GitHub repository
+- **Category:** actions
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  artifactName (String) - The name of the artifact. When provided, only artifacts with this name will be returned.
+  -  limit (Number) - The maximum number of artifacts to return.
+  -  page (Number) - The page of artifacts to return.
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubListRunArtifacts
+
+- **Version:** 1.5.0
+- **Description:** Lists artifacts for a workflow run
+- **Category:** actions
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  runId (Number, required) - The ID of the workflow run
+  -  perPage (Number) - Results per page (max 100)
+  -  page (Number) - Page number of the results to fetch
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubListSelfHostedRunnersRepo
+
+- **Version:** 1.5.0
+- **Description:** Lists all self-hosted runners for a repository
+- **Category:** actions
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  perPage (Number) - Results per page (max 100)
+  -  page (Number) - Page number of the results to fetch
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubListWorkflowJobs
+
+- **Version:** 1.5.0
+- **Description:** Lists jobs for a workflow run
+- **Category:** actions
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  runId (Number, required) - The ID of the workflow run
+  -  filter (Enum): [latest, all] - Filter jobs by status
+  -  perPage (Number) - Results per page (max 100)
+  -  page (Number) - Page number of the results to fetch
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubListWorkflowRuns
+
+- **Version:** 1.5.0
+- **Description:** Lists workflow runs for a GitHub repository
+- **Category:** actions
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  workflowId (String, required) - The ID of the workflow, you can also pass the workflow name such as main.yml
+  -  actor (String) - Gets the workflow runs triggered by a specific user. Provide the username of the person who made the push that started the workflow.
+  -  branch (String) - Gets the workflow runs triggered by a specific branch. Provide the name of the branch.
+  -  event (Enum): [BRANCH_PROTECTION_RULE, CHECK_RUN, CHECK_SUITE, CREATE, DELETE, DEPLOYMENT, DEPLOYMENT_STATUS, DISCUSSION, DISCUSSION_COMMENT, FORK, GOLLUM, ISSUE_COMMENT, ISSUES, LABEL, MERGE_GROUP, MILESTONE, PAGE_BUILD, PUBLIC, PULL_REQUEST, PULL_REQUEST_COMMENT, PULL_REQUEST_REVIEW, PULL_REQUEST_REVIEW_COMMENT, PULL_REQUEST_TARGET, PUSH, REGISTRY_PACKAGE, RELEASE, WORKFLOW_DISPATCH, WORKFLOW_RUN] - Gets the workflow runs triggered by a specific event. Provide the name of the event.
+  -  status (Enum): [COMPLETED, ACTION_REQUIRED, CANCELLED, FAILURE, NEUTRAL, SKIPPED, STALE, SUCCESS, TIMED_OUT, IN_PROGRESS, QUEUED, REQUESTED, WAITING, PENDING] - Filters workflow runs by their status or result. For example, you can get runs that are in_progress or that finished success. Only GitHub Actions can use waiting, pending, or requested as a status.
+  -  limit (Number) - The maximum number of runs to return.
+  -  page (Number) - The page of runs to return.
+  -  excludePullRequests (Boolean) - Excludes pull requests from the list of runs.
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubRemoveRunnerLabelRepo
+
+- **Version:** 1.5.0
+- **Description:** Removes a custom label from a self-hosted runner for a repository
+- **Category:** actions
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  runnerId (Number, required) - The ID of the self-hosted runner
+  -  name (String, required) - The name of the label to remove
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubRerunFailedJobs
+
+- **Version:** 1.5.0
+- **Description:** Reruns all failed jobs in a workflow run
+- **Category:** actions
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  runId (Number, required) - The ID of the workflow run
+  -  enableDebugLogging (Boolean) - Whether to enable debug logging for the re-run
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubRerunWorkflow
+
+- **Version:** 1.5.0
+- **Description:** Reruns a workflow run for a GitHub repository
+- **Category:** actions
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  runId (Number, required) - The ID of the workflow run
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubAddCollaborator
+
+- **Version:** 1.5.0
+- **Description:** Adds a collaborator to a repository
+- **Category:** repositories
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  username (String, required) - GitHub username of the collaborator
+  -  permission (Enum): [Pull, Push, Admin] - Permission level
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubCreateRelease
+
+- **Version:** 1.5.0
+- **Description:** Creates a new release
+- **Category:** repositories
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  tagName (String, required) - The name of the tag
+  -  targetCommitish (String) - Specifies the commitish value that determines where the Git tag is created from
+  -  name (String) - The name of the release
+  -  body (String) - Text describing the contents of the tag
+  -  draft (Boolean) - Whether to create a draft release
+  -  prerelease (Boolean) - Whether to identify the release as a prerelease
+  -  generateReleaseNotes (Boolean) - Whether to automatically generate the name and body for this release
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubCreateRepoOrg
+
+- **Version:** 1.5.0
+- **Description:** Creates a new repository in an organization
+- **Category:** repositories
+- **Arguments:**
+  -  org (String, required) - The organization name
+  -  name (String, required) - Repository name
+  -  description (String) - Repository description
+  -  homepage (String) - Repository homepage URL
+  -  private (Boolean) - Whether the repository should be private
+  -  hasIssues (Boolean) - Enable issues for the repository
+  -  hasProjects (Boolean) - Enable projects for the repository
+  -  hasWiki (Boolean) - Enable wiki for the repository
+  -  teamId (Number) - Team ID to grant access
+  -  autoInit (Boolean) - Initialize repository with a README
+  -  gitignoreTemplate (String) - Git ignore template
+  -  licenseTemplate (String) - License template
+  -  allowSquashMerge (Boolean) - Allow squash merging
+  -  allowMergeCommit (Boolean) - Allow merge commits
+  -  allowRebaseMerge (Boolean) - Allow rebase merging
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubCreateRepoUser
+
+- **Version:** 1.5.0
+- **Description:** Creates a new repository for the authenticated user
+- **Category:** repositories
+- **Arguments:**
+  -  name (String, required) - Repository name
+  -  description (String) - Repository description
+  -  homepage (String) - Repository homepage URL
+  -  private (Boolean) - Whether the repository should be private
+  -  hasIssues (Boolean) - Enable issues for the repository
+  -  hasProjects (Boolean) - Enable projects for the repository
+  -  hasWiki (Boolean) - Enable wiki for the repository
+  -  autoInit (Boolean) - Initialize repository with a README
+  -  gitignoreTemplate (String) - Git ignore template
+  -  licenseTemplate (String) - License template
+  -  allowSquashMerge (Boolean) - Allow squash merging
+  -  allowMergeCommit (Boolean) - Allow merge commits
+  -  allowRebaseMerge (Boolean) - Allow rebase merging
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubDeleteFile
+
+- **Version:** 1.5.0
+- **Description:** Deletes a file from a GitHub repository
+- **Category:** repositories
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  path (String, required) - The path to the file to delete
+  -  message (String, required) - The commit message
+  -  sha (String, required) - The blob SHA of the file being deleted
+  -  branch (String) - The branch name (default: repository's default branch)
+  -  committerName (String) - Name of the committer
+  -  committerEmail (String) - Email of the committer
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubDeleteRelease
+
+- **Version:** 1.5.0
+- **Description:** Deletes a GitHub release
+- **Category:** repositories
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  releaseId (Number, required) - The ID of the release to delete
+- **Output:** Boolean
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubDeleteRepo
+
+- **Version:** 1.5.0
+- **Description:** Deletes a repository
+- **Category:** repositories
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubGetBranch
+
+- **Version:** 1.5.0
+- **Description:** Gets a specific branch from a repository
+- **Category:** repositories
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  branch (String, required) - The name of the branch
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubGetFileContent
+
+- **Version:** 1.5.0
+- **Description:** Gets the content of a file from a repository
+- **Category:** repositories
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  path (String, required) - The path to the file
+  -  ref (String) - Git reference (branch, commit, or tag)
+- **Output:** String
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubGetRelease
+
+- **Version:** 1.5.0
+- **Description:** Gets a release by its ID
+- **Category:** repositories
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  releaseId (Number, required) - The ID of the release
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubGetRepo
+
+- **Version:** 1.5.0
+- **Description:** Gets a repository
+- **Category:** repositories
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubListBranches
+
+- **Version:** 1.5.0
+- **Description:** Lists branches for a repository
+- **Category:** repositories
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  perPage (Number) - Number of results per page (default: 30, max: 100)
+  -  page (Number) - Page number
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubListCollaborators
+
+- **Version:** 1.5.0
+- **Description:** Lists repository collaborators
+- **Category:** repositories
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  affiliation (Enum): [Outside, Direct, All] - Filter collaborators by affiliation
+  -  perPage (Number) - Results per page (max 100)
+  -  page (Number) - Page number
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubListOrgRepos
+
+- **Version:** 1.5.0
+- **Description:** Lists organization repositories
+- **Category:** repositories
+- **Arguments:**
+  -  org (String, required) - The organization name
+  -  type (Enum): [All, Public, Private, Forks, Sources, Member] - Type of repositories to list
+  -  sort (Enum): [Created, Updated, Pushed, FullName] - Sorting criterion
+  -  direction (Enum): [Asc, Desc] - Sorting direction
+  -  perPage (Number) - Results per page (max 100)
+  -  page (Number) - Page number
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubListReleases
+
+- **Version:** 1.5.0
+- **Description:** Lists releases for a repository
+- **Category:** repositories
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  perPage (Number) - Results per page (max 100)
+  -  page (Number) - Page number
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubListUserRepos
+
+- **Version:** 1.5.0
+- **Description:** Lists repositories for a user
+- **Category:** repositories
+- **Arguments:**
+  -  username (String, required) - GitHub username
+  -  type (Enum): [All, Owner, Member] - Type of repositories to list
+  -  sort (Enum): [Created, Updated, Pushed, FullName] - Sorting criterion
+  -  direction (Enum): [Asc, Desc] - Sorting direction
+  -  perPage (Number) - Results per page (max 100)
+  -  page (Number) - Page number
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubRemoveCollaborator
+
+- **Version:** 1.5.0
+- **Description:** Removes a collaborator from a repository
+- **Category:** repositories
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  username (String, required) - GitHub username of the collaborator
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubUnprotectBranch
+
+- **Version:** 1.5.0
+- **Description:** Removes branch protection from a repository branch
+- **Category:** repositories
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  branch (String, required) - The name of the branch to unprotect
+- **Output:** Boolean
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubUpdateFile
+
+- **Version:** 1.5.0
+- **Description:** Creates or updates a file in a repository
+- **Category:** repositories
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  path (String, required) - The path where to create/update the file
+  -  message (String, required) - Commit message
+  -  content (String, required) - File content (will be base64 encoded)
+  -  sha (String) - Blob SHA of the file being replaced (required for updates)
+  -  branch (String) - Branch name
+  -  committerName (String) - Committer name
+  -  committerEmail (String) - Committer email
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubUpdateRelease
+
+- **Version:** 1.5.0
+- **Description:** Updates an existing GitHub release
+- **Category:** repositories
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  releaseId (Number, required) - The ID of the release to update
+  -  tagName (String) - The new tag name
+  -  name (String) - The new release name
+  -  body (String) - The new release description
+  -  draft (Boolean) - Whether the release is a draft
+  -  prerelease (Boolean) - Whether the release is a prerelease
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubUpdateRepo
+
+- **Version:** 1.5.0
+- **Description:** Updates a repository
+- **Category:** repositories
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  name (String) - New repository name
+  -  description (String) - New repository description
+  -  homepage (String) - New repository homepage URL
+  -  private (Boolean) - Whether the repository should be private
+  -  hasIssues (Boolean) - Enable issues for the repository
+  -  hasProjects (Boolean) - Enable projects for the repository
+  -  hasWiki (Boolean) - Enable wiki for the repository
+  -  teamId (Number) - Team ID to grant access
+  -  allowSquashMerge (Boolean) - Allow squash merging
+  -  allowMergeCommit (Boolean) - Allow merge commits
+  -  allowRebaseMerge (Boolean) - Allow rebase merging
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubUploadReleaseAsset
+
+- **Version:** 1.5.0
+- **Description:** Uploads an asset to a GitHub release
+- **Category:** repositories
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  releaseId (Number, required) - The ID of the release
+  -  filePath (String, required) - Path to the file to upload
+  -  assetName (String) - Name to give the asset
+  -  contentType (String) - MIME type of the asset (default: application/octet-stream)
+  -  label (String) - Label for the asset
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
 ## $searchReddit
 
 - **Version:** 1.0.0
