@@ -5,14 +5,23 @@ dotenv.config();
 
 const reddit = new ForgeSocial({
   events: ['error', 'newRedditPost', 'newYoutubeVideo'],
-  clientID: process.env.CLIENT_ID,
-  clientSecret: process.env.CLIENT_SECRET,
-  redditUsername: process.env.REDDIT_USERNAME,
+  github: {
+    token: process.env.GITHUB_TOKEN,
+    log: false,
+  },
+  youtube: {
+    enabled: true,
+  },
+  reddit: {
+    redditUsername: process.env.REDDIT_USERNAME,
+    clientID: process.env.REDDIT_CLIENT_ID,
+    clientSecret: process.env.REDDIT_CLIENT_SECRET,
+  },
 });
 
 const client = new ForgeClient({
   extensions: [reddit],
-  events: ['messageCreate', 'ready'],
+  events: ['messageCreate'],
   intents: ['Guilds', 'GuildMessages', 'MessageContent'],
   prefixes: ['.'],
 });
@@ -35,9 +44,6 @@ client.commands.load('./__tests__/commands');
 
 client.login(process.env.TOKEN);
 
-client.commands.add({
-  type: 'ready',
-  code: `
-    $log[Client is ready!]
-  `,
+client.on('clientReady', () => {
+  console.log('Client is ready!');
 });
