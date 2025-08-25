@@ -213,3 +213,120 @@
 - **Brackets:** true
 - **Unwrap:** true
 
+## $extractVideoID
+
+- **Version:** 1.0.0
+- **Description:** Extracts a YouTube video ID from a URL or string.
+- **Category:** youtube
+- **Arguments:**
+  -  input (String, required) - YouTube URL or video ID
+- **Output:** String
+- **Brackets:** true
+- **Unwrap:** true
+
+## $getYoutubeChannel
+
+- **Version:** 1.0.0
+- **Description:** Gets info about a YouTube channel by ID or handle.
+- **Category:** youtube
+- **Arguments:**
+  -  identifier (String, required) - Channel ID or handle (e.g. UC... or @username)
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $listTrackedYoutubeChannels
+
+- **Version:** 1.0.0
+- **Description:** Returns a list of all tracked YouTube channel IDs.
+- **Category:** youtube
+- **Unwrap:** false
+
+## $searchYoutube
+
+- **Version:** 1.3.0
+- **Description:** Searches YouTube and returns the top videos in JSON format. Supports filters.
+- **Category:** youtube
+- **Arguments:**
+  -  query (String, required) - The search query to look up on YouTube
+  -  limit (Number) - Maximum number of videos to return (default 5, max 25)
+  -  uploadDate (Enum): [All, Hour, Today, Week, Month, Year] - Upload date filter
+  -  duration (Enum): [All, Short, Medium, Long] - Video duration filter
+  -  sortBy (Enum): [Relevance, Rating, UploadDate, ViewCount] - Sort results by
+  -  features (Enum, rest): [HD, Subtitles, FourK, Live, ThreeSixty, ThreeD, HDR, CC, VR180] - Features to filter by
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $searchYoutubeChannel
+
+- **Version:** 1.3.0
+- **Description:** Searches YouTube and returns matching channels in JSON format.
+- **Category:** youtube
+- **Arguments:**
+  -  query (String, required) - Search query for YouTube channels
+  -  limit (Number) - Maximum number of channels to return (default 5, max 25)
+  -  sortBy (Enum): [Relevance, Rating, UploadDate, ViewCount] - Sort results by (optional)
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $searchYoutubeMusic
+
+- **Version:** 1.3.0
+- **Description:** Searches YouTube Music and returns songs in JSON format.
+- **Category:** youtube
+- **Arguments:**
+  -  query (String, required) - Search query for music
+  -  limit (Number) - Max number of songs to return (default 5, max 25)
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $searchYoutubePlaylist
+
+- **Version:** 1.3.0
+- **Description:** Searches YouTube and returns the playlists in JSON format. Supports filters.
+- **Category:** youtube
+- **Arguments:**
+  -  query (String, required) - The search query to look up on YouTube
+  -  limit (Number) - Maximum number of playlists to return (default 5, max 25)
+  -  uploadDate (Enum): [All, Hour, Today, Week, Month, Year] - Upload date filter
+  -  duration (Enum): [All, Short, Medium, Long] - Video duration filter
+  -  sortBy (Enum): [Relevance, Rating, UploadDate, ViewCount] - Sort results by
+  -  features (Enum, rest): [HD, Subtitles, FourK, Live, ThreeSixty, ThreeD, HDR, CC, VR180] - Features to filter by
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $trackYoutubeChannel
+
+- **Version:** 1.0.0
+- **Description:** Starts tracking a YouTube channel and emits events on new uploads.
+- **Category:** youtube
+- **Arguments:**
+  -  channelId (String, required) - The channel ID to track (e.g. UC_x5XG1OV2P6uZZ5FSM9Ttw)
+- **Brackets:** true
+- **Unwrap:** true
+
+## $unTrackYoutubeChannel
+
+- **Version:** 1.0.0
+- **Description:** Stops tracking a previously tracked YouTube channel.
+- **Category:** youtube
+- **Arguments:**
+  -  channelId (String, required) - The channel ID to untrack.
+- **Brackets:** true
+- **Unwrap:** true
+
+## $getYoutubeVideo
+
+- **Version:** 1.3.0
+- **Description:** Returns the youtube videos info.
+- **Category:** youtube
+- **Arguments:**
+  -  ID (String, required) - The video ID to get info about
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
