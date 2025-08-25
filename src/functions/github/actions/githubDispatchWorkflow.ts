@@ -44,7 +44,7 @@ export default new NativeFunction({
       type: ArgType.String,
     },
   ],
-  output: ArgType.Json,
+  output: ArgType.String,
   async execute(ctx, [owner, repo, workflowId, ref, inputs]) {
     const ext = ctx.client.getExtension('ForgeSocial') as ForgeSocial;
     const github = ext.github;
@@ -69,7 +69,7 @@ export default new NativeFunction({
         ref,
         inputs: parsedInputs,
       });
-      return this.success({ message: 'Workflow dispatched successfully' });
+      return this.success(true);
     } catch (e) {
       return this.success(handleGitHubError(e));
     }
