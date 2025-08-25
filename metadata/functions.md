@@ -565,7 +565,7 @@
   -  owner (String, required) - The owner of the repository
   -  repo (String, required) - The name of the repository
   -  branch (String, required) - The name of the branch to unprotect
-- **Output:** Boolean
+- **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
 

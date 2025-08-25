@@ -52,15 +52,15 @@ export default new NativeFunction({
       return this.customError('GitHub client not initialized');
     }
     try {
-      await github.rest.repos.addCollaborator({
+      const invitation = await github.rest.repos.addCollaborator({
         owner,
         repo,
         username,
-        permission: permission || 'push',
+        permission: permission as 'pull' | 'push' | 'admin' | 'maintain' | 'triage' | undefined,
       });
-      return this.success(JSON.stringify({ success: true }, undefined, 2));
-    } catch (e) {
-      return this.success(handleGitHubError(e));
+      return this.success(JSON.stringify(invitation, undefined, 2));
+    } catch (error) {
+      return this.success(handleGitHubError(error));
     }
   },
 });

@@ -83,10 +83,7 @@ exports.default = new forgescript_1.NativeFunction({
                 branch: branch || undefined,
                 committer,
             });
-            return this.success(JSON.stringify({
-                commit: result.data.commit,
-                content: result.data.content,
-            }, undefined, 2));
+            return this.success(JSON.stringify(result, undefined, 2));
         }
         catch (e) {
             return this.success((0, errorHandler_1.handleGitHubError)(e));

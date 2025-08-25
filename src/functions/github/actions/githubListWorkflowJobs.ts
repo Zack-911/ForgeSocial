@@ -65,7 +65,7 @@ export default new NativeFunction({
       return this.customError('GitHub client not initialized');
     }
     try {
-      const jobs = await github.actions.listJobsForWorkflowRun({
+      const result = await github.actions.listJobsForWorkflowRun({
         owner,
         repo,
         run_id: runId,
@@ -73,7 +73,7 @@ export default new NativeFunction({
         per_page: perPage || undefined,
         page: page || undefined,
       });
-      return this.success(JSON.stringify(jobs.data, undefined, 2));
+      return this.success(JSON.stringify(result, undefined, 2));
     } catch (e) {
       return this.success(handleGitHubError(e));
     }

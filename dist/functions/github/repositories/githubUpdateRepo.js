@@ -108,7 +108,7 @@ exports.default = new forgescript_1.NativeFunction({
             return this.customError('GitHub client not initialized');
         }
         try {
-            const updatedRepo = await github.rest.repos.update({
+            const response = await github.rest.repos.update({
                 owner,
                 repo,
                 name: name || undefined,
@@ -123,7 +123,7 @@ exports.default = new forgescript_1.NativeFunction({
                 allow_merge_commit: allowMergeCommit || undefined,
                 allow_rebase_merge: allowRebaseMerge || undefined,
             });
-            return this.success(JSON.stringify(updatedRepo.data, undefined, 2));
+            return this.success(JSON.stringify(response, undefined, 2));
         }
         catch (e) {
             return this.success((0, errorHandler_1.handleGitHubError)(e));

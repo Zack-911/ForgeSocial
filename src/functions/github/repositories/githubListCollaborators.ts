@@ -62,13 +62,13 @@ export default new NativeFunction({
       const collaborators = await github.rest.repos.listCollaborators({
         owner,
         repo,
-        affiliation: affiliation || Affiliation.All,
-        per_page: perPage || undefined,
-        page: page || undefined,
+        per_page: perPage ?? 30,
+        page: page ?? 1,
+        affiliation: (affiliation as 'outside' | 'direct' | 'all' | undefined) ?? 'all',
       });
-      return this.success(JSON.stringify(collaborators.data, undefined, 2));
-    } catch (e) {
-      return this.success(handleGitHubError(e));
+      return this.success(JSON.stringify(collaborators, undefined, 2));
+    } catch (error) {
+      return this.success(handleGitHubError(error));
     }
   },
 });

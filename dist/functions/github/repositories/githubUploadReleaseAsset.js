@@ -94,7 +94,8 @@ exports.default = new forgescript_1.NativeFunction({
         },
     ],
     output: forgescript_1.ArgType.Json,
-    async execute(ctx, [owner, repo, releaseId, filePath, assetName, contentType, label]) {
+    async execute(ctx, args) {
+        const [owner, repo, releaseId, filePath, assetName, contentType, label] = args;
         const ext = ctx.client.getExtension('ForgeSocial');
         const github = ext.github;
         if (!github) {
@@ -105,31 +106,23 @@ exports.default = new forgescript_1.NativeFunction({
             const resolvedPath = path.resolve(filePath);
             // Read the file as a buffer
             const fileData = fs.readFileSync(resolvedPath);
-            // Determine the asset name (use the filename if not provided)
-            const name = assetName || path.basename(filePath);
             // Upload the asset
-            const result = await github.rest.repos.uploadReleaseAsset({
+            const response = await github.rest.repos.uploadReleaseAsset({
                 owner,
                 repo,
                 release_id: releaseId,
-                name,
-                label: label || undefined,
-                data: fileData, // Type assertion needed for Octokit
+                name: assetName,
+                data: fileData, // Type assertion to handle Buffer type
                 headers: {
                     'content-type': contentType || 'application/octet-stream',
                     'content-length': fileData.length,
                 },
+                label: label || undefined,
             });
-            return this.success(JSON.stringify({
-                id: result.data.id,
-                name: result.data.name,
-                label: result.data.label,
-                url: result.data.url,
-                browser_download_url: result.data.browser_download_url,
-            }, undefined, 2));
+            return this.success(JSON.stringify(response, undefined, 2));
         }
-        catch (e) {
-            return this.success((0, errorHandler_1.handleGitHubError)(e));
+        catch (error) {
+            return this.success((0, errorHandler_1.handleGitHubError)(error));
         }
     },
 });

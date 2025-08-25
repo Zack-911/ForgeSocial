@@ -101,9 +101,9 @@ export default new NativeFunction({
         per_page: perPage ?? undefined,
         page: page ?? undefined,
       });
-      return this.success(JSON.stringify(repos.data, undefined, 2));
-    } catch (e) {
-      return this.success(handleGitHubError(e));
+      return this.success(JSON.stringify(repos, undefined, 2));
+    } catch (error) {
+      return this.success(handleGitHubError(error));
     }
   },
 });

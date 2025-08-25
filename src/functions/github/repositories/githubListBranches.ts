@@ -51,9 +51,9 @@ export default new NativeFunction({
         per_page: perPage ?? 30,
         page: page ?? 1,
       });
-      return this.success(JSON.stringify(branches.data, undefined, 2));
-    } catch (e) {
-      return this.success(handleGitHubError(e));
+      return this.success(JSON.stringify(branches, undefined, 2));
+    } catch (error) {
+      return this.success(handleGitHubError(error));
     }
   },
 });

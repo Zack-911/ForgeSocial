@@ -48,12 +48,12 @@ export default new NativeFunction({
       const releases = await github.rest.repos.listReleases({
         owner,
         repo,
-        per_page: perPage || undefined,
-        page: page || undefined,
+        per_page: perPage ?? 30,
+        page: page ?? 1,
       });
-      return this.success(JSON.stringify(releases.data, undefined, 2));
-    } catch (e) {
-      return this.success(handleGitHubError(e));
+      return this.success(JSON.stringify(releases, undefined, 2));
+    } catch (error) {
+      return this.success(handleGitHubError(error));
     }
   },
 });

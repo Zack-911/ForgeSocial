@@ -35,9 +35,10 @@ export default new NativeFunction({
         owner,
         repo,
       });
-      return this.success(JSON.stringify(repository.data, undefined, 2));
-    } catch (e) {
-      return this.success(handleGitHubError(e));
+      return this.success(JSON.stringify(repository, undefined, 2));
+    } catch (error) {
+      const errorMessage = handleGitHubError(error);
+      return this.success(errorMessage);
     }
   },
 });

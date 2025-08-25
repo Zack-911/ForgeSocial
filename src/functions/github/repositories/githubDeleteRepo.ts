@@ -31,13 +31,13 @@ export default new NativeFunction({
       return this.customError('GitHub client not initialized');
     }
     try {
-      await github.rest.repos.delete({
+      const result = await github.rest.repos.delete({
         owner,
         repo,
       });
-      return this.success(JSON.stringify({ success: true }, undefined, 2));
-    } catch (e) {
-      return this.success(handleGitHubError(e));
+      return this.success(JSON.stringify(result, undefined, 2));
+    } catch (error) {
+      return this.success(handleGitHubError(error));
     }
   },
 });

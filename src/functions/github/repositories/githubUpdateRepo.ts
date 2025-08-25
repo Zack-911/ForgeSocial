@@ -125,7 +125,7 @@ export default new NativeFunction({
       return this.customError('GitHub client not initialized');
     }
     try {
-      const updatedRepo = await github.rest.repos.update({
+      const response = await github.rest.repos.update({
         owner,
         repo,
         name: name || undefined,
@@ -140,7 +140,7 @@ export default new NativeFunction({
         allow_merge_commit: allowMergeCommit || undefined,
         allow_rebase_merge: allowRebaseMerge || undefined,
       });
-      return this.success(JSON.stringify(updatedRepo.data, undefined, 2));
+      return this.success(JSON.stringify(response, undefined, 2));
     } catch (e) {
       return this.success(handleGitHubError(e));
     }

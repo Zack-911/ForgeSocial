@@ -35,10 +35,11 @@ exports.default = new forgescript_1.NativeFunction({
                 owner,
                 repo,
             });
-            return this.success(JSON.stringify(repository.data, undefined, 2));
+            return this.success(JSON.stringify(repository, undefined, 2));
         }
-        catch (e) {
-            return this.success((0, errorHandler_1.handleGitHubError)(e));
+        catch (error) {
+            const errorMessage = (0, errorHandler_1.handleGitHubError)(error);
+            return this.success(errorMessage);
         }
     },
 });

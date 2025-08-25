@@ -52,14 +52,14 @@ export default new NativeFunction({
       return this.customError('GitHub client not initialized');
     }
     try {
-      const artifacts = await github.actions.listArtifactsForRepo({
+      const result = await github.actions.listArtifactsForRepo({
         owner,
         repo,
         artifact_name: artifactName || undefined,
         limit: limit || undefined,
         page: page || undefined,
       });
-      return this.success(JSON.stringify(artifacts, undefined, 2));
+      return this.success(JSON.stringify(result, undefined, 2));
     } catch (e) {
       return this.success(handleGitHubError(e));
     }

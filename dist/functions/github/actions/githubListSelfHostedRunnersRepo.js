@@ -45,13 +45,13 @@ exports.default = new forgescript_1.NativeFunction({
             return this.customError('GitHub client not initialized');
         }
         try {
-            const runners = await github.actions.listSelfHostedRunnersForRepo({
+            const result = await github.actions.listSelfHostedRunnersForRepo({
                 owner,
                 repo,
                 per_page: perPage || undefined,
                 page: page || undefined,
             });
-            return this.success(JSON.stringify(runners.data, undefined, 2));
+            return this.success(JSON.stringify(result, undefined, 2));
         }
         catch (e) {
             return this.success((0, errorHandler_1.handleGitHubError)(e));

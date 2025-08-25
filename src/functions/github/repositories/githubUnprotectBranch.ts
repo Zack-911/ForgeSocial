@@ -30,7 +30,7 @@ export default new NativeFunction({
       type: ArgType.String,
     },
   ],
-  output: ArgType.Boolean,
+  output: ArgType.Json,
   async execute(ctx, [owner, repo, branch]: [string, string, string]) {
     const ext = ctx.client.getExtension('ForgeSocial') as ForgeSocial;
     const github = ext.github;
@@ -38,14 +38,14 @@ export default new NativeFunction({
       return this.customError('GitHub client not initialized');
     }
     try {
-      await github.rest.repos.deleteBranchProtection({
+      const result = await github.rest.repos.deleteBranchProtection({
         owner,
         repo,
         branch,
       });
-      return this.success(true);
-    } catch (e) {
-      return this.success(handleGitHubError(e));
+      return this.success(JSON.stringify(result, undefined, 2));
+    } catch (error) {
+      return this.success(handleGitHubError(error));
     }
   },
 });

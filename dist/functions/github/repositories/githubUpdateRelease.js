@@ -73,7 +73,7 @@ exports.default = new forgescript_1.NativeFunction({
             return this.customError('GitHub client not initialized');
         }
         try {
-            const release = await github.rest.repos.updateRelease({
+            const response = await github.rest.repos.updateRelease({
                 owner,
                 repo,
                 release_id: releaseId,
@@ -83,7 +83,7 @@ exports.default = new forgescript_1.NativeFunction({
                 draft: draft || undefined,
                 prerelease: prerelease || undefined,
             });
-            return this.success(JSON.stringify(release.data, undefined, 2));
+            return this.success(JSON.stringify(response, undefined, 2));
         }
         catch (e) {
             return this.success((0, errorHandler_1.handleGitHubError)(e));

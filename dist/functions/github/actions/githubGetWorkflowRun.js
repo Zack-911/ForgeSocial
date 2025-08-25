@@ -45,13 +45,13 @@ exports.default = new forgescript_1.NativeFunction({
             return this.customError('GitHub client not initialized');
         }
         try {
-            const run = await github.actions.getWorkflowRun({
+            const result = await github.actions.getWorkflowRun({
                 owner,
                 repo,
                 run_id: runId,
                 exclude_pull_requests: excludePullRequests || undefined,
             });
-            return this.success(JSON.stringify(run, undefined, 2));
+            return this.success(JSON.stringify(result, undefined, 2));
         }
         catch (e) {
             return this.success((0, errorHandler_1.handleGitHubError)(e));

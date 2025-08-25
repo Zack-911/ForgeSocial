@@ -62,14 +62,14 @@ exports.default = new forgescript_1.NativeFunction({
             const collaborators = await github.rest.repos.listCollaborators({
                 owner,
                 repo,
-                affiliation: affiliation || Affiliation.All,
-                per_page: perPage || undefined,
-                page: page || undefined,
+                per_page: perPage ?? 30,
+                page: page ?? 1,
+                affiliation: affiliation ?? 'all',
             });
-            return this.success(JSON.stringify(collaborators.data, undefined, 2));
+            return this.success(JSON.stringify(collaborators, undefined, 2));
         }
-        catch (e) {
-            return this.success((0, errorHandler_1.handleGitHubError)(e));
+        catch (error) {
+            return this.success((0, errorHandler_1.handleGitHubError)(error));
         }
     },
 });

@@ -38,12 +38,12 @@ export default new NativeFunction({
       return this.customError('GitHub client not initialized');
     }
     try {
-      const job = await github.actions.getJobForWorkflowRun({
+      const result = await github.actions.getJobForWorkflowRun({
         owner,
         repo,
         job_id: jobId,
       });
-      return this.success(JSON.stringify(job.data, undefined, 2));
+      return this.success(JSON.stringify(result, undefined, 2));
     } catch (e) {
       return this.success(handleGitHubError(e));
     }

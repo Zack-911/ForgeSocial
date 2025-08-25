@@ -46,20 +46,20 @@ exports.default = new forgescript_1.NativeFunction({
         }
         try {
             if (force) {
-                const run = await github.actions.forceCancelWorkflowRun({
+                const result = await github.actions.forceCancelWorkflowRun({
                     owner,
                     repo,
                     run_id: runId,
                 });
-                return this.success(JSON.stringify(run, undefined, 2));
+                return this.success(JSON.stringify(result, undefined, 2));
             }
             else {
-                const run = await github.actions.cancelWorkflowRun({
+                const result = await github.actions.cancelWorkflowRun({
                     owner,
                     repo,
                     run_id: runId,
                 });
-                return this.success(JSON.stringify(run, undefined, 2));
+                return this.success(JSON.stringify(result, undefined, 2));
             }
         }
         catch (e) {

@@ -38,14 +38,14 @@ export default new NativeFunction({
       return this.customError('GitHub client not initialized');
     }
     try {
-      const branchData = await github.rest.repos.getBranch({
+      const result = await github.rest.repos.getBranch({
         owner,
         repo,
         branch,
       });
-      return this.success(JSON.stringify(branchData.data, undefined, 2));
-    } catch (e) {
-      return this.success(handleGitHubError(e));
+      return this.success(JSON.stringify(result, undefined, 2));
+    } catch (error) {
+      return this.success(handleGitHubError(error));
     }
   },
 });
