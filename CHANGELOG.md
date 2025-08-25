@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.1](https://github.com/zack-911/forgesocial/compare/v1.5.0...v1.5.1) (2025-08-25)
+
+
+### Refactoring
+
+* make the function return true ([0566196](https://github.com/zack-911/forgesocial/commit/05661965211a91b3463a14145896ce8559499f9b))
+* now returns more info for almost every command ([9e7e84e](https://github.com/zack-911/forgesocial/commit/9e7e84ed1e5e372242cff19e0217203243055a11))
+
 ## [1.5.0](https://github.com/zack-911/forgesocial/compare/v1.2.0...v1.5.0) (2025-08-25)
 
 
