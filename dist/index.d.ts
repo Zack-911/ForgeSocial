@@ -2,6 +2,7 @@ import { ForgeClient, ForgeExtension } from '@tryforge/forgescript';
 import { ForgeSocialCommandManager } from './structures/ForgeSocialCommandManager';
 import { IForgeSocialEvents } from './structures/ForgeSocialEventHandlers';
 import { Innertube } from 'youtubei.js';
+import { Octokit } from '@octokit/rest';
 /**
  * Options for configuring the ForgeSocial extension.
  * @property {Array<keyof IForgeSocialEvents>=} events - List of event names to load for the extension.
@@ -11,9 +12,18 @@ import { Innertube } from 'youtubei.js';
  */
 export interface IForgeSocialOptions {
     events?: Array<keyof IForgeSocialEvents>;
-    clientID?: string;
-    clientSecret?: string;
-    redditUsername?: string;
+    reddit?: {
+        clientID: string;
+        clientSecret: string;
+        redditUsername: string;
+    };
+    github?: {
+        token: string;
+        log?: boolean;
+    };
+    youtube?: {
+        enabled: boolean;
+    };
 }
 /**
  * Utility type to transform event signatures for TypedEmitter.
@@ -31,6 +41,7 @@ export declare class ForgeSocial extends ForgeExtension {
     version: any;
     client: ForgeClient;
     youtube?: Innertube;
+    github?: Octokit;
     private emitter;
     private accessToken;
     private tokenExpiresAt;
