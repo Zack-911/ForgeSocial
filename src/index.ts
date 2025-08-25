@@ -69,21 +69,22 @@ export class ForgeSocial extends ForgeExtension {
   async init(client: ForgeClient) {
     this.client = client;
     this.commands = new ForgeSocialCommandManager(client);
+
     this.youtube = await Innertube.create();
     Log.setLevel(Log.Level.NONE);
     client.youtube = this.youtube;
 
     EventManager.load(ForgeSocialEventManagerName, __dirname + `/events`);
     this.load(__dirname + `/functions`);
+
     await loadTrackedSubredditsFromFile();
-    await loadTrackedChannelsFromFile(); // <-- YouTube state preload
+    await loadTrackedChannelsFromFile();
 
     if (this.options.events?.length) {
       this.client.events.load(ForgeSocialEventManagerName, this.options.events);
     }
-
     await this.refreshToken();
-    await this.startPolling();
+    this.startPolling();
   }
 
   /**
@@ -133,21 +134,19 @@ export class ForgeSocial extends ForgeExtension {
   /**
    * Starts polling for tracked subreddits and YouTube channels.
    */
-  public async startPolling(): Promise<void> {
+  public startPolling() {
     if (this._pollingStarted) return;
     this._pollingStarted = true;
 
     // Reddit polling
     if (this.accessToken && this.options.redditUsername) {
-      await startPollingTrackedSubreddits(this.accessToken, this.options.redditUsername, (post) =>
+      startPollingTrackedSubreddits(this.accessToken, this.options.redditUsername, (post) =>
         this.newPost('newRedditPost', post),
       );
     }
 
     // YouTube polling
-    await startPollingTrackedChannels(this, (video) =>
-      this.newPost('newYoutubeVideo', video),
-    );
+    startPollingTrackedChannels(this, (video) => this.newPost('newYoutubeVideo', video));
   }
 
   /**

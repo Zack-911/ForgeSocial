@@ -63,7 +63,7 @@ export declare class ForgeSocial extends ForgeExtension {
     /**
      * Starts polling for tracked subreddits and YouTube channels.
      */
-    startPolling(): Promise<void>;
+    startPolling(): void;
     /**
      * Refreshes the Reddit OAuth access token and schedules periodic refreshes.
      */

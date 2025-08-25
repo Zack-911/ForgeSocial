@@ -51,12 +51,12 @@ class ForgeSocial extends forgescript_1.ForgeExtension {
         forgescript_1.EventManager.load(constants_1.ForgeSocialEventManagerName, __dirname + `/events`);
         this.load(__dirname + `/functions`);
         await (0, pollSubreddit_1.loadTrackedSubredditsFromFile)();
-        await (0, pollYoutube_1.loadTrackedChannelsFromFile)(); // <-- YouTube state preload
+        await (0, pollYoutube_1.loadTrackedChannelsFromFile)();
         if (this.options.events?.length) {
             this.client.events.load(constants_1.ForgeSocialEventManagerName, this.options.events);
         }
         await this.refreshToken();
-        await this.startPolling();
+        this.startPolling();
     }
     /**
      * Gets the current Reddit OAuth access token.
@@ -98,16 +98,16 @@ class ForgeSocial extends forgescript_1.ForgeExtension {
     /**
      * Starts polling for tracked subreddits and YouTube channels.
      */
-    async startPolling() {
+    startPolling() {
         if (this._pollingStarted)
             return;
         this._pollingStarted = true;
         // Reddit polling
         if (this.accessToken && this.options.redditUsername) {
-            await (0, pollSubreddit_1.startPollingTrackedSubreddits)(this.accessToken, this.options.redditUsername, (post) => this.newPost('newRedditPost', post));
+            (0, pollSubreddit_1.startPollingTrackedSubreddits)(this.accessToken, this.options.redditUsername, (post) => this.newPost('newRedditPost', post));
         }
         // YouTube polling
-        await (0, pollYoutube_1.startPollingTrackedChannels)(this, (video) => this.newPost('newYoutubeVideo', video));
+        (0, pollYoutube_1.startPollingTrackedChannels)(this, (video) => this.newPost('newYoutubeVideo', video));
     }
     /**
      * Refreshes the Reddit OAuth access token and schedules periodic refreshes.

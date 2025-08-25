@@ -37,7 +37,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
-    "@tryforge/forgescript": "^2.3.0",
+    "@tryforge/forgescript": "github:tryforge/forgescript#dev",
     "@types/axios": "^0.9.36",
     "@types/node": "^20.19.9",
     "@types/xml2js": "^0.4.14",
