@@ -26,6 +26,7 @@
   "author": "Zack-911",
   "license": "GPL-3.0",
   "dependencies": {
+    "@octokit/rest": "^22.0.0",
     "axios": "^1.11.0",
     "fast-xml-parser": "^5.2.5",
     "node-html-parser": "^7.0.1",
