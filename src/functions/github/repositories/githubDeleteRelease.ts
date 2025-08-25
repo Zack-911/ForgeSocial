@@ -39,14 +39,14 @@ export default new NativeFunction({
     }
 
     try {
-      await github.rest.repos.deleteRelease({
+      const result = await github.rest.repos.deleteRelease({
         owner,
         repo,
         release_id: releaseId,
       });
-      return this.success(true);
-    } catch (e) {
-      return this.success(handleGitHubError(e));
+      return this.success(JSON.stringify(result, undefined, 2));
+    } catch (error) {
+      return this.success(handleGitHubError(error));
     }
   },
 });

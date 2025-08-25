@@ -52,7 +52,7 @@ exports.default = new forgescript_1.NativeFunction({
                 runner_id: runnerId,
                 labels: labelsArray,
             });
-            return this.success(JSON.stringify(result.data, undefined, 2));
+            return this.success(JSON.stringify(result, undefined, 2));
         }
         catch (e) {
             return this.success((0, errorHandler_1.handleGitHubError)(e));

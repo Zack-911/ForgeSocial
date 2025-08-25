@@ -79,8 +79,13 @@ exports.default = new forgescript_1.NativeFunction({
         if (!github) {
             return this.customError('GitHub client not initialized');
         }
-        const committer = committerName && committerEmail ? { name: committerName, email: committerEmail } : undefined;
         try {
+            const committerInfo = committerName && committerEmail
+                ? {
+                    name: committerName,
+                    email: committerEmail,
+                }
+                : undefined;
             const result = await github.rest.repos.createOrUpdateFileContents({
                 owner,
                 repo,
@@ -89,15 +94,13 @@ exports.default = new forgescript_1.NativeFunction({
                 content: Buffer.from(content).toString('base64'),
                 sha: sha || undefined,
                 branch: branch || undefined,
-                committer,
+                committer: committerInfo,
+                author: committerInfo,
             });
-            return this.success(JSON.stringify({
-                commit: result.data.commit,
-                content: result.data.content,
-            }, undefined, 2));
+            return this.success(JSON.stringify(result, undefined, 2));
         }
-        catch (e) {
-            return this.success((0, errorHandler_1.handleGitHubError)(e));
+        catch (error) {
+            return this.success((0, errorHandler_1.handleGitHubError)(error));
         }
     },
 });

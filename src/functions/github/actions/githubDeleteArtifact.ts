@@ -38,12 +38,12 @@ export default new NativeFunction({
       return this.customError('GitHub client not initialized');
     }
     try {
-      await github.actions.deleteArtifact({
+      const result = await github.actions.deleteArtifact({
         owner,
         repo,
         artifact_id: artifactId,
       });
-      return this.success(JSON.stringify({ success: true }, undefined, 2));
+      return this.success(JSON.stringify(result, undefined, 2));
     } catch (e) {
       return this.success(handleGitHubError(e));
     }

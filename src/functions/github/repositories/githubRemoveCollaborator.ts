@@ -38,14 +38,14 @@ export default new NativeFunction({
       return this.customError('GitHub client not initialized');
     }
     try {
-      await github.rest.repos.removeCollaborator({
+      const response = await github.rest.repos.removeCollaborator({
         owner,
         repo,
         username,
       });
-      return this.success(JSON.stringify({ success: true }, undefined, 2));
-    } catch (e) {
-      return this.success(handleGitHubError(e));
+      return this.success(JSON.stringify(response, undefined, 2));
+    } catch (error) {
+      return this.success(handleGitHubError(error));
     }
   },
 });

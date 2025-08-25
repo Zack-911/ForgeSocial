@@ -44,7 +44,7 @@ exports.default = new forgescript_1.NativeFunction({
             type: forgescript_1.ArgType.String,
         },
     ],
-    output: forgescript_1.ArgType.Json,
+    output: forgescript_1.ArgType.String,
     async execute(ctx, [owner, repo, workflowId, ref, inputs]) {
         const ext = ctx.client.getExtension('ForgeSocial');
         const github = ext.github;
@@ -61,14 +61,14 @@ exports.default = new forgescript_1.NativeFunction({
             }
         }
         try {
-            await github.actions.createWorkflowDispatch({
+            const result = await github.actions.createWorkflowDispatch({
                 owner,
                 repo,
                 workflow_id: workflowId,
                 ref,
                 inputs: parsedInputs,
             });
-            return this.success({ message: 'Workflow dispatched successfully' });
+            return this.success(JSON.stringify(result, null, 2));
         }
         catch (e) {
             return this.success((0, errorHandler_1.handleGitHubError)(e));

@@ -43,9 +43,9 @@ export default new NativeFunction({
         repo,
         release_id: releaseId,
       });
-      return this.success(JSON.stringify(release.data, undefined, 2));
-    } catch (e) {
-      return this.success(handleGitHubError(e));
+      return this.success(JSON.stringify(release, undefined, 2));
+    } catch (error) {
+      return this.success(handleGitHubError(error));
     }
   },
 });

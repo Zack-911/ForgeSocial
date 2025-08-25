@@ -52,32 +52,9 @@ export default new NativeFunction({
         ref: ref || undefined,
       });
 
-      // Handle the case where content is an array (directory) or a file
-      if (Array.isArray(content.data)) {
-        return this.success(
-          JSON.stringify(
-            content.data.map((item) => ({
-              name: item.name,
-              path: item.path,
-              type: item.type,
-              size: item.size,
-              url: item.html_url,
-            })),
-            undefined,
-            2,
-          ),
-        );
-      }
-
-      // Handle file content
-      if ('content' in content.data) {
-        const fileContent = Buffer.from(content.data.content, 'base64').toString('utf-8');
-        return this.success(fileContent);
-      }
-
-      return this.success(JSON.stringify(content.data, undefined, 2));
-    } catch (e) {
-      return this.success(handleGitHubError(e));
+      return this.success(JSON.stringify(content, undefined, 2));
+    } catch (error) {
+      return this.success(handleGitHubError(error));
     }
   },
 });

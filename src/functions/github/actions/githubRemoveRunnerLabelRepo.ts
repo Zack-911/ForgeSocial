@@ -51,7 +51,7 @@ export default new NativeFunction({
         runner_id: runnerId,
         name,
       });
-      return this.success(JSON.stringify(result.data, undefined, 2));
+      return this.success(JSON.stringify(result, undefined, 2));
     } catch (e) {
       return this.success(handleGitHubError(e));
     }

@@ -63,16 +63,9 @@ export default new NativeFunction({
   output: ArgType.Json,
   async execute(
     ctx,
-    [owner, repo, releaseId, filePath, assetName, contentType, label]: [
-      string,
-      string,
-      number,
-      string,
-      string | null,
-      string | null,
-      string | null,
-    ],
+    args: [string, string, number, string, string | null, string | null, string | null],
   ) {
+    const [owner, repo, releaseId, filePath, assetName, contentType, label] = args;
     const ext = ctx.client.getExtension('ForgeSocial') as ForgeSocial;
     const github = ext.github;
     if (!github) {
@@ -86,38 +79,22 @@ export default new NativeFunction({
       // Read the file as a buffer
       const fileData = fs.readFileSync(resolvedPath);
 
-      // Determine the asset name (use the filename if not provided)
-      const name = assetName || path.basename(filePath);
-
       // Upload the asset
-      const result = await github.rest.repos.uploadReleaseAsset({
+      const response = await github.rest.repos.uploadReleaseAsset({
         owner,
         repo,
         release_id: releaseId,
-        name,
-        label: label || undefined,
-        data: fileData as unknown as string, // Type assertion needed for Octokit
+        name: assetName as string,
+        data: fileData as unknown as string, // Type assertion to handle Buffer type
         headers: {
           'content-type': contentType || 'application/octet-stream',
           'content-length': fileData.length,
         },
+        label: (label as string) || undefined,
       });
-
-      return this.success(
-        JSON.stringify(
-          {
-            id: result.data.id,
-            name: result.data.name,
-            label: result.data.label,
-            url: result.data.url,
-            browser_download_url: result.data.browser_download_url,
-          },
-          undefined,
-          2,
-        ),
-      );
-    } catch (e) {
-      return this.success(handleGitHubError(e));
+      return this.success(JSON.stringify(response, undefined, 2));
+    } catch (error) {
+      return this.success(handleGitHubError(error));
     }
   },
 });

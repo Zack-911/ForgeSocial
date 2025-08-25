@@ -108,25 +108,25 @@ exports.default = new forgescript_1.NativeFunction({
             return this.customError('GitHub client not initialized');
         }
         try {
-            const repo = await github.rest.repos.createForAuthenticatedUser({
+            const result = await github.rest.repos.createForAuthenticatedUser({
                 name,
                 description: description || undefined,
                 homepage: homepage || undefined,
-                private: isPrivate || undefined,
-                has_issues: hasIssues || undefined,
-                has_projects: hasProjects || undefined,
-                has_wiki: hasWiki || undefined,
-                auto_init: autoInit || undefined,
+                private: isPrivate || false,
+                has_issues: hasIssues ?? true,
+                has_projects: hasProjects ?? true,
+                has_wiki: hasWiki ?? true,
+                auto_init: autoInit || false,
                 gitignore_template: gitignoreTemplate || undefined,
                 license_template: licenseTemplate || undefined,
-                allow_squash_merge: allowSquashMerge || undefined,
-                allow_merge_commit: allowMergeCommit || undefined,
-                allow_rebase_merge: allowRebaseMerge || undefined,
+                allow_squash_merge: allowSquashMerge || false,
+                allow_merge_commit: allowMergeCommit || false,
+                allow_rebase_merge: allowRebaseMerge || false,
             });
-            return this.success(JSON.stringify(repo.data, undefined, 2));
+            return this.success(JSON.stringify(result, undefined, 2));
         }
-        catch (e) {
-            return this.success((0, errorHandler_1.handleGitHubError)(e));
+        catch (error) {
+            return this.success((0, errorHandler_1.handleGitHubError)(error));
         }
     },
 });

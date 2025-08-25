@@ -85,7 +85,7 @@
   -  workflowId (String, required) - The ID or filename of the workflow, e.g., main.yml
   -  ref (String, required) - The git ref (branch or tag) to run the workflow on
   -  inputs (String) - Optional JSON string of inputs for the workflow run
-- **Output:** Json
+- **Output:** String
 - **Brackets:** true
 - **Unwrap:** true
 
@@ -565,7 +565,7 @@
   -  owner (String, required) - The owner of the repository
   -  repo (String, required) - The name of the repository
   -  branch (String, required) - The name of the branch to unprotect
-- **Output:** Boolean
+- **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
 

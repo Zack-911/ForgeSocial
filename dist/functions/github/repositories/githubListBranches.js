@@ -51,10 +51,10 @@ exports.default = new forgescript_1.NativeFunction({
                 per_page: perPage ?? 30,
                 page: page ?? 1,
             });
-            return this.success(JSON.stringify(branches.data, undefined, 2));
+            return this.success(JSON.stringify(branches, undefined, 2));
         }
-        catch (e) {
-            return this.success((0, errorHandler_1.handleGitHubError)(e));
+        catch (error) {
+            return this.success((0, errorHandler_1.handleGitHubError)(error));
         }
     },
 });

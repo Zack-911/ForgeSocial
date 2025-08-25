@@ -62,14 +62,14 @@ export default new NativeFunction({
     }
 
     try {
-      await github.actions.createWorkflowDispatch({
+      const result = await github.actions.createWorkflowDispatch({
         owner,
         repo,
         workflow_id: workflowId,
         ref,
         inputs: parsedInputs,
       });
-      return this.success(true);
+      return this.success(JSON.stringify(result, null, 2));
     } catch (e) {
       return this.success(handleGitHubError(e));
     }

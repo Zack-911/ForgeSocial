@@ -45,14 +45,14 @@ export default new NativeFunction({
       return this.customError('GitHub client not initialized');
     }
     try {
-      const artifact = await github.actions.downloadArtifact({
+      const result = await github.actions.downloadArtifact({
         owner,
         repo,
         artifact_id: artifactId,
         path,
         archive_format: 'zip',
       });
-      return this.success(JSON.stringify(artifact, undefined, 2));
+      return this.success(JSON.stringify(result, undefined, 2));
     } catch (e) {
       return this.success(handleGitHubError(e));
     }

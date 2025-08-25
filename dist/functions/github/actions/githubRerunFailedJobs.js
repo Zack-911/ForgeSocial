@@ -51,7 +51,7 @@ exports.default = new forgescript_1.NativeFunction({
                 run_id: runId,
                 enable_debug_logging: enableDebugLogging || false,
             });
-            return this.success(JSON.stringify(result.data, undefined, 2));
+            return this.success(JSON.stringify(result, undefined, 2));
         }
         catch (e) {
             return this.success((0, errorHandler_1.handleGitHubError)(e));

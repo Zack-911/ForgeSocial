@@ -38,15 +38,15 @@ exports.default = new forgescript_1.NativeFunction({
             return this.customError('GitHub client not initialized');
         }
         try {
-            const branchData = await github.rest.repos.getBranch({
+            const result = await github.rest.repos.getBranch({
                 owner,
                 repo,
                 branch,
             });
-            return this.success(JSON.stringify(branchData.data, undefined, 2));
+            return this.success(JSON.stringify(result, undefined, 2));
         }
-        catch (e) {
-            return this.success((0, errorHandler_1.handleGitHubError)(e));
+        catch (error) {
+            return this.success((0, errorHandler_1.handleGitHubError)(error));
         }
     },
 });

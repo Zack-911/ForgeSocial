@@ -52,14 +52,14 @@ export default new NativeFunction({
       return this.customError('GitHub client not initialized');
     }
     try {
-      const logs = await github.actions.downloadJobLogsForWorkflowRun({
+      const result = await github.actions.downloadJobLogsForWorkflowRun({
         owner,
         repo,
         job_id: jobId,
         per_page: perPage || undefined,
         page: page || undefined,
       });
-      return this.success(JSON.stringify(logs, undefined, 2));
+      return this.success(JSON.stringify(result, undefined, 2));
     } catch (e) {
       return this.success(handleGitHubError(e));
     }

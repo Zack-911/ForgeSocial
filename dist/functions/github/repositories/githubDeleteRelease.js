@@ -38,15 +38,15 @@ exports.default = new forgescript_1.NativeFunction({
             return this.customError('GitHub client not initialized');
         }
         try {
-            await github.rest.repos.deleteRelease({
+            const result = await github.rest.repos.deleteRelease({
                 owner,
                 repo,
                 release_id: releaseId,
             });
-            return this.success(true);
+            return this.success(JSON.stringify(result, undefined, 2));
         }
-        catch (e) {
-            return this.success((0, errorHandler_1.handleGitHubError)(e));
+        catch (error) {
+            return this.success((0, errorHandler_1.handleGitHubError)(error));
         }
     },
 });

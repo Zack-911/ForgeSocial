@@ -86,7 +86,7 @@ export default new NativeFunction({
     }
 
     try {
-      const release = await github.rest.repos.updateRelease({
+      const response = await github.rest.repos.updateRelease({
         owner,
         repo,
         release_id: releaseId,
@@ -96,8 +96,7 @@ export default new NativeFunction({
         draft: draft || undefined,
         prerelease: prerelease || undefined,
       });
-
-      return this.success(JSON.stringify(release.data, undefined, 2));
+      return this.success(JSON.stringify(response, undefined, 2));
     } catch (e) {
       return this.success(handleGitHubError(e));
     }
