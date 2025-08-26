@@ -53,6 +53,23 @@
 - WAITING
 - PENDING
 
+## IssueState
+
+- OPEN
+- CLOSED
+- ALL
+
+## IssueSort
+
+- CREATED
+- UPDATED
+- COMMENTS
+
+## SortDirection
+
+- ASC
+- DESC
+
 ## IssueFilter
 
 - Assigned
@@ -60,23 +77,6 @@
 - Mentioned
 - Subscribed
 - All
-
-## IssueState
-
-- Open
-- Closed
-- All
-
-## IssueSort
-
-- Created
-- Updated
-- Comments
-
-## SortDirection
-
-- Asc
-- Desc
 
 ## ReviewSort
 

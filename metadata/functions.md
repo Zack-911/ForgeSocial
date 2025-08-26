@@ -402,13 +402,13 @@
   -  owner (String, required) - The owner of the repository
   -  repo (String, required) - The name of the repository
   -  milestone (String) - Milestone number, or * for issues with any milestone, or none for issues without milestones
-  -  state (String) - State of the issues to return (open, closed, all)
+  -  state (Enum): [OPEN, CLOSED, ALL] - State of the issues to return (open, closed, all)
   -  assignee (String) - Filter by assignee (username, * for assigned to any, none for no assignee)
   -  creator (String) - Filter by creator (username)
   -  mentioned (String) - Filter by mentioned user (username)
   -  labels (String) - Comma-separated list of label names
-  -  sort (String) - What to sort results by (created, updated, comments)
-  -  direction (String) - Direction of sort (asc, desc)
+  -  sort (Enum): [CREATED, UPDATED, COMMENTS] - What to sort results by (created, updated, comments)
+  -  direction (Enum): [ASC, DESC] - Direction of sort (asc, desc)
   -  since (String) - Only show notifications updated after the given time (ISO 8601 format)
 - **Output:** Json
 - **Brackets:** true

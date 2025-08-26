@@ -2,6 +2,23 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const forgescript_1 = require("@tryforge/forgescript");
 const errorHandler_1 = require("../../../utils/errorHandler");
+var IssueState;
+(function (IssueState) {
+    IssueState["OPEN"] = "open";
+    IssueState["CLOSED"] = "closed";
+    IssueState["ALL"] = "all";
+})(IssueState || (IssueState = {}));
+var IssueSort;
+(function (IssueSort) {
+    IssueSort["CREATED"] = "created";
+    IssueSort["UPDATED"] = "updated";
+    IssueSort["COMMENTS"] = "comments";
+})(IssueSort || (IssueSort = {}));
+var SortDirection;
+(function (SortDirection) {
+    SortDirection["ASC"] = "asc";
+    SortDirection["DESC"] = "desc";
+})(SortDirection || (SortDirection = {}));
 exports.default = new forgescript_1.NativeFunction({
     name: '$githubListIssues',
     description: 'List issues in a GitHub repository',
@@ -34,7 +51,8 @@ exports.default = new forgescript_1.NativeFunction({
             description: 'State of the issues to return (open, closed, all)',
             required: false,
             rest: false,
-            type: forgescript_1.ArgType.String,
+            type: forgescript_1.ArgType.Enum,
+            enum: IssueState,
             default: 'open',
         },
         {
@@ -70,7 +88,8 @@ exports.default = new forgescript_1.NativeFunction({
             description: 'What to sort results by (created, updated, comments)',
             required: false,
             rest: false,
-            type: forgescript_1.ArgType.String,
+            type: forgescript_1.ArgType.Enum,
+            enum: IssueSort,
             default: 'created',
         },
         {
@@ -78,7 +97,8 @@ exports.default = new forgescript_1.NativeFunction({
             description: 'Direction of sort (asc, desc)',
             required: false,
             rest: false,
-            type: forgescript_1.ArgType.String,
+            type: forgescript_1.ArgType.Enum,
+            enum: SortDirection,
             default: 'desc',
         },
         {

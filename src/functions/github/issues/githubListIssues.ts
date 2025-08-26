@@ -2,6 +2,21 @@ import { ForgeSocial } from '../../../';
 import { ArgType, NativeFunction } from '@tryforge/forgescript';
 import { handleGitHubError } from '../../../utils/errorHandler';
 
+enum IssueState {
+  OPEN = 'open',
+  CLOSED = 'closed',
+  ALL = 'all',
+}
+enum IssueSort {
+  CREATED = 'created',
+  UPDATED = 'updated',
+  COMMENTS = 'comments',
+}
+enum SortDirection {
+  ASC = 'asc',
+  DESC = 'desc',
+}
+
 export default new NativeFunction({
   name: '$githubListIssues',
   description: 'List issues in a GitHub repository',
@@ -35,7 +50,8 @@ export default new NativeFunction({
       description: 'State of the issues to return (open, closed, all)',
       required: false,
       rest: false,
-      type: ArgType.String,
+      type: ArgType.Enum,
+      enum: IssueState,
       default: 'open',
     },
     {
@@ -71,7 +87,8 @@ export default new NativeFunction({
       description: 'What to sort results by (created, updated, comments)',
       required: false,
       rest: false,
-      type: ArgType.String,
+      type: ArgType.Enum,
+      enum: IssueSort,
       default: 'created',
     },
     {
@@ -79,7 +96,8 @@ export default new NativeFunction({
       description: 'Direction of sort (asc, desc)',
       required: false,
       rest: false,
-      type: ArgType.String,
+      type: ArgType.Enum,
+      enum: SortDirection,
       default: 'desc',
     },
     {
@@ -106,13 +124,13 @@ export default new NativeFunction({
         owner,
         repo,
         milestone: milestone || undefined,
-        state: (state as 'open' | 'closed' | 'all' | null) || 'open',
+        state: (state as IssueState) || 'open',
         assignee: assignee || undefined,
         creator: creator || undefined,
         mentioned: mentioned || undefined,
         labels: labels || undefined,
-        sort: (sort as 'created' | 'updated' | 'comments' | null) || 'created',
-        direction: (direction as 'asc' | 'desc' | null) || 'desc',
+        sort: (sort as IssueSort) || 'created',
+        direction: (direction as SortDirection) || 'desc',
         since: since || undefined,
       });
       return this.success(JSON.stringify(result, undefined, 2));
