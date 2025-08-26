@@ -9,7 +9,7 @@
 
 ## $githubAddRunnerLabelsRepo
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Adds custom labels to a self-hosted runner for a repository
 - **Category:** actions
 - **Arguments:**
@@ -23,7 +23,7 @@
 
 ## $githubApproveWorkflow
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Approves a workflow run that is waiting for review
 - **Category:** actions
 - **Arguments:**
@@ -36,7 +36,7 @@
 
 ## $githubCancelWorkflowRun
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Cancels a workflow run for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -50,7 +50,7 @@
 
 ## $githubDeleteArtifact
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Deletes an artifact from a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -63,7 +63,7 @@
 
 ## $githubDeleteWorkflowLogs
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Deletes all logs for a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -76,7 +76,7 @@
 
 ## $githubDispatchWorkflow
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Dispatches a workflow run for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -91,7 +91,7 @@
 
 ## $githubDownloadArtifact
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Downloads an artifact for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -105,7 +105,7 @@
 
 ## $githubDownloadJobLogs
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Downloads the logs for a specific job in a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -120,7 +120,7 @@
 
 ## $githubDownloadWorkflowRunLogs
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Downloads the logs for a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -133,7 +133,7 @@
 
 ## $githubGetArtifact
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Gets an artifact for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -146,7 +146,7 @@
 
 ## $githubGetWorkflowJob
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Gets a specific job from a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -159,7 +159,7 @@
 
 ## $githubGetWorkflowRun
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Gets a workflow run for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -173,7 +173,7 @@
 
 ## $githubListArtifacts
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Lists artifacts for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -188,7 +188,7 @@
 
 ## $githubListRunArtifacts
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Lists artifacts for a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -203,7 +203,7 @@
 
 ## $githubListSelfHostedRunnersRepo
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Lists all self-hosted runners for a repository
 - **Category:** actions
 - **Arguments:**
@@ -217,7 +217,7 @@
 
 ## $githubListWorkflowJobs
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Lists jobs for a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -233,7 +233,7 @@
 
 ## $githubListWorkflowRuns
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Lists workflow runs for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -253,7 +253,7 @@
 
 ## $githubRemoveRunnerLabelRepo
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Removes a custom label from a self-hosted runner for a repository
 - **Category:** actions
 - **Arguments:**
@@ -267,7 +267,7 @@
 
 ## $githubRerunFailedJobs
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Reruns all failed jobs in a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -281,7 +281,7 @@
 
 ## $githubRerunWorkflow
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Reruns a workflow run for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -292,9 +292,301 @@
 - **Brackets:** true
 - **Unwrap:** true
 
+## $githubAddAssignees
+
+- **Version:** 1.5.1
+- **Description:** Add assignees to an issue in a GitHub repository
+- **Category:** issues
+- **Arguments:**
+  -  owner (String, required) - Repository owner
+  -  repo (String, required) - Repository name
+  -  issue_number (Number, required) - Issue number
+  -  assignees (String, required) - Comma-separated list of assignees to add
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubAddLabels
+
+- **Version:** 1.5.1
+- **Description:** Add labels to an issue in a GitHub repository
+- **Category:** issues
+- **Arguments:**
+  -  owner (String, required) - Repository owner
+  -  repo (String, required) - Repository name
+  -  issue_number (Number, required) - Issue number
+  -  labels (String, required) - Comma-separated list of labels to add
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubCreateComment
+
+- **Version:** 1.5.1
+- **Description:** Create a comment on an issue or pull request
+- **Category:** issues
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  issue_number (Number, required) - The issue number
+  -  body (String, required) - The contents of the comment
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubCreateIssue
+
+- **Version:** 1.5.1
+- **Description:** Create a new issue in a GitHub repository
+- **Category:** issues
+- **Arguments:**
+  -  owner (String, required) - Repository owner
+  -  repo (String, required) - Repository name
+  -  title (String, required) - Issue title
+  -  body (String) - Issue body
+  -  assignees (String) - Comma-separated list of usernames to assign
+  -  labels (String) - Comma-separated list of label names
+  -  milestone (Number) - Milestone ID to associate the issue with
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubDeleteComment
+
+- **Version:** 1.5.1
+- **Description:** Delete a comment on an issue or pull request
+- **Category:** issues
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  comment_id (Number, required) - The ID of the comment to delete
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubGetIssue
+
+- **Version:** 1.5.1
+- **Description:** Get a specific issue from a GitHub repository
+- **Category:** issues
+- **Arguments:**
+  -  owner (String, required) - Repository owner
+  -  repo (String, required) - Repository name
+  -  issue_number (Number, required) - Issue number
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubListIssueComments
+
+- **Version:** 1.5.1
+- **Description:** List comments on an issue
+- **Category:** issues
+- **Arguments:**
+  -  owner (String, required) - Repository owner
+  -  repo (String, required) - Repository name
+  -  issue_number (Number, required) - The issue number
+  -  since (String) - Only show notifications updated after the given time
+  -  per_page (Number) - Results per page (max 100)
+  -  page (Number) - Page number of the results to fetch
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubListIssues
+
+- **Version:** 1.5.1
+- **Description:** List issues in a GitHub repository
+- **Category:** issues
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  milestone (String) - Milestone number, or * for issues with any milestone, or none for issues without milestones
+  -  state (String) - State of the issues to return (open, closed, all)
+  -  assignee (String) - Filter by assignee (username, * for assigned to any, none for no assignee)
+  -  creator (String) - Filter by creator (username)
+  -  mentioned (String) - Filter by mentioned user (username)
+  -  labels (String) - Comma-separated list of label names
+  -  sort (String) - What to sort results by (created, updated, comments)
+  -  direction (String) - Direction of sort (asc, desc)
+  -  since (String) - Only show notifications updated after the given time (ISO 8601 format)
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubListMyIssues
+
+- **Version:** 1.5.1
+- **Description:** Lists issues assigned to the authenticated user across all repositories
+- **Category:** issues
+- **Arguments:**
+  -  filter (Enum): [Assigned, Created, Mentioned, Subscribed, All] - Filter to determine which issues are returned (assigned, created, mentioned, subscribed, all)
+  -  state (Enum): [Open, Closed, All] - State of the issues to return (open, closed, all)
+  -  labels (String) - Comma-separated list of label names to filter by
+  -  sort (Enum): [Created, Updated, Comments] - How to sort the results (created, updated, comments)
+  -  direction (Enum): [Asc, Desc] - Sort direction (asc, desc)
+  -  since (String) - Only show notifications updated after the given time (ISO 8601 format)
+  -  per_page (Number) - Results per page (max 100)
+  -  page (Number) - Page number of the results to fetch
+- **Output:** Json
+- **Brackets:** false
+- **Unwrap:** true
+
+## $githubRemoveAssignees
+
+- **Version:** 1.5.1
+- **Description:** Remove assignees from a GitHub issue
+- **Category:** issues
+- **Arguments:**
+  -  owner (String, required) - Repository owner
+  -  repo (String, required) - Repository name
+  -  issue_number (Number, required) - The issue number
+  -  assignees (String, required) - Comma-separated list of usernames to remove as assignees
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubRemoveLabel
+
+- **Version:** 1.5.1
+- **Description:** Remove a label from an issue in a GitHub repository
+- **Category:** issues
+- **Arguments:**
+  -  owner (String, required) - Repository owner
+  -  repo (String, required) - Repository name
+  -  issue_number (Number, required) - Issue number
+  -  name (String, required) - Label name to remove
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubUpdateComment
+
+- **Version:** 1.5.1
+- **Description:** Update a comment on an issue or pull request
+- **Category:** issues
+- **Arguments:**
+  -  owner (String, required) - Repository owner
+  -  repo (String, required) - Repository name
+  -  comment_id (Number, required) - The ID of the comment to update
+  -  body (String, required) - The updated contents of the comment
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubUpdateIssue
+
+- **Version:** 1.5.1
+- **Description:** Update an existing issue in a GitHub repository
+- **Category:** issues
+- **Arguments:**
+  -  owner (String, required) - Repository owner
+  -  repo (String, required) - Repository name
+  -  issue_number (Number, required) - Issue number
+  -  title (String) - New issue title
+  -  body (String) - New issue description
+  -  assignee (String) - GitHub username of the assignee
+  -  assignees (String) - List of assignees (comma-separated)
+  -  labels (String) - List of labels (comma-separated)
+  -  milestone (Number) - Milestone number
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubCreatePullReview
+
+- **Version:** 1.5.1
+- **Description:** Create a review for a pull request
+- **Category:** pulls
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  pullNumber (Number, required) - The pull request number
+  -  event (String, required) - The review action (APPROVE, REQUEST_CHANGES, COMMENT)
+  -  body (String) - The body text of the review
+  -  comments (String) - Review comments as JSON string
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubDeletePullReviewComment
+
+- **Version:** 1.5.1
+- **Description:** Delete a pull request review comment
+- **Category:** pulls
+- **Arguments:**
+  -  owner (String, required) - Repository owner
+  -  repo (String, required) - Repository name
+  -  commentId (Number, required) - The ID of the comment to delete
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubGetPullReview
+
+- **Version:** 1.5.1
+- **Description:** Get a specific pull request review
+- **Category:** pulls
+- **Arguments:**
+  -  owner (String, required) - The owner of the repository
+  -  repo (String, required) - The name of the repository
+  -  pullNumber (Number, required) - The pull request number
+  -  reviewId (Number, required) - The ID of the review
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubListPullReviews
+
+- **Version:** 1.5.1
+- **Description:** List reviews for a pull request
+- **Category:** pulls
+- **Arguments:**
+  -  owner (String, required) - Repository owner
+  -  repo (String, required) - Repository name
+  -  pullNumber (Number, required) - The pull request number
+  -  sort (String) - How to sort the results
+  -  direction (String) - Sort direction
+  -  perPage (Number) - Results per page (max 100)
+  -  page (Number) - Page number of the results to fetch
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubSubmitPullReview
+
+- **Version:** 1.5.1
+- **Description:** Submit a pending review for a pull request
+- **Category:** pulls
+- **Arguments:**
+  -  owner (String, required) - Repository owner
+  -  repo (String, required) - Repository name
+  -  pullNumber (Number, required) - The pull request number
+  -  reviewId (Number, required) - The ID of the pending review
+  -  event (String, required) - The review action to perform
+  -  body (String) - The body text of the review
+  -  comments (String) - JSON string of review comments
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubUpdatePullReview
+
+- **Version:** 1.5.1
+- **Description:** Update the body text of a review that has not been submitted
+- **Category:** pulls
+- **Arguments:**
+  -  owner (String, required) - Repository owner
+  -  repo (String, required) - Repository name
+  -  pullNumber (Number, required) - The pull request number
+  -  reviewId (Number, required) - The ID of the review
+  -  body (String, required) - The updated body text of the review
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
 ## $githubAddCollaborator
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Adds a collaborator to a repository
 - **Category:** repositories
 - **Arguments:**
@@ -308,7 +600,7 @@
 
 ## $githubCreateRelease
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Creates a new release
 - **Category:** repositories
 - **Arguments:**
@@ -327,7 +619,7 @@
 
 ## $githubCreateRepoOrg
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Creates a new repository in an organization
 - **Category:** repositories
 - **Arguments:**
@@ -352,7 +644,7 @@
 
 ## $githubCreateRepoUser
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Creates a new repository for the authenticated user
 - **Category:** repositories
 - **Arguments:**
@@ -375,7 +667,7 @@
 
 ## $githubDeleteFile
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Deletes a file from a GitHub repository
 - **Category:** repositories
 - **Arguments:**
@@ -393,7 +685,7 @@
 
 ## $githubDeleteRelease
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Deletes a GitHub release
 - **Category:** repositories
 - **Arguments:**
@@ -406,7 +698,7 @@
 
 ## $githubDeleteRepo
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Deletes a repository
 - **Category:** repositories
 - **Arguments:**
@@ -418,7 +710,7 @@
 
 ## $githubGetBranch
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Gets a specific branch from a repository
 - **Category:** repositories
 - **Arguments:**
@@ -431,7 +723,7 @@
 
 ## $githubGetFileContent
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Gets the content of a file from a repository
 - **Category:** repositories
 - **Arguments:**
@@ -445,7 +737,7 @@
 
 ## $githubGetRelease
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Gets a release by its ID
 - **Category:** repositories
 - **Arguments:**
@@ -458,7 +750,7 @@
 
 ## $githubGetRepo
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Gets a repository
 - **Category:** repositories
 - **Arguments:**
@@ -470,7 +762,7 @@
 
 ## $githubListBranches
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Lists branches for a repository
 - **Category:** repositories
 - **Arguments:**
@@ -484,7 +776,7 @@
 
 ## $githubListCollaborators
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Lists repository collaborators
 - **Category:** repositories
 - **Arguments:**
@@ -499,7 +791,7 @@
 
 ## $githubListOrgRepos
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Lists organization repositories
 - **Category:** repositories
 - **Arguments:**
@@ -515,7 +807,7 @@
 
 ## $githubListReleases
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Lists releases for a repository
 - **Category:** repositories
 - **Arguments:**
@@ -529,7 +821,7 @@
 
 ## $githubListUserRepos
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Lists repositories for a user
 - **Category:** repositories
 - **Arguments:**
@@ -545,7 +837,7 @@
 
 ## $githubRemoveCollaborator
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Removes a collaborator from a repository
 - **Category:** repositories
 - **Arguments:**
@@ -558,7 +850,7 @@
 
 ## $githubUnprotectBranch
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Removes branch protection from a repository branch
 - **Category:** repositories
 - **Arguments:**
@@ -571,7 +863,7 @@
 
 ## $githubUpdateFile
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Creates or updates a file in a repository
 - **Category:** repositories
 - **Arguments:**
@@ -590,7 +882,7 @@
 
 ## $githubUpdateRelease
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Updates an existing GitHub release
 - **Category:** repositories
 - **Arguments:**
@@ -608,7 +900,7 @@
 
 ## $githubUpdateRepo
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Updates a repository
 - **Category:** repositories
 - **Arguments:**
@@ -631,7 +923,7 @@
 
 ## $githubUploadReleaseAsset
 
-- **Version:** 1.5.0
+- **Version:** 1.5.1
 - **Description:** Uploads an asset to a GitHub release
 - **Category:** repositories
 - **Arguments:**

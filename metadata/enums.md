@@ -53,6 +53,31 @@
 - WAITING
 - PENDING
 
+## IssueFilter
+
+- Assigned
+- Created
+- Mentioned
+- Subscribed
+- All
+
+## IssueState
+
+- Open
+- Closed
+- All
+
+## IssueSort
+
+- Created
+- Updated
+- Comments
+
+## SortDirection
+
+- Asc
+- Desc
+
 ## Permission
 
 - Pull
