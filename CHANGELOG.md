@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.5](https://github.com/zack-911/forgesocial/compare/v1.5.4...v1.5.5) (2025-08-26)
+
+
+### Refactoring
+
+* Added more enums ([4ccf839](https://github.com/zack-911/forgesocial/commit/4ccf83911b14e4be2a14b698b68a40111b6bbbfb))
+* Remove some functions ([f954fbc](https://github.com/zack-911/forgesocial/commit/f954fbc5a2bb58cff7d5e0ec64bd91a8a88f9928))
+
 ### [1.5.4](https://github.com/zack-911/forgesocial/compare/v1.5.3...v1.5.4) (2025-08-26)
 
 ### [1.5.3](https://github.com/zack-911/forgesocial/compare/v1.5.2...v1.5.3) (2025-08-26)
