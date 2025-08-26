@@ -1,4 +1,5 @@
 import { ArgType, NativeFunction } from '@tryforge/forgescript';
+import { GitignoreTemplate, LicenseTemplate } from '../../../utils/githubEnums';
 declare const _default: NativeFunction<[{
     name: string;
     description: string;
@@ -64,13 +65,15 @@ declare const _default: NativeFunction<[{
     description: string;
     required: false;
     rest: false;
-    type: ArgType.String;
+    type: ArgType.Enum;
+    enum: typeof GitignoreTemplate;
 }, {
     name: string;
     description: string;
     required: false;
     rest: false;
-    type: ArgType.String;
+    type: ArgType.Enum;
+    enum: typeof LicenseTemplate;
 }, {
     name: string;
     description: string;

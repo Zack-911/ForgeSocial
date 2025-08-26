@@ -1,154 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GitignoreTemplate = exports.LicenseTemplate = void 0;
 const forgescript_1 = require("@tryforge/forgescript");
 const errorHandler_1 = require("../../../utils/errorHandler");
-var LicenseTemplate;
-(function (LicenseTemplate) {
-    LicenseTemplate["AFL_3_0"] = "afl-3.0";
-    LicenseTemplate["Apache_2_0"] = "apache-2.0";
-    LicenseTemplate["Artistic_2_0"] = "artistic-2.0";
-    LicenseTemplate["BSL_1_0"] = "bsl-1.0";
-    LicenseTemplate["BSD_2_Clause"] = "bsd-2-clause";
-    LicenseTemplate["BSD_3_Clause"] = "bsd-3-clause";
-    LicenseTemplate["CC0_1_0"] = "cc0-1.0";
-    LicenseTemplate["CDDL_1_0"] = "cddl-1.0";
-    LicenseTemplate["EPL_2_0"] = "epl-2.0";
-    LicenseTemplate["EPL_1_0"] = "epl-1.0";
-    LicenseTemplate["EUPL_1_1"] = "eupl-1.1";
-    LicenseTemplate["GPL_2_0"] = "gpl-2.0";
-    LicenseTemplate["GPL_3_0"] = "gpl-3.0";
-    LicenseTemplate["ISC"] = "isc";
-    LicenseTemplate["LGPL_2_1"] = "lgpl-2.1";
-    LicenseTemplate["LGPL_3_0"] = "lgpl-3.0";
-    LicenseTemplate["MIT"] = "mit";
-    LicenseTemplate["MPL_2_0"] = "mpl-2.0";
-    LicenseTemplate["OSL_3_0"] = "osl-3.0";
-    LicenseTemplate["OFL_1_1"] = "ofl-1.1";
-    LicenseTemplate["NCSA"] = "ncsa";
-    LicenseTemplate["Unlicense"] = "unlicense";
-    LicenseTemplate["Zlib"] = "zlib";
-})(LicenseTemplate || (exports.LicenseTemplate = LicenseTemplate = {}));
-var GitignoreTemplate;
-(function (GitignoreTemplate) {
-    GitignoreTemplate["Actionscript"] = "ActionScript";
-    GitignoreTemplate["Ada"] = "Ada";
-    GitignoreTemplate["Agda"] = "Agda";
-    GitignoreTemplate["Android"] = "Android";
-    GitignoreTemplate["AppEngine"] = "AppEngine";
-    GitignoreTemplate["AppceleratorTitanium"] = "AppceleratorTitanium";
-    GitignoreTemplate["ArchLinuxPackages"] = "ArchLinuxPackages";
-    GitignoreTemplate["Autotools"] = "Autotools";
-    GitignoreTemplate["C"] = "C";
-    GitignoreTemplate["CPlusPlus"] = "C++";
-    GitignoreTemplate["CMake"] = "CMake";
-    GitignoreTemplate["CSharp"] = "C#";
-    GitignoreTemplate["CakePHP"] = "CakePHP";
-    GitignoreTemplate["ChefCookbook"] = "ChefCookbook";
-    GitignoreTemplate["Clojure"] = "Clojure";
-    GitignoreTemplate["CodeIgniter"] = "CodeIgniter";
-    GitignoreTemplate["CommonLisp"] = "CommonLisp";
-    GitignoreTemplate["Composer"] = "Composer";
-    GitignoreTemplate["Concrete5"] = "Concrete5";
-    GitignoreTemplate["Coq"] = "Coq";
-    GitignoreTemplate["CraftCMS"] = "CraftCMS";
-    GitignoreTemplate["D"] = "D";
-    GitignoreTemplate["Dart"] = "Dart";
-    GitignoreTemplate["Delphi"] = "Delphi";
-    GitignoreTemplate["Drupal"] = "Drupal";
-    GitignoreTemplate["EPiServer"] = "EPiServer";
-    GitignoreTemplate["Eagle"] = "Eagle";
-    GitignoreTemplate["Elisp"] = "Emacs";
-    GitignoreTemplate["Elixir"] = "Elixir";
-    GitignoreTemplate["Elm"] = "Elm";
-    GitignoreTemplate["Erlang"] = "Erlang";
-    GitignoreTemplate["ExpressionEngine"] = "ExpressionEngine";
-    GitignoreTemplate["ExtJs"] = "ExtJs";
-    GitignoreTemplate["Fancy"] = "Fancy";
-    GitignoreTemplate["Finale"] = "Finale";
-    GitignoreTemplate["ForceDotCom"] = "ForceDotCom";
-    GitignoreTemplate["Fortran"] = "Fortran";
-    GitignoreTemplate["FuelPHP"] = "FuelPHP";
-    GitignoreTemplate["GWT"] = "GWT";
-    GitignoreTemplate["GitBook"] = "GitBook";
-    GitignoreTemplate["Go"] = "Go";
-    GitignoreTemplate["Godot"] = "Godot";
-    GitignoreTemplate["Gradle"] = "Gradle";
-    GitignoreTemplate["Grails"] = "Grails";
-    GitignoreTemplate["Haskell"] = "Haskell";
-    GitignoreTemplate["IGORPro"] = "IGORPro";
-    GitignoreTemplate["Idris"] = "Idris";
-    GitignoreTemplate["Java"] = "Java";
-    GitignoreTemplate["Jboss"] = "Jboss";
-    GitignoreTemplate["Jekyll"] = "Jekyll";
-    GitignoreTemplate["Joomla"] = "Joomla";
-    GitignoreTemplate["Julia"] = "Julia";
-    GitignoreTemplate["KiCad"] = "KiCad";
-    GitignoreTemplate["Kohana"] = "Kohana";
-    GitignoreTemplate["Kotlin"] = "Kotlin";
-    GitignoreTemplate["LabVIEW"] = "LabVIEW";
-    GitignoreTemplate["Laravel"] = "Laravel";
-    GitignoreTemplate["Leiningen"] = "Leiningen";
-    GitignoreTemplate["LemonStand"] = "LemonStand";
-    GitignoreTemplate["Lilypond"] = "Lilypond";
-    GitignoreTemplate["Lithium"] = "Lithium";
-    GitignoreTemplate["Lua"] = "Lua";
-    GitignoreTemplate["Magento"] = "Magento";
-    GitignoreTemplate["Maven"] = "Maven";
-    GitignoreTemplate["Mercury"] = "Mercury";
-    GitignoreTemplate["MetaProgrammingSystem"] = "MetaProgrammingSystem";
-    GitignoreTemplate["Nginx"] = "Nginx";
-    GitignoreTemplate["Node"] = "Node";
-    GitignoreTemplate["ObjectiveC"] = "Objective-C";
-    GitignoreTemplate["OCaml"] = "OCaml";
-    GitignoreTemplate["Opa"] = "Opa";
-    GitignoreTemplate["OpenCart"] = "OpenCart";
-    GitignoreTemplate["OracleForms"] = "OracleForms";
-    GitignoreTemplate["Packer"] = "Packer";
-    GitignoreTemplate["Perl"] = "Perl";
-    GitignoreTemplate["Perl6"] = "Perl6";
-    GitignoreTemplate["Phalcon"] = "Phalcon";
-    GitignoreTemplate["PlayFramework"] = "PlayFramework";
-    GitignoreTemplate["Plone"] = "Plone";
-    GitignoreTemplate["Prestashop"] = "Prestashop";
-    GitignoreTemplate["Processing"] = "Processing";
-    GitignoreTemplate["Python"] = "Python";
-    GitignoreTemplate["Qooxdoo"] = "Qooxdoo";
-    GitignoreTemplate["Qt"] = "Qt";
-    GitignoreTemplate["R"] = "R";
-    GitignoreTemplate["Rails"] = "Rails";
-    GitignoreTemplate["Raku"] = "Raku";
-    GitignoreTemplate["RhodesRhomobile"] = "RhodesRhomobile";
-    GitignoreTemplate["ROS"] = "ROS";
-    GitignoreTemplate["Ruby"] = "Ruby";
-    GitignoreTemplate["Rust"] = "Rust";
-    GitignoreTemplate["Sass"] = "Sass";
-    GitignoreTemplate["Scala"] = "Scala";
-    GitignoreTemplate["Scheme"] = "Scheme";
-    GitignoreTemplate["SCons"] = "SCons";
-    GitignoreTemplate["Scrivener"] = "Scrivener";
-    GitignoreTemplate["Smalltalk"] = "Smalltalk";
-    GitignoreTemplate["SugarCRM"] = "SugarCRM";
-    GitignoreTemplate["Swift"] = "Swift";
-    GitignoreTemplate["Symfony"] = "Symfony";
-    GitignoreTemplate["SymphonyCMS"] = "SymphonyCMS";
-    GitignoreTemplate["Terraform"] = "Terraform";
-    GitignoreTemplate["TeX"] = "TeX";
-    GitignoreTemplate["Textpattern"] = "Textpattern";
-    GitignoreTemplate["TurboGears2"] = "TurboGears2";
-    GitignoreTemplate["Typo3"] = "Typo3";
-    GitignoreTemplate["Umbraco"] = "Umbraco";
-    GitignoreTemplate["Unity"] = "Unity";
-    GitignoreTemplate["UnrealEngine"] = "UnrealEngine";
-    GitignoreTemplate["VisualStudio"] = "VisualStudio";
-    GitignoreTemplate["VVVV"] = "VVVV";
-    GitignoreTemplate["Waf"] = "Waf";
-    GitignoreTemplate["WordPress"] = "WordPress";
-    GitignoreTemplate["Xojo"] = "Xojo";
-    GitignoreTemplate["Yeoman"] = "Yeoman";
-    GitignoreTemplate["Yii"] = "Yii";
-    GitignoreTemplate["ZendFramework"] = "ZendFramework";
-})(GitignoreTemplate || (exports.GitignoreTemplate = GitignoreTemplate = {}));
+const githubEnums_1 = require("../../../utils/githubEnums");
 exports.default = new forgescript_1.NativeFunction({
     name: '$githubCreateRepoUser',
     description: 'Creates a new repository for the authenticated user',
@@ -217,7 +71,7 @@ exports.default = new forgescript_1.NativeFunction({
             required: false,
             rest: false,
             type: forgescript_1.ArgType.Enum,
-            enum: GitignoreTemplate,
+            enum: githubEnums_1.GitignoreTemplate,
         },
         {
             name: 'licenseTemplate',
@@ -225,7 +79,7 @@ exports.default = new forgescript_1.NativeFunction({
             required: false,
             rest: false,
             type: forgescript_1.ArgType.Enum,
-            enum: LicenseTemplate,
+            enum: githubEnums_1.LicenseTemplate,
         },
         {
             name: 'allowSquashMerge',

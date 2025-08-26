@@ -9,7 +9,7 @@
 
 ## $githubAddRunnerLabelsRepo
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Adds custom labels to a self-hosted runner for a repository
 - **Category:** actions
 - **Arguments:**
@@ -23,7 +23,7 @@
 
 ## $githubApproveWorkflow
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Approves a workflow run that is waiting for review
 - **Category:** actions
 - **Arguments:**
@@ -36,7 +36,7 @@
 
 ## $githubCancelWorkflowRun
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Cancels a workflow run for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -50,7 +50,7 @@
 
 ## $githubDeleteArtifact
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Deletes an artifact from a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -63,7 +63,7 @@
 
 ## $githubDeleteWorkflowLogs
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Deletes all logs for a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -76,7 +76,7 @@
 
 ## $githubDispatchWorkflow
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Dispatches a workflow run for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -91,7 +91,7 @@
 
 ## $githubDownloadArtifact
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Downloads an artifact for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -105,7 +105,7 @@
 
 ## $githubDownloadJobLogs
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Downloads the logs for a specific job in a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -120,7 +120,7 @@
 
 ## $githubDownloadWorkflowRunLogs
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Downloads the logs for a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -133,7 +133,7 @@
 
 ## $githubGetArtifact
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Gets an artifact for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -146,7 +146,7 @@
 
 ## $githubGetWorkflowJob
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Gets a specific job from a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -159,7 +159,7 @@
 
 ## $githubGetWorkflowRun
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Gets a workflow run for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -173,7 +173,7 @@
 
 ## $githubListArtifacts
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Lists artifacts for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -188,7 +188,7 @@
 
 ## $githubListRunArtifacts
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Lists artifacts for a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -203,7 +203,7 @@
 
 ## $githubListSelfHostedRunnersRepo
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Lists all self-hosted runners for a repository
 - **Category:** actions
 - **Arguments:**
@@ -217,7 +217,7 @@
 
 ## $githubListWorkflowJobs
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Lists jobs for a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -233,7 +233,7 @@
 
 ## $githubListWorkflowRuns
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Lists workflow runs for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -253,7 +253,7 @@
 
 ## $githubRemoveRunnerLabelRepo
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Removes a custom label from a self-hosted runner for a repository
 - **Category:** actions
 - **Arguments:**
@@ -267,7 +267,7 @@
 
 ## $githubRerunFailedJobs
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Reruns all failed jobs in a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -281,7 +281,7 @@
 
 ## $githubRerunWorkflow
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Reruns a workflow run for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -294,7 +294,7 @@
 
 ## $githubAddAssignees
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Add assignees to an issue in a GitHub repository
 - **Category:** issues
 - **Arguments:**
@@ -308,7 +308,7 @@
 
 ## $githubAddLabels
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Add labels to an issue in a GitHub repository
 - **Category:** issues
 - **Arguments:**
@@ -322,7 +322,7 @@
 
 ## $githubCreateComment
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Create a comment on an issue or pull request
 - **Category:** issues
 - **Arguments:**
@@ -336,7 +336,7 @@
 
 ## $githubCreateIssue
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Create a new issue in a GitHub repository
 - **Category:** issues
 - **Arguments:**
@@ -353,7 +353,7 @@
 
 ## $githubDeleteComment
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Delete a comment on an issue or pull request
 - **Category:** issues
 - **Arguments:**
@@ -366,7 +366,7 @@
 
 ## $githubGetIssue
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Get a specific issue from a GitHub repository
 - **Category:** issues
 - **Arguments:**
@@ -379,7 +379,7 @@
 
 ## $githubListIssueComments
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** List comments on an issue
 - **Category:** issues
 - **Arguments:**
@@ -395,7 +395,7 @@
 
 ## $githubListIssues
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** List issues in a GitHub repository
 - **Category:** issues
 - **Arguments:**
@@ -416,7 +416,7 @@
 
 ## $githubListMyIssues
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Lists issues assigned to the authenticated user across all repositories
 - **Category:** issues
 - **Arguments:**
@@ -434,7 +434,7 @@
 
 ## $githubRemoveAssignees
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Remove assignees from a GitHub issue
 - **Category:** issues
 - **Arguments:**
@@ -448,7 +448,7 @@
 
 ## $githubRemoveLabel
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Remove a label from an issue in a GitHub repository
 - **Category:** issues
 - **Arguments:**
@@ -462,7 +462,7 @@
 
 ## $githubUpdateComment
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Update a comment on an issue or pull request
 - **Category:** issues
 - **Arguments:**
@@ -476,7 +476,7 @@
 
 ## $githubUpdateIssue
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Update an existing issue in a GitHub repository
 - **Category:** issues
 - **Arguments:**
@@ -495,7 +495,7 @@
 
 ## $githubCreatePullReview
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Create a review for a pull request
 - **Category:** pulls
 - **Arguments:**
@@ -511,7 +511,7 @@
 
 ## $githubDeletePullReviewComment
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Delete a pull request review comment
 - **Category:** pulls
 - **Arguments:**
@@ -524,7 +524,7 @@
 
 ## $githubGetPullReview
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Get a specific pull request review
 - **Category:** pulls
 - **Arguments:**
@@ -538,7 +538,7 @@
 
 ## $githubListPullReviews
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** List reviews for a pull request
 - **Category:** pulls
 - **Arguments:**
@@ -555,7 +555,7 @@
 
 ## $githubSubmitPullReview
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Submit a pending review for a pull request
 - **Category:** pulls
 - **Arguments:**
@@ -571,7 +571,7 @@
 
 ## $githubUpdatePullReview
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Update the body text of a review that has not been submitted
 - **Category:** pulls
 - **Arguments:**
@@ -586,7 +586,7 @@
 
 ## $githubAddCollaborator
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Adds a collaborator to a repository
 - **Category:** repositories
 - **Arguments:**
@@ -600,7 +600,7 @@
 
 ## $githubCreateRelease
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Creates a new release
 - **Category:** repositories
 - **Arguments:**
@@ -619,7 +619,7 @@
 
 ## $githubCreateRepoOrg
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Creates a new repository in an organization
 - **Category:** repositories
 - **Arguments:**
@@ -633,8 +633,8 @@
   -  hasWiki (Boolean) - Enable wiki for the repository
   -  teamId (Number) - Team ID to grant access
   -  autoInit (Boolean) - Initialize repository with a README
-  -  gitignoreTemplate (String) - Git ignore template
-  -  licenseTemplate (String) - License template
+  -  gitignoreTemplate (Enum): [Actionscript, Ada, Agda, Android, AppEngine, AppceleratorTitanium, ArchLinuxPackages, Autotools, C, CPlusPlus, CMake, CSharp, CakePHP, ChefCookbook, Clojure, CodeIgniter, CommonLisp, Composer, Concrete5, Coq, CraftCMS, D, Dart, Delphi, Drupal, EPiServer, Eagle, Elisp, Elixir, Elm, Erlang, ExpressionEngine, ExtJs, Fancy, Finale, ForceDotCom, Fortran, FuelPHP, GWT, GitBook, Go, Godot, Gradle, Grails, Haskell, IGORPro, Idris, Java, Jboss, Jekyll, Joomla, Julia, KiCad, Kohana, Kotlin, LabVIEW, Laravel, Leiningen, LemonStand, Lilypond, Lithium, Lua, Magento, Maven, Mercury, MetaProgrammingSystem, Nginx, Node, ObjectiveC, OCaml, Opa, OpenCart, OracleForms, Packer, Perl, Perl6, Phalcon, PlayFramework, Plone, Prestashop, Processing, Python, Qooxdoo, Qt, R, Rails, Raku, RhodesRhomobile, ROS, Ruby, Rust, Sass, Scala, Scheme, SCons, Scrivener, Smalltalk, SugarCRM, Swift, Symfony, SymphonyCMS, Terraform, TeX, Textpattern, TurboGears2, Typo3, Umbraco, Unity, UnrealEngine, VisualStudio, VVVV, Waf, WordPress, Xojo, Yeoman, Yii, ZendFramework] - Git ignore template
+  -  licenseTemplate (Enum): [AFL_3_0, Apache_2_0, Artistic_2_0, BSL_1_0, BSD_2_Clause, BSD_3_Clause, CC0_1_0, CDDL_1_0, EPL_2_0, EPL_1_0, EUPL_1_1, GPL_2_0, GPL_3_0, ISC, LGPL_2_1, LGPL_3_0, MIT, MPL_2_0, OSL_3_0, OFL_1_1, NCSA, Unlicense, Zlib] - License template
   -  allowSquashMerge (Boolean) - Allow squash merging
   -  allowMergeCommit (Boolean) - Allow merge commits
   -  allowRebaseMerge (Boolean) - Allow rebase merging
@@ -644,7 +644,7 @@
 
 ## $githubCreateRepoUser
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Creates a new repository for the authenticated user
 - **Category:** repositories
 - **Arguments:**
@@ -667,7 +667,7 @@
 
 ## $githubDeleteFile
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Deletes a file from a GitHub repository
 - **Category:** repositories
 - **Arguments:**
@@ -685,7 +685,7 @@
 
 ## $githubDeleteRelease
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Deletes a GitHub release
 - **Category:** repositories
 - **Arguments:**
@@ -698,7 +698,7 @@
 
 ## $githubDeleteRepo
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Deletes a repository
 - **Category:** repositories
 - **Arguments:**
@@ -710,7 +710,7 @@
 
 ## $githubGetBranch
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Gets a specific branch from a repository
 - **Category:** repositories
 - **Arguments:**
@@ -723,7 +723,7 @@
 
 ## $githubGetFileContent
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Gets the content of a file from a repository
 - **Category:** repositories
 - **Arguments:**
@@ -737,7 +737,7 @@
 
 ## $githubGetRelease
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Gets a release by its ID
 - **Category:** repositories
 - **Arguments:**
@@ -750,7 +750,7 @@
 
 ## $githubGetRepo
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Gets a repository
 - **Category:** repositories
 - **Arguments:**
@@ -762,7 +762,7 @@
 
 ## $githubListBranches
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Lists branches for a repository
 - **Category:** repositories
 - **Arguments:**
@@ -776,7 +776,7 @@
 
 ## $githubListCollaborators
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Lists repository collaborators
 - **Category:** repositories
 - **Arguments:**
@@ -791,7 +791,7 @@
 
 ## $githubListOrgRepos
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Lists organization repositories
 - **Category:** repositories
 - **Arguments:**
@@ -807,7 +807,7 @@
 
 ## $githubListReleases
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Lists releases for a repository
 - **Category:** repositories
 - **Arguments:**
@@ -821,7 +821,7 @@
 
 ## $githubListUserRepos
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Lists repositories for a user
 - **Category:** repositories
 - **Arguments:**
@@ -837,7 +837,7 @@
 
 ## $githubRemoveCollaborator
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Removes a collaborator from a repository
 - **Category:** repositories
 - **Arguments:**
@@ -850,7 +850,7 @@
 
 ## $githubUnprotectBranch
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Removes branch protection from a repository branch
 - **Category:** repositories
 - **Arguments:**
@@ -863,7 +863,7 @@
 
 ## $githubUpdateFile
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Creates or updates a file in a repository
 - **Category:** repositories
 - **Arguments:**
@@ -882,7 +882,7 @@
 
 ## $githubUpdateRelease
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Updates an existing GitHub release
 - **Category:** repositories
 - **Arguments:**
@@ -900,7 +900,7 @@
 
 ## $githubUpdateRepo
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Updates a repository
 - **Category:** repositories
 - **Arguments:**
@@ -923,7 +923,7 @@
 
 ## $githubUploadReleaseAsset
 
-- **Version:** 1.5.2
+- **Version:** 1.5.3
 - **Description:** Uploads an asset to a GitHub release
 - **Category:** repositories
 - **Arguments:**

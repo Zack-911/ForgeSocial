@@ -1,6 +1,7 @@
 import { ArgType, NativeFunction } from '@tryforge/forgescript';
 import { ForgeSocial } from '../../../';
 import { handleGitHubError } from '../../../utils/errorHandler';
+import { GitignoreTemplate, LicenseTemplate } from '../../../utils/githubEnums';
 
 export default new NativeFunction({
   name: '$githubCreateRepoOrg',
@@ -83,14 +84,16 @@ export default new NativeFunction({
       description: 'Git ignore template',
       required: false,
       rest: false,
-      type: ArgType.String,
+      type: ArgType.Enum,
+      enum: GitignoreTemplate,
     },
     {
       name: 'licenseTemplate',
       description: 'License template',
       required: false,
       rest: false,
-      type: ArgType.String,
+      type: ArgType.Enum,
+      enum: LicenseTemplate,
     },
     {
       name: 'allowSquashMerge',

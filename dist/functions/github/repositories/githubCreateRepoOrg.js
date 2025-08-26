@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const forgescript_1 = require("@tryforge/forgescript");
 const errorHandler_1 = require("../../../utils/errorHandler");
+const githubEnums_1 = require("../../../utils/githubEnums");
 exports.default = new forgescript_1.NativeFunction({
     name: '$githubCreateRepoOrg',
     description: 'Creates a new repository in an organization',
@@ -83,14 +84,16 @@ exports.default = new forgescript_1.NativeFunction({
             description: 'Git ignore template',
             required: false,
             rest: false,
-            type: forgescript_1.ArgType.String,
+            type: forgescript_1.ArgType.Enum,
+            enum: githubEnums_1.GitignoreTemplate,
         },
         {
             name: 'licenseTemplate',
             description: 'License template',
             required: false,
             rest: false,
-            type: forgescript_1.ArgType.String,
+            type: forgescript_1.ArgType.Enum,
+            enum: githubEnums_1.LicenseTemplate,
         },
         {
             name: 'allowSquashMerge',
