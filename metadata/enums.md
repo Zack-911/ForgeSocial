@@ -263,6 +263,39 @@
 - Asc
 - Desc
 
+## SortOrder
+
+- Asc
+- Desc
+
+## SearchCommitsSort
+
+- AuthorDate
+- CommitterDate
+
+## SearchLabelSort
+
+- Updated
+- Created
+
+## SearchRepoSort
+
+- Stars
+- Forks
+- HelpWantedIssues
+- Updated
+
+## SearchTopicSort
+
+- Updated
+- Created
+
+## SearchUsersSort
+
+- Followers
+- Repos
+- Joined
+
 ## type
 
 - link
