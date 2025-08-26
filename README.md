@@ -15,15 +15,24 @@ The clientID is the box highlighted using red but not filled the clientSecret is
 ```js
 import { ForgeSocial } from 'forgeSocial';
 
-const reddit = new ForgeSocial({
+const social = new ForgeSocial({
   events: ['error'],
-  clientID: '',
-  clientSecret: '',
-  redditUsername: '',
+  github: {
+    accessToken: '',
+    log: false,
+  },
+  reddit: {
+    clientID: '',
+    clientSecret: '',
+    username: '',
+  },
+  youtube: {
+    enabled: true,
+  },
 });
 
 const client = new ForgeClient({
-  extensions: [reddit],
+  extensions: [social],
   events: ['messageCreate'],
   intents: ['Guilds', 'GuildMessages', 'MessageContent'],
   prefixes: ['.'],
