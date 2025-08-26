@@ -9,7 +9,7 @@
 
 ## $githubAddRunnerLabelsRepo
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Adds custom labels to a self-hosted runner for a repository
 - **Category:** actions
 - **Arguments:**
@@ -23,7 +23,7 @@
 
 ## $githubApproveWorkflow
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Approves a workflow run that is waiting for review
 - **Category:** actions
 - **Arguments:**
@@ -36,7 +36,7 @@
 
 ## $githubCancelWorkflowRun
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Cancels a workflow run for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -50,7 +50,7 @@
 
 ## $githubDeleteArtifact
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Deletes an artifact from a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -63,7 +63,7 @@
 
 ## $githubDeleteWorkflowLogs
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Deletes all logs for a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -76,7 +76,7 @@
 
 ## $githubDispatchWorkflow
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Dispatches a workflow run for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -91,7 +91,7 @@
 
 ## $githubDownloadArtifact
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Downloads an artifact for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -105,7 +105,7 @@
 
 ## $githubDownloadJobLogs
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Downloads the logs for a specific job in a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -120,7 +120,7 @@
 
 ## $githubDownloadWorkflowRunLogs
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Downloads the logs for a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -133,7 +133,7 @@
 
 ## $githubGetArtifact
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Gets an artifact for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -146,7 +146,7 @@
 
 ## $githubGetWorkflowJob
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Gets a specific job from a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -159,7 +159,7 @@
 
 ## $githubGetWorkflowRun
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Gets a workflow run for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -173,7 +173,7 @@
 
 ## $githubListArtifacts
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Lists artifacts for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -188,7 +188,7 @@
 
 ## $githubListRunArtifacts
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Lists artifacts for a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -203,7 +203,7 @@
 
 ## $githubListSelfHostedRunnersRepo
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Lists all self-hosted runners for a repository
 - **Category:** actions
 - **Arguments:**
@@ -217,7 +217,7 @@
 
 ## $githubListWorkflowJobs
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Lists jobs for a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -233,7 +233,7 @@
 
 ## $githubListWorkflowRuns
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Lists workflow runs for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -253,7 +253,7 @@
 
 ## $githubRemoveRunnerLabelRepo
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Removes a custom label from a self-hosted runner for a repository
 - **Category:** actions
 - **Arguments:**
@@ -267,7 +267,7 @@
 
 ## $githubRerunFailedJobs
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Reruns all failed jobs in a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -281,7 +281,7 @@
 
 ## $githubRerunWorkflow
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Reruns a workflow run for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -294,7 +294,7 @@
 
 ## $githubAddAssignees
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Add assignees to an issue in a GitHub repository
 - **Category:** issues
 - **Arguments:**
@@ -308,7 +308,7 @@
 
 ## $githubAddLabels
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Add labels to an issue in a GitHub repository
 - **Category:** issues
 - **Arguments:**
@@ -322,7 +322,7 @@
 
 ## $githubCreateComment
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Create a comment on an issue or pull request
 - **Category:** issues
 - **Arguments:**
@@ -336,7 +336,7 @@
 
 ## $githubCreateIssue
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Create a new issue in a GitHub repository
 - **Category:** issues
 - **Arguments:**
@@ -353,7 +353,7 @@
 
 ## $githubDeleteComment
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Delete a comment on an issue or pull request
 - **Category:** issues
 - **Arguments:**
@@ -366,7 +366,7 @@
 
 ## $githubGetIssue
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Get a specific issue from a GitHub repository
 - **Category:** issues
 - **Arguments:**
@@ -379,7 +379,7 @@
 
 ## $githubListIssueComments
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** List comments on an issue
 - **Category:** issues
 - **Arguments:**
@@ -395,7 +395,7 @@
 
 ## $githubListIssues
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** List issues in a GitHub repository
 - **Category:** issues
 - **Arguments:**
@@ -416,7 +416,7 @@
 
 ## $githubListMyIssues
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Lists issues assigned to the authenticated user across all repositories
 - **Category:** issues
 - **Arguments:**
@@ -434,7 +434,7 @@
 
 ## $githubRemoveAssignees
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Remove assignees from a GitHub issue
 - **Category:** issues
 - **Arguments:**
@@ -448,7 +448,7 @@
 
 ## $githubRemoveLabel
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Remove a label from an issue in a GitHub repository
 - **Category:** issues
 - **Arguments:**
@@ -462,7 +462,7 @@
 
 ## $githubUpdateComment
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Update a comment on an issue or pull request
 - **Category:** issues
 - **Arguments:**
@@ -476,7 +476,7 @@
 
 ## $githubUpdateIssue
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Update an existing issue in a GitHub repository
 - **Category:** issues
 - **Arguments:**
@@ -493,9 +493,71 @@
 - **Brackets:** true
 - **Unwrap:** true
 
+## $githubGetOrgs
+
+- **Version:** 1.5.7
+- **Description:** Get GitHub organizations
+- **Category:** organizations
+- **Arguments:**
+  -  org (String, required) - The organization to get
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubGetTeam
+
+- **Version:** 1.5.7
+- **Description:** Get GitHub team
+- **Category:** organizations
+- **Arguments:**
+  -  org (String, required) - The organization to get team for
+  -  teamSlug (String, required) - The team slug
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubListOrgs
+
+- **Version:** 1.5.7
+- **Description:** List GitHub organizations
+- **Category:** organizations
+- **Arguments:**
+  -  user (String) - The user to list organizations for
+  -  per_page (Number) - The number of results per page
+  -  page (Number) - The page number
+- **Output:** Json
+- **Brackets:** false
+- **Unwrap:** true
+
+## $githubListOrgsMembers
+
+- **Version:** 1.5.7
+- **Description:** List GitHub organization members
+- **Category:** organizations
+- **Arguments:**
+  -  org (String, required) - The organization to list members for
+  -  perPage (Number) - The number of results per page
+  -  page (Number) - The page number
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $githubListTeams
+
+- **Version:** 1.5.7
+- **Description:** List GitHub teams
+- **Category:** organizations
+- **Arguments:**
+  -  org (String, required) - The organization to list teams for
+  -  perPage (Number) - The number of results per page
+  -  page (Number) - The page number
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
 ## $githubDeletePullReviewComment
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Delete a pull request review comment
 - **Category:** pulls
 - **Arguments:**
@@ -508,7 +570,7 @@
 
 ## $githubGetPullReview
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Get a specific pull request review
 - **Category:** pulls
 - **Arguments:**
@@ -522,7 +584,7 @@
 
 ## $githubListPullReviews
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** List reviews for a pull request
 - **Category:** pulls
 - **Arguments:**
@@ -539,7 +601,7 @@
 
 ## $githubUpdatePullReview
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Update the body text of a review that has not been submitted
 - **Category:** pulls
 - **Arguments:**
@@ -554,7 +616,7 @@
 
 ## $githubAddCollaborator
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Adds a collaborator to a repository
 - **Category:** repositories
 - **Arguments:**
@@ -568,7 +630,7 @@
 
 ## $githubCreateRelease
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Creates a new release
 - **Category:** repositories
 - **Arguments:**
@@ -587,7 +649,7 @@
 
 ## $githubCreateRepoOrg
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Creates a new repository in an organization
 - **Category:** repositories
 - **Arguments:**
@@ -612,7 +674,7 @@
 
 ## $githubCreateRepoUser
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Creates a new repository for the authenticated user
 - **Category:** repositories
 - **Arguments:**
@@ -635,7 +697,7 @@
 
 ## $githubDeleteFile
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Deletes a file from a GitHub repository
 - **Category:** repositories
 - **Arguments:**
@@ -653,7 +715,7 @@
 
 ## $githubDeleteRelease
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Deletes a GitHub release
 - **Category:** repositories
 - **Arguments:**
@@ -666,7 +728,7 @@
 
 ## $githubDeleteRepo
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Deletes a repository
 - **Category:** repositories
 - **Arguments:**
@@ -678,7 +740,7 @@
 
 ## $githubGetBranch
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Gets a specific branch from a repository
 - **Category:** repositories
 - **Arguments:**
@@ -691,7 +753,7 @@
 
 ## $githubGetFileContent
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Gets the content of a file from a repository
 - **Category:** repositories
 - **Arguments:**
@@ -705,7 +767,7 @@
 
 ## $githubGetRelease
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Gets a release by its ID
 - **Category:** repositories
 - **Arguments:**
@@ -718,7 +780,7 @@
 
 ## $githubGetRepo
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Gets a repository
 - **Category:** repositories
 - **Arguments:**
@@ -730,7 +792,7 @@
 
 ## $githubListBranches
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Lists branches for a repository
 - **Category:** repositories
 - **Arguments:**
@@ -744,7 +806,7 @@
 
 ## $githubListCollaborators
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Lists repository collaborators
 - **Category:** repositories
 - **Arguments:**
@@ -759,7 +821,7 @@
 
 ## $githubListOrgRepos
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Lists organization repositories
 - **Category:** repositories
 - **Arguments:**
@@ -775,7 +837,7 @@
 
 ## $githubListReleases
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Lists releases for a repository
 - **Category:** repositories
 - **Arguments:**
@@ -789,7 +851,7 @@
 
 ## $githubListUserRepos
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Lists repositories for a user
 - **Category:** repositories
 - **Arguments:**
@@ -805,7 +867,7 @@
 
 ## $githubRemoveCollaborator
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Removes a collaborator from a repository
 - **Category:** repositories
 - **Arguments:**
@@ -818,7 +880,7 @@
 
 ## $githubUnprotectBranch
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Removes branch protection from a repository branch
 - **Category:** repositories
 - **Arguments:**
@@ -831,7 +893,7 @@
 
 ## $githubUpdateFile
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Creates or updates a file in a repository
 - **Category:** repositories
 - **Arguments:**
@@ -850,7 +912,7 @@
 
 ## $githubUpdateRelease
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Updates an existing GitHub release
 - **Category:** repositories
 - **Arguments:**
@@ -868,7 +930,7 @@
 
 ## $githubUpdateRepo
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Updates a repository
 - **Category:** repositories
 - **Arguments:**
@@ -891,7 +953,7 @@
 
 ## $githubUploadReleaseAsset
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Uploads an asset to a GitHub release
 - **Category:** repositories
 - **Arguments:**
@@ -908,7 +970,7 @@
 
 ## $githubAuthenticatedUser
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Get the authenticated user
 - **Category:** user
 - **Output:** Json
@@ -916,7 +978,7 @@
 
 ## $githubCheckFollowing
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Check if the user is following the other user
 - **Category:** user
 - **Arguments:**
@@ -928,7 +990,7 @@
 
 ## $githubFollowUser
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Follow the user
 - **Category:** user
 - **Arguments:**
@@ -939,7 +1001,7 @@
 
 ## $githubListFollowers
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Get the followers of the user
 - **Category:** user
 - **Arguments:**
@@ -950,7 +1012,7 @@
 
 ## $githubListFollowing
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Get the following of the user
 - **Category:** user
 - **Arguments:**
@@ -961,7 +1023,7 @@
 
 ## $githubUnfollowUser
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Unfollow the user
 - **Category:** user
 - **Arguments:**
@@ -972,7 +1034,7 @@
 
 ## $githubSearchCode
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Search GitHub for code
 - **Category:** utility
 - **Arguments:**
@@ -986,7 +1048,7 @@
 
 ## $githubSearchCommits
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Search GitHub for commits
 - **Category:** utility
 - **Arguments:**
@@ -1001,7 +1063,7 @@
 
 ## $githubSearchLabels
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Search GitHub for labels
 - **Category:** utility
 - **Arguments:**
@@ -1017,7 +1079,7 @@
 
 ## $githubSearchRepo
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Search GitHub for repositories
 - **Category:** utility
 - **Arguments:**
@@ -1032,7 +1094,7 @@
 
 ## $githubSearchTopics
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Search GitHub for topics
 - **Category:** utility
 - **Arguments:**
@@ -1047,7 +1109,7 @@
 
 ## $githubSearchUsers
 
-- **Version:** 1.5.6
+- **Version:** 1.5.7
 - **Description:** Search GitHub for users
 - **Category:** utility
 - **Arguments:**
