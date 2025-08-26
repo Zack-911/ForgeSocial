@@ -2,8 +2,15 @@ import { ForgeSocial } from '../../../';
 import { NativeFunction, ArgType } from '@tryforge/forgescript';
 import { handleGitHubError } from '../../../utils/errorHandler';
 
-type ReviewSort = 'created' | 'updated' | 'created_at';
-type SortDirection = 'asc' | 'desc';
+enum ReviewSort {
+  CREATED = 'created',
+  UPDATED = 'updated',
+  CREATED_AT = 'created_at',
+}
+enum SortDirection {
+  ASC = 'asc',
+  DESC = 'desc',
+}
 
 export default new NativeFunction({
   name: '$githubListPullReviews',
@@ -35,25 +42,24 @@ export default new NativeFunction({
     {
       name: 'sort',
       description: 'How to sort the results',
-      type: ArgType.String,
+      type: ArgType.Enum,
+      enum: ReviewSort,
       required: false,
-      default: 'created',
       rest: false,
     },
     {
       name: 'direction',
       description: 'Sort direction',
-      type: ArgType.String,
+      type: ArgType.Enum,
+      enum: SortDirection,
       required: false,
-      default: 'desc',
       rest: false,
     },
     {
       name: 'perPage',
-      description: 'Results per page (max 100)',
+      description: 'Results per page',
       type: ArgType.Number,
       required: false,
-      default: 30,
       rest: false,
     },
     {
@@ -61,7 +67,6 @@ export default new NativeFunction({
       description: 'Page number of the results to fetch',
       type: ArgType.Number,
       required: false,
-      default: 1,
       rest: false,
     },
   ],
@@ -78,10 +83,10 @@ export default new NativeFunction({
         owner,
         repo,
         pull_number: pullNumber,
-        sort: (sort as ReviewSort) || 'created',
-        direction: (direction as SortDirection) || 'desc',
-        per_page: perPage || 30,
-        page: page || 1,
+        sort: sort || ReviewSort.CREATED,
+        direction: direction || SortDirection.DESC,
+        per_page: perPage || undefined,
+        page: page || undefined,
       });
       return this.success(JSON.stringify(reviews.data, undefined, 2));
     } catch (error) {

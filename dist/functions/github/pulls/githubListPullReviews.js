@@ -2,6 +2,17 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const forgescript_1 = require("@tryforge/forgescript");
 const errorHandler_1 = require("../../../utils/errorHandler");
+var ReviewSort;
+(function (ReviewSort) {
+    ReviewSort["CREATED"] = "created";
+    ReviewSort["UPDATED"] = "updated";
+    ReviewSort["CREATED_AT"] = "created_at";
+})(ReviewSort || (ReviewSort = {}));
+var SortDirection;
+(function (SortDirection) {
+    SortDirection["ASC"] = "asc";
+    SortDirection["DESC"] = "desc";
+})(SortDirection || (SortDirection = {}));
 exports.default = new forgescript_1.NativeFunction({
     name: '$githubListPullReviews',
     description: 'List reviews for a pull request',
@@ -32,25 +43,24 @@ exports.default = new forgescript_1.NativeFunction({
         {
             name: 'sort',
             description: 'How to sort the results',
-            type: forgescript_1.ArgType.String,
+            type: forgescript_1.ArgType.Enum,
+            enum: ReviewSort,
             required: false,
-            default: 'created',
             rest: false,
         },
         {
             name: 'direction',
             description: 'Sort direction',
-            type: forgescript_1.ArgType.String,
+            type: forgescript_1.ArgType.Enum,
+            enum: SortDirection,
             required: false,
-            default: 'desc',
             rest: false,
         },
         {
             name: 'perPage',
-            description: 'Results per page (max 100)',
+            description: 'Results per page',
             type: forgescript_1.ArgType.Number,
             required: false,
-            default: 30,
             rest: false,
         },
         {
@@ -58,7 +68,6 @@ exports.default = new forgescript_1.NativeFunction({
             description: 'Page number of the results to fetch',
             type: forgescript_1.ArgType.Number,
             required: false,
-            default: 1,
             rest: false,
         },
     ],
@@ -74,10 +83,10 @@ exports.default = new forgescript_1.NativeFunction({
                 owner,
                 repo,
                 pull_number: pullNumber,
-                sort: sort || 'created',
-                direction: direction || 'desc',
-                per_page: perPage || 30,
-                page: page || 1,
+                sort: sort || ReviewSort.CREATED,
+                direction: direction || SortDirection.DESC,
+                per_page: perPage || undefined,
+                page: page || undefined,
             });
             return this.success(JSON.stringify(reviews.data, undefined, 2));
         }

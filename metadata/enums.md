@@ -78,6 +78,12 @@
 - Asc
 - Desc
 
+## ReviewSort
+
+- CREATED
+- UPDATED
+- CREATED_AT
+
 ## Permission
 
 - Pull
