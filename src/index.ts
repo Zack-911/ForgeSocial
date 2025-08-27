@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { EventManager, ForgeClient, ForgeExtension, Logger } from '@tryforge/forgescript';
 import { ForgeSocialEventManagerName } from './constants';
 import { ForgeSocialCommandManager } from './structures/ForgeSocialCommandManager';
@@ -63,7 +64,7 @@ export class ForgeSocial extends ForgeExtension {
   private tokenExpiresAt: number = 0;
   private tokenRefreshInterval: NodeJS.Timeout | null = null;
 
-  public commands!: ForgeSocialCommandManager;
+  public commands!: any;
 
   private _pollingStarted = false;
 
