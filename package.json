@@ -29,7 +29,6 @@
   "dependencies": {
     "@octokit/request-error": "^7.0.0",
     "@octokit/rest": "^22.0.0",
-    "@tryforge/forgescript": "^2.4.1",
     "axios": "^1.11.0",
     "fast-xml-parser": "^5.2.5",
     "node-html-parser": "^7.0.1",
@@ -41,6 +40,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
+    "@tryforge/forgescript": "^2.4.1",
     "@types/axios": "^0.9.36",
     "@types/node": "^20.19.9",
     "@types/xml2js": "^0.4.14",
