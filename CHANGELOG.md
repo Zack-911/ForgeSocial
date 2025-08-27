@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.9](https://github.com/zack-911/forgesocial/compare/v1.5.8...v1.5.9) (2025-08-27)
+
+
+### Documentation
+
+* update for new structure ([305c007](https://github.com/zack-911/forgesocial/commit/305c007d717df1647e2dc1f1bae85b10cb4d6b13))
+
 ### [1.5.8](https://github.com/zack-911/forgesocial/compare/v1.5.7...v1.5.8) (2025-08-26)
 
 ### [1.5.7](https://github.com/zack-911/forgesocial/compare/v1.5.6...v1.5.7) (2025-08-26)
