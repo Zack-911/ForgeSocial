@@ -10,6 +10,7 @@ enum CommentsSortBy {
 export default new NativeFunction({
   name: '$youtubeGetComments',
   description: 'Get comments for a YouTube video',
+  brackets: true,
   unwrap: true,
   args: [
     {

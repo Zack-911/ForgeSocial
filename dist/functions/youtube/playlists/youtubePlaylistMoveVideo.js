@@ -5,6 +5,7 @@ const errorHandler_1 = require("../../../utils/errorHandler");
 exports.default = new forgescript_1.NativeFunction({
     name: '$youtubePlaylistMoveVideo',
     description: 'Move a video within a YouTube playlist',
+    brackets: true,
     unwrap: true,
     args: [
         {

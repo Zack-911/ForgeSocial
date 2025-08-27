@@ -5,6 +5,7 @@ import { handleYoutubeError } from '../../../utils/errorHandler';
 export default new NativeFunction({
   name: '$youtubePlaylistMoveVideo',
   description: 'Move a video within a YouTube playlist',
+  brackets: true,
   unwrap: true,
   args: [
     {

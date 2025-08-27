@@ -5,6 +5,7 @@ import { handleYoutubeError } from '../../../utils/errorHandler';
 export default new NativeFunction({
   name: '$youtubePlaylistSetName',
   description: 'Set the name of a YouTube playlist',
+  brackets: true,
   unwrap: true,
   args: [
     {

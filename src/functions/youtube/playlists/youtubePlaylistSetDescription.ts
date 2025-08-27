@@ -5,6 +5,7 @@ import { handleYoutubeError } from '../../../utils/errorHandler';
 export default new NativeFunction({
   name: '$youtubePlaylistSetDescription',
   description: 'Set the description of a YouTube playlist',
+  brackets: true,
   unwrap: true,
   args: [
     {

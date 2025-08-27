@@ -1336,6 +1336,7 @@
 - **Arguments:**
   -  id (String, required) - The ID of the channel to get
 - **Output:** Json
+- **Brackets:** true
 - **Unwrap:** true
 
 ## $youtubeGetHashtag
@@ -1346,6 +1347,7 @@
 - **Arguments:**
   -  hashtag (String, required) - The hashtag to search for (without #)
 - **Output:** Json
+- **Brackets:** true
 - **Unwrap:** true
 
 ## $youtubeGetPlaylists
@@ -1374,6 +1376,7 @@
   -  sortBy (Enum): [NewestFirst, TopComments] - Sort order of comments (TOP_COMMENTS, NEWEST_FIRST)
   -  commentId (String) - The ID of a specific comment to get replies for
 - **Output:** Json
+- **Brackets:** true
 - **Unwrap:** true
 
 ## $youtubeGetPost
@@ -1385,6 +1388,7 @@
   -  postId (String, required) - The ID of the community post to retrieve
   -  channelId (String, required) - The ID of the channel that owns the post
 - **Output:** Json
+- **Brackets:** true
 - **Unwrap:** true
 
 ## $youtubeGetPostComments
@@ -1397,6 +1401,7 @@
   -  channelId (String, required) - The ID of the channel that owns the post
   -  sortBy (Enum): [NewestFirst, TopComments] - Sort order of comments (TOP_COMMENTS, NEWEST_FIRST)
 - **Output:** Json
+- **Brackets:** true
 - **Unwrap:** true
 
 ## $youtubeDownload
@@ -1591,6 +1596,7 @@
 - **Arguments:**
   -  id (String, required) - The ID of the playlist to get
 - **Output:** Json
+- **Brackets:** true
 - **Unwrap:** true
 
 ## $youtubePlaylistAddToLibrary
@@ -1599,8 +1605,9 @@
 - **Description:** Add a playlist to the library
 - **Category:** playlists
 - **Arguments:**
-  -  playlist_id (String, required) - The ID of the playlist to add to library
+  -  playlistId (String, required) - The ID of the playlist to add to library
 - **Output:** Boolean
+- **Brackets:** true
 - **Unwrap:** true
 
 ## $youtubePlaylistAddVideos
@@ -1609,9 +1616,10 @@
 - **Description:** Add videos to a YouTube playlist
 - **Category:** playlists
 - **Arguments:**
-  -  playlist_id (String, required) - The ID of the playlist to add videos to
+  -  playlistId (String, required) - The ID of the playlist to add videos to
   -  videoIds (String, required, rest) - Video IDs to add to the playlist
 - **Output:** Boolean
+- **Brackets:** true
 - **Unwrap:** true
 
 ## $youtubePlaylistCreate
@@ -1623,6 +1631,7 @@
   -  title (String, required) - The title of the new playlist
   -  videoIds (String, rest) - video IDs to add to the playlist
 - **Output:** Json
+- **Brackets:** true
 - **Unwrap:** true
 
 ## $youtubePlaylistDelete
@@ -1633,6 +1642,7 @@
 - **Arguments:**
   -  playlistId (String, required) - The ID of the playlist to delete
 - **Output:** Boolean
+- **Brackets:** true
 - **Unwrap:** true
 
 ## $youtubePlaylistMoveVideo
@@ -1645,6 +1655,7 @@
   -  movedVideoId (String, required) - The ID of the video to move
   -  predecessorVideoId (String, required) - The ID of the video that will be before the moved video (empty for start)
 - **Output:** Boolean
+- **Brackets:** true
 - **Unwrap:** true
 
 ## $youtubePlaylistRemoveFromLibrary
@@ -1655,6 +1666,7 @@
 - **Arguments:**
   -  playlistId (String, required) - The ID of the playlist to remove from library
 - **Output:** Boolean
+- **Brackets:** true
 - **Unwrap:** true
 
 ## $youtubePlaylistRemoveVideos
@@ -1667,6 +1679,7 @@
   -  useSetVideoIds (Boolean) - Whether to use set video IDs (true) or playlist item IDs (false)
   -  videoIds (String, required, rest) - Comma-separated list of video IDs to remove from the playlist
 - **Output:** Boolean
+- **Brackets:** true
 - **Unwrap:** true
 
 ## $youtubePlaylistSetDescription
@@ -1678,6 +1691,7 @@
   -  playlist_id (String, required) - The ID of the playlist to update
   -  description (String, required) - The new description for the playlist
 - **Output:** Boolean
+- **Brackets:** true
 - **Unwrap:** true
 
 ## $youtubePlaylistSetName
@@ -1689,6 +1703,7 @@
   -  playlistId (String, required) - The ID of the playlist to rename
   -  name (String, required) - The new name for the playlist
 - **Output:** Boolean
+- **Brackets:** true
 - **Unwrap:** true
 
 ## $listTrackedYoutubeChannels

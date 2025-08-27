@@ -5,6 +5,7 @@ const errorHandler_1 = require("../../../utils/errorHandler");
 exports.default = new forgescript_1.NativeFunction({
     name: '$youtubeGetPlaylist',
     description: 'Get a YouTube playlist by ID',
+    brackets: true,
     unwrap: true,
     args: [
         {

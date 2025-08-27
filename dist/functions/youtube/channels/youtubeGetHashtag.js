@@ -5,6 +5,7 @@ const errorHandler_1 = require("../../../utils/errorHandler");
 exports.default = new forgescript_1.NativeFunction({
     name: '$youtubeGetHashtag',
     description: 'Get a YouTube hashtag page',
+    brackets: true,
     unwrap: true,
     args: [
         {

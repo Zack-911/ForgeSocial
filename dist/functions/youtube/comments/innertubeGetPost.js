@@ -5,6 +5,7 @@ const errorHandler_1 = require("../../../utils/errorHandler");
 exports.default = new forgescript_1.NativeFunction({
     name: '$youtubeGetPost',
     description: 'Get a YouTube community post by ID',
+    brackets: true,
     unwrap: true,
     args: [
         {

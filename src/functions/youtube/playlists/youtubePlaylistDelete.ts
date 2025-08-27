@@ -5,6 +5,7 @@ import { handleYoutubeError } from '../../../utils/errorHandler';
 export default new NativeFunction({
   name: '$youtubePlaylistDelete',
   description: 'Delete a YouTube playlist',
+  brackets: true,
   unwrap: true,
   args: [
     {

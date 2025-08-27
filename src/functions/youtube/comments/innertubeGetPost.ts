@@ -5,6 +5,7 @@ import { handleYoutubeError } from '../../../utils/errorHandler';
 export default new NativeFunction({
   name: '$youtubeGetPost',
   description: 'Get a YouTube community post by ID',
+  brackets: true,
   unwrap: true,
   args: [
     {

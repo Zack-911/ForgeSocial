@@ -5,6 +5,7 @@ const errorHandler_1 = require("../../../utils/errorHandler");
 exports.default = new forgescript_1.NativeFunction({
     name: '$youtubePlaylistRemoveFromLibrary',
     description: 'Remove a playlist from the library',
+    brackets: true,
     unwrap: true,
     args: [
         {

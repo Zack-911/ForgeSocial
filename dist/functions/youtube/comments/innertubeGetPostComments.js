@@ -10,6 +10,7 @@ var CommentsSortBy;
 exports.default = new forgescript_1.NativeFunction({
     name: '$youtubeGetPostComments',
     description: 'Get comments for a YouTube community post',
+    brackets: true,
     unwrap: true,
     args: [
         {

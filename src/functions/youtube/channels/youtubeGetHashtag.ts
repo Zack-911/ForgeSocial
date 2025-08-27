@@ -5,6 +5,7 @@ import { handleYoutubeError } from '../../../utils/errorHandler';
 export default new NativeFunction({
   name: '$youtubeGetHashtag',
   description: 'Get a YouTube hashtag page',
+  brackets: true,
   unwrap: true,
   args: [
     {

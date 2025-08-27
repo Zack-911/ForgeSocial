@@ -5,6 +5,7 @@ const errorHandler_1 = require("../../../utils/errorHandler");
 exports.default = new forgescript_1.NativeFunction({
     name: '$youtubeGetChannel',
     description: 'Get a YouTube channel by ID',
+    brackets: true,
     unwrap: true,
     args: [
         {

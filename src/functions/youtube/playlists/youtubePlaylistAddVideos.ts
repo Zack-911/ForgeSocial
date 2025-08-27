@@ -5,10 +5,11 @@ import { handleYoutubeError } from '../../../utils/errorHandler';
 export default new NativeFunction({
   name: '$youtubePlaylistAddVideos',
   description: 'Add videos to a YouTube playlist',
+  brackets: true,
   unwrap: true,
   args: [
     {
-      name: 'playlist_id',
+      name: 'playlistId',
       description: 'The ID of the playlist to add videos to',
       type: ArgType.String,
       required: true,

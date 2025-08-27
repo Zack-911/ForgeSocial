@@ -5,6 +5,7 @@ import { handleYoutubeError } from '../../../utils/errorHandler';
 export default new NativeFunction({
   name: '$youtubeGetPlaylist',
   description: 'Get a YouTube playlist by ID',
+  brackets: true,
   unwrap: true,
   args: [
     {

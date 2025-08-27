@@ -5,10 +5,11 @@ const errorHandler_1 = require("../../../utils/errorHandler");
 exports.default = new forgescript_1.NativeFunction({
     name: '$youtubePlaylistAddToLibrary',
     description: 'Add a playlist to the library',
+    brackets: true,
     unwrap: true,
     args: [
         {
-            name: 'playlist_id',
+            name: 'playlistId',
             description: 'The ID of the playlist to add to library',
             type: forgescript_1.ArgType.String,
             required: true,

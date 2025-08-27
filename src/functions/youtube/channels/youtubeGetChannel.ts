@@ -5,6 +5,7 @@ import { handleYoutubeError } from '../../../utils/errorHandler';
 export default new NativeFunction({
   name: '$youtubeGetChannel',
   description: 'Get a YouTube channel by ID',
+  brackets: true,
   unwrap: true,
   args: [
     {
