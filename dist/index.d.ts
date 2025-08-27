@@ -23,6 +23,10 @@ export interface IForgeSocialOptions {
     };
     youtube?: {
         enabled: boolean;
+        cookie: string;
+        userAgent: string;
+        cache?: boolean;
+        log?: 'DEBUG' | 'INFO' | 'WARNING' | 'ERROR' | 'NONE';
     };
 }
 /**

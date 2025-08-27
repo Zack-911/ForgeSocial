@@ -1,0 +1,34 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const forgescript_1 = require("@tryforge/forgescript");
+const errorHandler_1 = require("../../../utils/errorHandler");
+exports.default = new forgescript_1.NativeFunction({
+    name: '$youtubeResolveURL',
+    description: 'Resolves a URL.',
+    brackets: true,
+    unwrap: true,
+    args: [
+        {
+            name: 'url',
+            description: 'The URL to resolve.',
+            type: forgescript_1.ArgType.String,
+            required: true,
+            rest: false,
+        },
+    ],
+    async execute(ctx, [url]) {
+        const ext = ctx.getExtension('ForgeSocial');
+        const youtube = ext.youtube;
+        if (!youtube) {
+            return this.customError('YouTube not configured not found');
+        }
+        try {
+            const info = await youtube.resolveURL(url);
+            return this.success(JSON.stringify(info, null, 2));
+        }
+        catch (error) {
+            return this.success((0, errorHandler_1.handleYoutubeError)(error));
+        }
+    },
+});
+//# sourceMappingURL=youtubeResolveURL.js.map

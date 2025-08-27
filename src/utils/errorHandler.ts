@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { RequestError } from '@octokit/request-error';
 
 export function handleGitHubError(error: unknown): string {
@@ -28,4 +29,8 @@ export function handleGitHubError(error: unknown): string {
     null,
     2,
   );
+}
+
+export function handleYoutubeError(error: any): string {
+  return JSON.stringify(error, null, 2);
 }

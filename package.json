@@ -7,6 +7,7 @@
   "scripts": {
     "prepublishOnly": "tsc",
     "docgen": "tsc && node dist/docgen",
+    "commit": "npm run docgen && node dist/commit",
     "test": "tsc && node __tests__/client.test.js",
     "prepare": "husky install",
     "release": "standard-version --changelog-filename=CHANGELOCK.md",

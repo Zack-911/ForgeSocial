@@ -1,0 +1,69 @@
+src/functions/innertube
+├── core
+│   ├── [getInfo(target, options)] innertubeGetInfo.ts
+│   ├── [getBasicInfo(video_id, options)] innertubeGetBasicInfo.ts
+│   ├── [getShortsVideoInfo(video_id, client)] innertubeGetShortsVideoInfo.ts
+│   ├── [search(query, filters = {})] innertubeSearch.ts
+│   ├── [getSearchSuggestions(query, previous_query)] innertubeGetSearchSuggestions.ts
+│   ├── [resolveURL(url)] innertubeResolveURL.ts
+│   ├── [getStreamingData(video_id, options = {})] innertubeGetStreamingData.ts
+│   ├── [download(video_id, options)] innertubeDownload.ts
+│   ├── [getAttestationChallenge(engagement_type, ids)] innertubeGetAttestationChallenge.ts
+│   └── [call(endpoint, args)] innertubeCall.ts
+├── feed
+│   ├── [getHomeFeed()] innertubeGetHomeFeed.ts
+│   ├── [getGuide()] innertubeGetGuide.ts
+│   ├── [getLibrary()] innertubeGetLibrary.ts
+│   ├── [getHistory()] innertubeGetHistory.ts
+│   ├── [getTrending()] innertubeGetTrending.ts
+│   ├── [getCourses()] innertubeGetCourses.ts
+│   ├── [getSubscriptionsFeed()] innertubeGetSubscriptionsFeed.ts
+│   ├── [getChannelsFeed()] innertubeGetChannelsFeed.ts
+│   └── [getNotifications()] innertubeGetNotifications.ts
+├── channels
+│   ├── [getChannel(id)] innertubeGetChannel.ts
+│   ├── [getHashtag(hashtag)] innertubeGetHashtag.ts
+│   ├── [getUnseenNotificationsCount()] innertubeGetUnseenNotificationsCount.ts
+│   └── [getPlaylists()] innertubeGetPlaylists.ts
+├── playlists
+│   ├── [getPlaylist(id)] innertubeGetPlaylist.ts
+│   ├── [create(title, video_ids)] innertubePlaylistCreate.ts
+│   ├── [delete(playlist_id)] innertubePlaylistDelete.ts
+│   ├── [addToLibrary(playlist_id)] innertubePlaylistAddToLibrary.ts
+│   ├── [removeFromLibrary(playlist_id)] innertubePlaylistRemoveFromLibrary.ts
+│   ├── [addVideos(playlist_id, video_ids)] innertubePlaylistAddVideos.ts
+│   ├── [removeVideos(playlist_id, video_ids, use_set_video_ids = false)] innertubePlaylistRemoveVideos.ts
+│   ├── [moveVideo(playlist_id, moved_video_id, predecessor_video_id)] innertubePlaylistMoveVideo.ts
+│   ├── [setName(playlist_id, name)] innertubePlaylistSetName.ts
+│   ├── [setDescription(playlist_id, description)] innertubePlaylistSetDescription.ts
+│   └── [upload(file, metadata = {})] innertubeUpload.ts
+├── comments
+│   ├── [getComments(video_id, sort_by, comment_id)] innertubeGetComments.ts
+│   ├── [getPostComments(post_id, channel_id, sort_by)] innertubeGetPostComments.ts
+│   └── [getPost(post_id, channel_id)] innertubeGetPost.ts
+├── music
+│   ├── [getInfo(target, options)] innertubeMusicGetInfo.ts
+│   ├── [search(query, filters = {})] innertubeMusicSearch.ts
+│   ├── [getHomeFeed()] innertubeMusicGetHomeFeed.ts
+│   ├── [getExplore()] innertubeMusicGetExplore.ts
+│   ├── [getLibrary()] innertubeMusicGetLibrary.ts
+│   ├── [getArtist(artist_id)] innertubeMusicGetArtist.ts
+│   ├── [getAlbum(album_id)] innertubeMusicGetAlbum.ts
+│   ├── [getPlaylist(playlist_id)] innertubeMusicGetPlaylist.ts
+│   ├── [getUpNext(video_id, automix = true)] innertubeMusicGetUpNext.ts
+│   ├── [getRelated(video_id)] innertubeMusicGetRelated.ts
+│   ├── [getLyrics(video_id)] innertubeMusicGetLyrics.ts
+│   ├── [getRecap()] innertubeMusicGetRecap.ts
+│   └── [getSearchSuggestions(input)] innertubeMusicGetSearchSuggestions.ts
+├── kids
+│   ├── [search(query)] innertubeKidsSearch.ts
+│   ├── [getInfo(video_id, options)] innertubeKidsGetInfo.ts
+│   ├── [getChannel(channel_id)] innertubeKidsGetChannel.ts
+│   ├── [getHomeFeed()] innertubeKidsGetHomeFeed.ts
+│   └── [blockChannel(channel_id)] innertubeKidsBlockChannel.ts
+├── studio
+│   ├── [updateVideoMetadata(video_id, metadata)] innertubeStudioUpdateVideoMetadata.ts
+│   └── [upload(file, metadata = {})] innertubeStudioUpload.ts
+└── account
+    ├── [getInfo(all = false)] innertubeAccountGetInfo.ts
+    └── [getSettings()] innertubeAccountGetSettings.ts

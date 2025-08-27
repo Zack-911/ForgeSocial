@@ -9,7 +9,7 @@ import {
 } from './natives/pollSubreddit';
 import { loadTrackedChannelsFromFile, startPollingTrackedChannels } from './natives/pollYoutube';
 import https from 'https';
-import { Innertube, Log } from 'youtubei.js';
+import { Innertube, Log, UniversalCache } from 'youtubei.js';
 import { Octokit } from '@octokit/rest';
 /**
  * Options for configuring the ForgeSocial extension.
@@ -31,6 +31,10 @@ export interface IForgeSocialOptions {
   };
   youtube?: {
     enabled: boolean;
+    cookie: string;
+    userAgent: string;
+    cache?: boolean;
+    log?: 'DEBUG' | 'INFO' | 'WARNING' | 'ERROR' | 'NONE';
   };
 }
 
@@ -79,10 +83,6 @@ export class ForgeSocial extends ForgeExtension {
   async init(client: ForgeClient) {
     this.client = client;
     this.commands = new ForgeSocialCommandManager(client);
-
-    this.youtube = await Innertube.create();
-    Log.setLevel(Log.Level.NONE);
-    client.youtube = this.youtube;
     if (this.options.github) {
       this.load(__dirname + `/functions/github`);
       const shouldLog = this.options.github?.log ?? true;
@@ -114,7 +114,15 @@ export class ForgeSocial extends ForgeExtension {
     } else {
       Logger.warn('ForgeSocial: Missing GitHub token. Skipping GitHub initialization.');
     }
+    const shouldCache = this.options.youtube?.cache ?? true;
     if (this.options.youtube?.enabled) {
+      this.youtube = await Innertube.create({
+        cookie: this.options.youtube?.cookie || undefined,
+        user_agent: this.options.youtube?.userAgent || undefined,
+        cache: shouldCache ? new UniversalCache(true, './ForgeSocial/youtube-cache') : undefined,
+      });
+      Log.setLevel(Log.Level[this.options.youtube?.log || 'INFO']);
+      client.youtube = this.youtube;
       this.load(__dirname + `/functions/youtube`);
     }
     if (this.options.reddit) {

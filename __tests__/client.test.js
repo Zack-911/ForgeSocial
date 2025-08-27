@@ -11,6 +11,8 @@ const reddit = new ForgeSocial({
   },
   youtube: {
     enabled: true,
+    cookie: process.env.YOUTUBE_COOKIE,
+    userAgent: process.env.YOUTUBE_UA,
   },
   reddit: {
     redditUsername: process.env.REDDIT_USERNAME,

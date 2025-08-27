@@ -47,9 +47,6 @@ class ForgeSocial extends forgescript_1.ForgeExtension {
     async init(client) {
         this.client = client;
         this.commands = new ForgeSocialCommandManager_1.ForgeSocialCommandManager(client);
-        this.youtube = await youtubei_js_1.Innertube.create();
-        youtubei_js_1.Log.setLevel(youtubei_js_1.Log.Level.NONE);
-        client.youtube = this.youtube;
         if (this.options.github) {
             this.load(__dirname + `/functions/github`);
             const shouldLog = this.options.github?.log ?? true;
@@ -81,7 +78,15 @@ class ForgeSocial extends forgescript_1.ForgeExtension {
         else {
             forgescript_1.Logger.warn('ForgeSocial: Missing GitHub token. Skipping GitHub initialization.');
         }
+        const shouldCache = this.options.youtube?.cache ?? true;
         if (this.options.youtube?.enabled) {
+            this.youtube = await youtubei_js_1.Innertube.create({
+                cookie: this.options.youtube?.cookie || undefined,
+                user_agent: this.options.youtube?.userAgent || undefined,
+                cache: shouldCache ? new youtubei_js_1.UniversalCache(true, './ForgeSocial/youtube-cache') : undefined,
+            });
+            youtubei_js_1.Log.setLevel(youtubei_js_1.Log.Level[this.options.youtube?.log || 'INFO']);
+            client.youtube = this.youtube;
             this.load(__dirname + `/functions/youtube`);
         }
         if (this.options.reddit) {

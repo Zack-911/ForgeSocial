@@ -9,7 +9,7 @@
 
 ## $githubAddRunnerLabelsRepo
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Adds custom labels to a self-hosted runner for a repository
 - **Category:** actions
 - **Arguments:**
@@ -23,7 +23,7 @@
 
 ## $githubApproveWorkflow
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Approves a workflow run that is waiting for review
 - **Category:** actions
 - **Arguments:**
@@ -36,7 +36,7 @@
 
 ## $githubCancelWorkflowRun
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Cancels a workflow run for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -50,7 +50,7 @@
 
 ## $githubDeleteArtifact
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Deletes an artifact from a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -63,7 +63,7 @@
 
 ## $githubDeleteWorkflowLogs
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Deletes all logs for a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -76,7 +76,7 @@
 
 ## $githubDispatchWorkflow
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Dispatches a workflow run for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -91,7 +91,7 @@
 
 ## $githubDownloadArtifact
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Downloads an artifact for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -105,7 +105,7 @@
 
 ## $githubDownloadJobLogs
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Downloads the logs for a specific job in a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -120,7 +120,7 @@
 
 ## $githubDownloadWorkflowRunLogs
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Downloads the logs for a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -133,7 +133,7 @@
 
 ## $githubGetArtifact
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Gets an artifact for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -146,7 +146,7 @@
 
 ## $githubGetWorkflowJob
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Gets a specific job from a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -159,7 +159,7 @@
 
 ## $githubGetWorkflowRun
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Gets a workflow run for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -173,7 +173,7 @@
 
 ## $githubListArtifacts
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Lists artifacts for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -188,7 +188,7 @@
 
 ## $githubListRunArtifacts
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Lists artifacts for a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -203,7 +203,7 @@
 
 ## $githubListSelfHostedRunnersRepo
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Lists all self-hosted runners for a repository
 - **Category:** actions
 - **Arguments:**
@@ -217,7 +217,7 @@
 
 ## $githubListWorkflowJobs
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Lists jobs for a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -233,7 +233,7 @@
 
 ## $githubListWorkflowRuns
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Lists workflow runs for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -253,7 +253,7 @@
 
 ## $githubRemoveRunnerLabelRepo
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Removes a custom label from a self-hosted runner for a repository
 - **Category:** actions
 - **Arguments:**
@@ -267,7 +267,7 @@
 
 ## $githubRerunFailedJobs
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Reruns all failed jobs in a workflow run
 - **Category:** actions
 - **Arguments:**
@@ -281,7 +281,7 @@
 
 ## $githubRerunWorkflow
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Reruns a workflow run for a GitHub repository
 - **Category:** actions
 - **Arguments:**
@@ -294,7 +294,7 @@
 
 ## $githubAddAssignees
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Add assignees to an issue in a GitHub repository
 - **Category:** issues
 - **Arguments:**
@@ -308,7 +308,7 @@
 
 ## $githubAddLabels
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Add labels to an issue in a GitHub repository
 - **Category:** issues
 - **Arguments:**
@@ -322,7 +322,7 @@
 
 ## $githubCreateComment
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Create a comment on an issue or pull request
 - **Category:** issues
 - **Arguments:**
@@ -336,7 +336,7 @@
 
 ## $githubCreateIssue
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Create a new issue in a GitHub repository
 - **Category:** issues
 - **Arguments:**
@@ -353,7 +353,7 @@
 
 ## $githubDeleteComment
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Delete a comment on an issue or pull request
 - **Category:** issues
 - **Arguments:**
@@ -366,7 +366,7 @@
 
 ## $githubGetIssue
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Get a specific issue from a GitHub repository
 - **Category:** issues
 - **Arguments:**
@@ -379,7 +379,7 @@
 
 ## $githubListIssueComments
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** List comments on an issue
 - **Category:** issues
 - **Arguments:**
@@ -395,7 +395,7 @@
 
 ## $githubListIssues
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** List issues in a GitHub repository
 - **Category:** issues
 - **Arguments:**
@@ -416,7 +416,7 @@
 
 ## $githubListMyIssues
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Lists issues assigned to the authenticated user across all repositories
 - **Category:** issues
 - **Arguments:**
@@ -434,7 +434,7 @@
 
 ## $githubRemoveAssignees
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Remove assignees from a GitHub issue
 - **Category:** issues
 - **Arguments:**
@@ -448,7 +448,7 @@
 
 ## $githubRemoveLabel
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Remove a label from an issue in a GitHub repository
 - **Category:** issues
 - **Arguments:**
@@ -462,7 +462,7 @@
 
 ## $githubUpdateComment
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Update a comment on an issue or pull request
 - **Category:** issues
 - **Arguments:**
@@ -476,7 +476,7 @@
 
 ## $githubUpdateIssue
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Update an existing issue in a GitHub repository
 - **Category:** issues
 - **Arguments:**
@@ -495,7 +495,7 @@
 
 ## $githubGetOrgs
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Get GitHub organizations
 - **Category:** organizations
 - **Arguments:**
@@ -506,7 +506,7 @@
 
 ## $githubGetTeam
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Get GitHub team
 - **Category:** organizations
 - **Arguments:**
@@ -518,7 +518,7 @@
 
 ## $githubListOrgs
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** List GitHub organizations
 - **Category:** organizations
 - **Arguments:**
@@ -531,7 +531,7 @@
 
 ## $githubListOrgsMembers
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** List GitHub organization members
 - **Category:** organizations
 - **Arguments:**
@@ -544,7 +544,7 @@
 
 ## $githubListTeams
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** List GitHub teams
 - **Category:** organizations
 - **Arguments:**
@@ -557,7 +557,7 @@
 
 ## $githubDeletePullReviewComment
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Delete a pull request review comment
 - **Category:** pulls
 - **Arguments:**
@@ -570,7 +570,7 @@
 
 ## $githubGetPullReview
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Get a specific pull request review
 - **Category:** pulls
 - **Arguments:**
@@ -584,7 +584,7 @@
 
 ## $githubListPullReviews
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** List reviews for a pull request
 - **Category:** pulls
 - **Arguments:**
@@ -601,7 +601,7 @@
 
 ## $githubUpdatePullReview
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Update the body text of a review that has not been submitted
 - **Category:** pulls
 - **Arguments:**
@@ -616,7 +616,7 @@
 
 ## $githubAddCollaborator
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Adds a collaborator to a repository
 - **Category:** repositories
 - **Arguments:**
@@ -630,7 +630,7 @@
 
 ## $githubCreateRelease
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Creates a new release
 - **Category:** repositories
 - **Arguments:**
@@ -649,7 +649,7 @@
 
 ## $githubCreateRepoOrg
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Creates a new repository in an organization
 - **Category:** repositories
 - **Arguments:**
@@ -674,7 +674,7 @@
 
 ## $githubCreateRepoUser
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Creates a new repository for the authenticated user
 - **Category:** repositories
 - **Arguments:**
@@ -697,7 +697,7 @@
 
 ## $githubDeleteFile
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Deletes a file from a GitHub repository
 - **Category:** repositories
 - **Arguments:**
@@ -715,7 +715,7 @@
 
 ## $githubDeleteRelease
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Deletes a GitHub release
 - **Category:** repositories
 - **Arguments:**
@@ -728,7 +728,7 @@
 
 ## $githubDeleteRepo
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Deletes a repository
 - **Category:** repositories
 - **Arguments:**
@@ -740,7 +740,7 @@
 
 ## $githubGetBranch
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Gets a specific branch from a repository
 - **Category:** repositories
 - **Arguments:**
@@ -753,7 +753,7 @@
 
 ## $githubGetFileContent
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Gets the content of a file from a repository
 - **Category:** repositories
 - **Arguments:**
@@ -767,7 +767,7 @@
 
 ## $githubGetRelease
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Gets a release by its ID
 - **Category:** repositories
 - **Arguments:**
@@ -780,7 +780,7 @@
 
 ## $githubGetRepo
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Gets a repository
 - **Category:** repositories
 - **Arguments:**
@@ -792,7 +792,7 @@
 
 ## $githubListBranches
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Lists branches for a repository
 - **Category:** repositories
 - **Arguments:**
@@ -806,7 +806,7 @@
 
 ## $githubListCollaborators
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Lists repository collaborators
 - **Category:** repositories
 - **Arguments:**
@@ -821,7 +821,7 @@
 
 ## $githubListOrgRepos
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Lists organization repositories
 - **Category:** repositories
 - **Arguments:**
@@ -837,7 +837,7 @@
 
 ## $githubListReleases
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Lists releases for a repository
 - **Category:** repositories
 - **Arguments:**
@@ -851,7 +851,7 @@
 
 ## $githubListUserRepos
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Lists repositories for a user
 - **Category:** repositories
 - **Arguments:**
@@ -867,7 +867,7 @@
 
 ## $githubRemoveCollaborator
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Removes a collaborator from a repository
 - **Category:** repositories
 - **Arguments:**
@@ -880,7 +880,7 @@
 
 ## $githubUnprotectBranch
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Removes branch protection from a repository branch
 - **Category:** repositories
 - **Arguments:**
@@ -893,7 +893,7 @@
 
 ## $githubUpdateFile
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Creates or updates a file in a repository
 - **Category:** repositories
 - **Arguments:**
@@ -912,7 +912,7 @@
 
 ## $githubUpdateRelease
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Updates an existing GitHub release
 - **Category:** repositories
 - **Arguments:**
@@ -930,7 +930,7 @@
 
 ## $githubUpdateRepo
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Updates a repository
 - **Category:** repositories
 - **Arguments:**
@@ -953,7 +953,7 @@
 
 ## $githubUploadReleaseAsset
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Uploads an asset to a GitHub release
 - **Category:** repositories
 - **Arguments:**
@@ -970,7 +970,7 @@
 
 ## $githubAuthenticatedUser
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Get the authenticated user
 - **Category:** user
 - **Output:** Json
@@ -978,7 +978,7 @@
 
 ## $githubCheckFollowing
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Check if the user is following the other user
 - **Category:** user
 - **Arguments:**
@@ -990,7 +990,7 @@
 
 ## $githubFollowUser
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Follow the user
 - **Category:** user
 - **Arguments:**
@@ -1001,7 +1001,7 @@
 
 ## $githubListFollowers
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Get the followers of the user
 - **Category:** user
 - **Arguments:**
@@ -1012,7 +1012,7 @@
 
 ## $githubListFollowing
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Get the following of the user
 - **Category:** user
 - **Arguments:**
@@ -1023,7 +1023,7 @@
 
 ## $githubUnfollowUser
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Unfollow the user
 - **Category:** user
 - **Arguments:**
@@ -1034,7 +1034,7 @@
 
 ## $githubSearchCode
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Search GitHub for code
 - **Category:** utility
 - **Arguments:**
@@ -1048,7 +1048,7 @@
 
 ## $githubSearchCommits
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Search GitHub for commits
 - **Category:** utility
 - **Arguments:**
@@ -1063,7 +1063,7 @@
 
 ## $githubSearchLabels
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Search GitHub for labels
 - **Category:** utility
 - **Arguments:**
@@ -1079,7 +1079,7 @@
 
 ## $githubSearchRepo
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Search GitHub for repositories
 - **Category:** utility
 - **Arguments:**
@@ -1094,7 +1094,7 @@
 
 ## $githubSearchTopics
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Search GitHub for topics
 - **Category:** utility
 - **Arguments:**
@@ -1109,7 +1109,7 @@
 
 ## $githubSearchUsers
 
-- **Version:** 1.5.7
+- **Version:** 1.5.8
 - **Description:** Search GitHub for users
 - **Category:** utility
 - **Arguments:**
@@ -1328,25 +1328,115 @@
 - **Brackets:** true
 - **Unwrap:** true
 
-## $extractVideoID
+## $youtubeDownload
 
-- **Version:** 1.0.0
-- **Description:** Extracts a YouTube video ID from a URL or string.
-- **Category:** youtube
+- **Version:** 1.5.8
+- **Description:** Downloads a YouTube video to a file.
+- **Category:** core
 - **Arguments:**
-  -  input (String, required) - YouTube URL or video ID
-- **Output:** String
+  -  video_id (String, required) - The video ID to download.
+  -  path (String, required) - The file path to save the video.
+  -  client (Enum): [IOS, Web, MWEB, ANDROID, YTMUSIC, YTMUSIC_ANDROID, YTSTUDIO_ANDROID, TV, TV_SIMPLY, TV_EMBEDDED, YTKIDS, WEB_EMBEDDED, WEB_CREATOR] - The client to use for downloading.
+  -  itag (Enum): [FLV_240p, FLV_270p, _3GP_144p, MP4_360p, MP4_720p, FLV_360p, FLV_480p, _3GP_180p, MP4_1080p, MP4_3072p, WebM_360p, WebM_480p, WebM_720p, WebM_1080p, MP4_360p_3D, MP4_480p_3D, MP4_720p_3D, MP4_1080p_3D, HLS_240p_3D, HLS_360p_3D, HLS_480p_3D, HLS_720p_3D, HLS_1080p, WebM_360p_3D, WebM_480p_3D, WebM_720p_3D, MP4_240p, MP4_240p_2, MP4_360p_2, MP4_480p_2, MP4_720p_2, MP4_1080p_2, MP4_2160p60, M4A_48kbps, M4A_128kbps, M4A_256kbps, HLS_72p, MP4_144p, WebM_360p_2, WebM_480p_2, WebM_1080p_2, WebM_Opus128, WebM_480p_3, WebM_144p_3, WebM_240p, WebM_360p_3, WebM_480p_4, WebM_480p_5, WebM_480p_6, WebM_720p_2, WebM_1080p_3, WebM_Opus50, WebM_Opus70, WebM_Opus160, MP4_1440p, MP4_2160p60_2, WebM_1440p_2, WebM_4320p, WebM_144p_4, MP4_720p60, MP4_1080p60, WebM_720p60_2, WebM_1080p60_2, WebM_1440p60, WebM_2160p, WebM_2160p60_2, WebM_144p60_HDR, WebM_240p60_HDR, WebM_360p60_HDR, WebM_480p60_HDR, WebM_720p60_HDR, WebM_1080p60_HDR, WebM_1440p60_HDR, WebM_2160p60_HDR] - The itag to get streaming data for.
+  -  quality (Enum): [P144, P240, P360, P480, P720, P1080, P1440, P2160, P4320, Best, BestEfficiency] - The quality to get streaming data for.
+  -  type (Enum): [Video, Audio, VideoAudio] - The type to get streaming data for.
+  -  language (String) - The language to get streaming data for.
+  -  format (String) - The format to get streaming data for.
+  -  codec (Enum): [AVC, VP9, AV1, OPUS, MP4A, H264, VP8] - Video or audio codec identifier for the stream
 - **Brackets:** true
 - **Unwrap:** true
 
-## $getYoutubeChannel
+## $youtubeGetAttestationChallenge
 
-- **Version:** 1.0.0
-- **Description:** Gets info about a YouTube channel by ID or handle.
-- **Category:** youtube
+- **Version:** 1.5.8
+- **Description:** Gets an attestation challenge for YouTube.
+- **Category:** core
 - **Arguments:**
-  -  identifier (String, required) - Channel ID or handle (e.g. UC... or @username)
-- **Output:** Json
+  -  engagement_type (Enum, required): [EngagementTypeUnbound, EngagementTypeVideoLike, EngagementTypeVideoDislike, EngagementTypeSubscribe, EngagementTypePlayback, EngagementTypeYpcGetPremiumPage, EngagementTypeYpcGetDownloadAction] - The engagement type to get an attestation challenge for.
+  -  ids (String, rest) - The IDs to get an attestation challenge for.
+- **Brackets:** true
+- **Unwrap:** true
+
+## $youtubeGetBasicInfo
+
+- **Version:** 1.5.8
+- **Description:** Retrieves basic information about a YouTube video.
+- **Category:** core
+- **Arguments:**
+  -  videoId (String, required) - The ID of the video to retrieve information for.
+- **Brackets:** true
+- **Unwrap:** true
+
+## $youtubeGetInfo
+
+- **Version:** 1.5.8
+- **Description:** Retrieves information about a YouTube video.
+- **Category:** core
+- **Arguments:**
+  -  videoId (String, required) - The ID of the video to retrieve information for.
+- **Brackets:** true
+- **Unwrap:** true
+
+## $youtubeGetSearchSuggestions
+
+- **Version:** 1.5.8
+- **Description:** Gets search suggestions.
+- **Category:** core
+- **Arguments:**
+  -  query (String, required) - The query to get search suggestions for.
+  -  previousQuery (String) - The previous query to get search suggestions for.
+- **Brackets:** true
+- **Unwrap:** true
+
+## $youtubeGetShortsVideoInfo
+
+- **Version:** 1.5.8
+- **Description:** Retrieves information about a YouTube Shorts video.
+- **Category:** core
+- **Arguments:**
+  -  videoId (String, required) - The ID of the video to retrieve information for.
+  -  client (Enum): [IOS, Web, MWEB, ANDROID, YTMUSIC, YTMUSIC_ANDROID, YTSTUDIO_ANDROID, TV, TV_SIMPLY, TV_EMBEDDED, YTKIDS, WEB_EMBEDDED, WEB_CREATOR] - The client to use.
+- **Brackets:** true
+- **Unwrap:** true
+
+## $youtubeGetStreamingData
+
+- **Version:** 1.5.8
+- **Description:** Gets streaming data.
+- **Category:** core
+- **Arguments:**
+  -  video_id (String, required) - The video ID to get streaming data for.
+  -  itag (Enum): [FLV_240p, FLV_270p, _3GP_144p, MP4_360p, MP4_720p, FLV_360p, FLV_480p, _3GP_180p, MP4_1080p, MP4_3072p, WebM_360p, WebM_480p, WebM_720p, WebM_1080p, MP4_360p_3D, MP4_480p_3D, MP4_720p_3D, MP4_1080p_3D, HLS_240p_3D, HLS_360p_3D, HLS_480p_3D, HLS_720p_3D, HLS_1080p, WebM_360p_3D, WebM_480p_3D, WebM_720p_3D, MP4_240p, MP4_240p_2, MP4_360p_2, MP4_480p_2, MP4_720p_2, MP4_1080p_2, MP4_2160p60, M4A_48kbps, M4A_128kbps, M4A_256kbps, HLS_72p, MP4_144p, WebM_360p_2, WebM_480p_2, WebM_1080p_2, WebM_Opus128, WebM_480p_3, WebM_144p_3, WebM_240p, WebM_360p_3, WebM_480p_4, WebM_480p_5, WebM_480p_6, WebM_720p_2, WebM_1080p_3, WebM_Opus50, WebM_Opus70, WebM_Opus160, MP4_1440p, MP4_2160p60_2, WebM_1440p_2, WebM_4320p, WebM_144p_4, MP4_720p60, MP4_1080p60, WebM_720p60_2, WebM_1080p60_2, WebM_1440p60, WebM_2160p, WebM_2160p60_2, WebM_144p60_HDR, WebM_240p60_HDR, WebM_360p60_HDR, WebM_480p60_HDR, WebM_720p60_HDR, WebM_1080p60_HDR, WebM_1440p60_HDR, WebM_2160p60_HDR] - Theitag to get streaming data for.
+  -  quality (Enum): [P144, P240, P360, P480, P720, P1080, P1440, P2160, P4320, Best, BestEfficiency] - The quality to get streaming data for.
+  -  type (Enum): [Video, Audio, VideoAudio] - The type to get streaming data for.
+  -  language (String) - The language to get streaming data for.
+  -  format (String) - The format to get streaming data for.
+  -  codec (Enum): [AVC, VP9, AV1, OPUS, MP4A, H264, VP8] - Video or audio codec identifier for the stream
+- **Brackets:** true
+- **Unwrap:** true
+
+## $youtubeResolveURL
+
+- **Version:** 1.5.8
+- **Description:** Resolves a URL.
+- **Category:** core
+- **Arguments:**
+  -  url (String, required) - The URL to resolve.
+- **Brackets:** true
+- **Unwrap:** true
+
+## $youtubeSearch
+
+- **Version:** 1.5.8
+- **Description:** Searches YouTube.
+- **Category:** core
+- **Arguments:**
+  -  query (String, required) - The query to search for.
+  -  uploadDate (Enum): [All, Hour, Today, Week, Month, Year] - The upload date to filter by.
+  -  duration (Enum): [All, Short, Medium, Long] - The duration to filter by.
+  -  type (Enum): [Video, Channel, Playlist, Movie, All] - The type to filter by.
+  -  sortBy (Enum): [Relevance, Rating, UploadDate, ViewCount] - The sort by to filter by.
+  -  features (Enum, rest): [HD, Subtitles, FourK, Live, ThreeSixty, ThreeD, HDR, CreativeCommons, VR180] - The features to filter by.
 - **Brackets:** true
 - **Unwrap:** true
 
@@ -1354,71 +1444,14 @@
 
 - **Version:** 1.0.0
 - **Description:** Returns a list of all tracked YouTube channel IDs.
-- **Category:** youtube
+- **Category:** tracking
 - **Unwrap:** false
-
-## $searchYoutube
-
-- **Version:** 1.3.0
-- **Description:** Searches YouTube and returns the top videos in JSON format. Supports filters.
-- **Category:** youtube
-- **Arguments:**
-  -  query (String, required) - The search query to look up on YouTube
-  -  limit (Number) - Maximum number of videos to return (default 5, max 25)
-  -  uploadDate (Enum): [All, Hour, Today, Week, Month, Year] - Upload date filter
-  -  duration (Enum): [All, Short, Medium, Long] - Video duration filter
-  -  sortBy (Enum): [Relevance, Rating, UploadDate, ViewCount] - Sort results by
-  -  features (Enum, rest): [HD, Subtitles, FourK, Live, ThreeSixty, ThreeD, HDR, CC, VR180] - Features to filter by
-- **Output:** Json
-- **Brackets:** true
-- **Unwrap:** true
-
-## $searchYoutubeChannel
-
-- **Version:** 1.3.0
-- **Description:** Searches YouTube and returns matching channels in JSON format.
-- **Category:** youtube
-- **Arguments:**
-  -  query (String, required) - Search query for YouTube channels
-  -  limit (Number) - Maximum number of channels to return (default 5, max 25)
-  -  sortBy (Enum): [Relevance, Rating, UploadDate, ViewCount] - Sort results by (optional)
-- **Output:** Json
-- **Brackets:** true
-- **Unwrap:** true
-
-## $searchYoutubeMusic
-
-- **Version:** 1.3.0
-- **Description:** Searches YouTube Music and returns songs in JSON format.
-- **Category:** youtube
-- **Arguments:**
-  -  query (String, required) - Search query for music
-  -  limit (Number) - Max number of songs to return (default 5, max 25)
-- **Output:** Json
-- **Brackets:** true
-- **Unwrap:** true
-
-## $searchYoutubePlaylist
-
-- **Version:** 1.3.0
-- **Description:** Searches YouTube and returns the playlists in JSON format. Supports filters.
-- **Category:** youtube
-- **Arguments:**
-  -  query (String, required) - The search query to look up on YouTube
-  -  limit (Number) - Maximum number of playlists to return (default 5, max 25)
-  -  uploadDate (Enum): [All, Hour, Today, Week, Month, Year] - Upload date filter
-  -  duration (Enum): [All, Short, Medium, Long] - Video duration filter
-  -  sortBy (Enum): [Relevance, Rating, UploadDate, ViewCount] - Sort results by
-  -  features (Enum, rest): [HD, Subtitles, FourK, Live, ThreeSixty, ThreeD, HDR, CC, VR180] - Features to filter by
-- **Output:** Json
-- **Brackets:** true
-- **Unwrap:** true
 
 ## $trackYoutubeChannel
 
 - **Version:** 1.0.0
 - **Description:** Starts tracking a YouTube channel and emits events on new uploads.
-- **Category:** youtube
+- **Category:** tracking
 - **Arguments:**
   -  channelId (String, required) - The channel ID to track (e.g. UC_x5XG1OV2P6uZZ5FSM9Ttw)
 - **Brackets:** true
@@ -1428,20 +1461,20 @@
 
 - **Version:** 1.0.0
 - **Description:** Stops tracking a previously tracked YouTube channel.
-- **Category:** youtube
+- **Category:** tracking
 - **Arguments:**
   -  channelId (String, required) - The channel ID to untrack.
 - **Brackets:** true
 - **Unwrap:** true
 
-## $getYoutubeVideo
+## $extractVideoID
 
-- **Version:** 1.3.0
-- **Description:** Returns the youtube videos info.
-- **Category:** youtube
+- **Version:** 1.0.0
+- **Description:** Extracts a YouTube video ID from a URL or string.
+- **Category:** utility
 - **Arguments:**
-  -  ID (String, required) - The video ID to get info about
-- **Output:** Json
+  -  input (String, required) - YouTube URL or video ID
+- **Output:** String
 - **Brackets:** true
 - **Unwrap:** true
 
