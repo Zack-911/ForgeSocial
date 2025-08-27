@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const reddit = new ForgeSocial({
-  events: ['error', 'newRedditPost', 'newYoutubeVideo'],
+  events: ['newRedditPost', 'newYoutubeVideo'],
   github: {
     token: process.env.GITHUB_TOKEN,
     log: false,
@@ -13,6 +13,8 @@ const reddit = new ForgeSocial({
     enabled: true,
     cookie: process.env.YOUTUBE_COOKIE,
     userAgent: process.env.YOUTUBE_UA,
+    cache: true,
+    log: 'NONE',
   },
   reddit: {
     redditUsername: process.env.REDDIT_USERNAME,
@@ -45,7 +47,3 @@ reddit.commands.add({
 client.commands.load('./__tests__/commands');
 
 client.login(process.env.TOKEN);
-
-client.on('clientReady', () => {
-  console.log('Client is ready!');
-});
