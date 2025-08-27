@@ -317,6 +317,11 @@
 - popular
 - new
 
+## CommentsSortBy
+
+- NewestFirst
+- TopComments
+
 ## Client
 
 - IOS

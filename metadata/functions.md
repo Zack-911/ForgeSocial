@@ -1328,6 +1328,77 @@
 - **Brackets:** true
 - **Unwrap:** true
 
+## $youtubeGetChannel
+
+- **Version:** 1.5.8
+- **Description:** Get a YouTube channel by ID
+- **Category:** channels
+- **Arguments:**
+  -  id (String, required) - The ID of the channel to get
+- **Output:** Json
+- **Unwrap:** true
+
+## $youtubeGetHashtag
+
+- **Version:** 1.5.8
+- **Description:** Get a YouTube hashtag page
+- **Category:** channels
+- **Arguments:**
+  -  hashtag (String, required) - The hashtag to search for (without #)
+- **Output:** Json
+- **Unwrap:** true
+
+## $youtubeGetPlaylists
+
+- **Version:** 1.5.8
+- **Description:** Get YouTube playlists
+- **Category:** channels
+- **Output:** Json
+- **Unwrap:** false
+
+## $youtubeGetUnseenNotificationsCount
+
+- **Version:** 1.5.8
+- **Description:** Get the count of unseen YouTube notifications
+- **Category:** channels
+- **Output:** Number
+- **Unwrap:** false
+
+## $youtubeGetComments
+
+- **Version:** 1.5.8
+- **Description:** Get comments for a YouTube video
+- **Category:** comments
+- **Arguments:**
+  -  videoId (String, required) - The ID of the video to get comments from
+  -  sortBy (Enum): [NewestFirst, TopComments] - Sort order of comments (TOP_COMMENTS, NEWEST_FIRST)
+  -  commentId (String) - The ID of a specific comment to get replies for
+- **Output:** Json
+- **Unwrap:** true
+
+## $youtubeGetPost
+
+- **Version:** 1.5.8
+- **Description:** Get a YouTube community post by ID
+- **Category:** comments
+- **Arguments:**
+  -  postId (String, required) - The ID of the community post to retrieve
+  -  channelId (String, required) - The ID of the channel that owns the post
+- **Output:** Json
+- **Unwrap:** true
+
+## $youtubeGetPostComments
+
+- **Version:** 1.5.8
+- **Description:** Get comments for a YouTube community post
+- **Category:** comments
+- **Arguments:**
+  -  postId (String, required) - The ID of the community post
+  -  channelId (String, required) - The ID of the channel that owns the post
+  -  sortBy (Enum): [NewestFirst, TopComments] - Sort order of comments (TOP_COMMENTS, NEWEST_FIRST)
+- **Output:** Json
+- **Unwrap:** true
+
 ## $youtubeDownload
 
 - **Version:** 1.5.8
@@ -1438,6 +1509,186 @@
   -  sortBy (Enum): [Relevance, Rating, UploadDate, ViewCount] - The sort by to filter by.
   -  features (Enum, rest): [HD, Subtitles, FourK, Live, ThreeSixty, ThreeD, HDR, CreativeCommons, VR180] - The features to filter by.
 - **Brackets:** true
+- **Unwrap:** true
+
+## $youtubeGetChannelsFeed
+
+- **Version:** 1.5.8
+- **Description:** Get channels feed from YouTube
+- **Category:** feed
+- **Output:** Json
+- **Unwrap:** false
+
+## $youtubeGetCourses
+
+- **Version:** 1.5.8
+- **Description:** Get YouTube courses
+- **Category:** feed
+- **Output:** Json
+- **Unwrap:** false
+
+## $youtubeGetGuide
+
+- **Version:** 1.5.8
+- **Description:** Get the guide of YouTube
+- **Category:** feed
+- **Output:** Json
+- **Unwrap:** false
+
+## $youtubeGetHistory
+
+- **Version:** 1.5.8
+- **Description:** Get the user's watch history from YouTube
+- **Category:** feed
+- **Output:** Json
+- **Unwrap:** false
+
+## $youtubeGetHomeFeed
+
+- **Version:** 1.5.8
+- **Description:** Get the home feed of YouTube
+- **Category:** feed
+- **Output:** Json
+- **Unwrap:** false
+
+## $youtubeGetLibrary
+
+- **Version:** 1.5.8
+- **Description:** Get the user's YouTube library
+- **Category:** feed
+- **Output:** Json
+- **Unwrap:** false
+
+## $youtubeGetNotifications
+
+- **Version:** 1.5.8
+- **Description:** Get notifications from YouTube
+- **Category:** feed
+- **Output:** Json
+- **Unwrap:** false
+
+## $youtubeGetSubscriptionsFeed
+
+- **Version:** 1.5.8
+- **Description:** Get the subscriptions feed from YouTube
+- **Category:** feed
+- **Output:** Json
+- **Unwrap:** false
+
+## $youtubeGetTrending
+
+- **Version:** 1.5.8
+- **Description:** Get trending videos from YouTube
+- **Category:** feed
+- **Output:** Json
+- **Unwrap:** false
+
+## $youtubeGetPlaylist
+
+- **Version:** 1.5.8
+- **Description:** Get a YouTube playlist by ID
+- **Category:** playlists
+- **Arguments:**
+  -  id (String, required) - The ID of the playlist to get
+- **Output:** Json
+- **Unwrap:** true
+
+## $youtubePlaylistAddToLibrary
+
+- **Version:** 1.5.8
+- **Description:** Add a playlist to the library
+- **Category:** playlists
+- **Arguments:**
+  -  playlist_id (String, required) - The ID of the playlist to add to library
+- **Output:** Boolean
+- **Unwrap:** true
+
+## $youtubePlaylistAddVideos
+
+- **Version:** 1.5.8
+- **Description:** Add videos to a YouTube playlist
+- **Category:** playlists
+- **Arguments:**
+  -  playlist_id (String, required) - The ID of the playlist to add videos to
+  -  videoIds (String, required, rest) - Video IDs to add to the playlist
+- **Output:** Boolean
+- **Unwrap:** true
+
+## $youtubePlaylistCreate
+
+- **Version:** 1.5.8
+- **Description:** Create a new YouTube playlist
+- **Category:** playlists
+- **Arguments:**
+  -  title (String, required) - The title of the new playlist
+  -  videoIds (String, rest) - video IDs to add to the playlist
+- **Output:** Json
+- **Unwrap:** true
+
+## $youtubePlaylistDelete
+
+- **Version:** 1.5.8
+- **Description:** Delete a YouTube playlist
+- **Category:** playlists
+- **Arguments:**
+  -  playlistId (String, required) - The ID of the playlist to delete
+- **Output:** Boolean
+- **Unwrap:** true
+
+## $youtubePlaylistMoveVideo
+
+- **Version:** 1.5.8
+- **Description:** Move a video within a YouTube playlist
+- **Category:** playlists
+- **Arguments:**
+  -  playlistId (String, required) - The ID of the playlist containing the video
+  -  movedVideoId (String, required) - The ID of the video to move
+  -  predecessorVideoId (String, required) - The ID of the video that will be before the moved video (empty for start)
+- **Output:** Boolean
+- **Unwrap:** true
+
+## $youtubePlaylistRemoveFromLibrary
+
+- **Version:** 1.5.8
+- **Description:** Remove a playlist from the library
+- **Category:** playlists
+- **Arguments:**
+  -  playlistId (String, required) - The ID of the playlist to remove from library
+- **Output:** Boolean
+- **Unwrap:** true
+
+## $youtubePlaylistRemoveVideos
+
+- **Version:** 1.5.8
+- **Description:** Remove videos from a YouTube playlist
+- **Category:** playlists
+- **Arguments:**
+  -  playlistId (String, required) - The ID of the playlist to remove videos from
+  -  useSetVideoIds (Boolean) - Whether to use set video IDs (true) or playlist item IDs (false)
+  -  videoIds (String, required, rest) - Comma-separated list of video IDs to remove from the playlist
+- **Output:** Boolean
+- **Unwrap:** true
+
+## $youtubePlaylistSetDescription
+
+- **Version:** 1.5.8
+- **Description:** Set the description of a YouTube playlist
+- **Category:** playlists
+- **Arguments:**
+  -  playlist_id (String, required) - The ID of the playlist to update
+  -  description (String, required) - The new description for the playlist
+- **Output:** Boolean
+- **Unwrap:** true
+
+## $youtubePlaylistSetName
+
+- **Version:** 1.5.8
+- **Description:** Set the name of a YouTube playlist
+- **Category:** playlists
+- **Arguments:**
+  -  playlistId (String, required) - The ID of the playlist to rename
+  -  name (String, required) - The new name for the playlist
+- **Output:** Boolean
 - **Unwrap:** true
 
 ## $listTrackedYoutubeChannels
