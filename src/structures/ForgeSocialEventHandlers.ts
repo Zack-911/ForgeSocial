@@ -6,6 +6,9 @@ export interface IForgeSocialEvents {
   newRedditPost: JSON;
   newYoutubeVideo: JSON;
   newYoutubeSubscriber: JSON;
+  youtubeAuthPending: JSON;
+  youtubeAuth: JSON;
+  youtubeAuthError: JSON;
 }
 
 export class ForgeSocialEventHandler<T extends keyof IForgeSocialEvents> extends BaseEventHandler<

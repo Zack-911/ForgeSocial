@@ -4,6 +4,9 @@ export interface IForgeSocialEvents {
     newRedditPost: JSON;
     newYoutubeVideo: JSON;
     newYoutubeSubscriber: JSON;
+    youtubeAuthPending: JSON;
+    youtubeAuth: JSON;
+    youtubeAuthError: JSON;
 }
 export declare class ForgeSocialEventHandler<T extends keyof IForgeSocialEvents> extends BaseEventHandler<IForgeSocialEvents, T> {
     register(client: ForgeClient): void;

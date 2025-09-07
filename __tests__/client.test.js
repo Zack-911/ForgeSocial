@@ -1,18 +1,18 @@
 const { ForgeClient } = require('@tryforge/forgescript');
-const { ForgeSocial } = require('../dist');
+const { ForgeSocial, ClientType } = require('../dist');
 const dotenv = require('dotenv');
 dotenv.config();
 
 const reddit = new ForgeSocial({
-  events: ['newRedditPost', 'newYoutubeVideo'],
+  events: ['newRedditPost', 'newYoutubeVideo', 'youtubeAuthPending', 'youtubeAuth', 'youtubeAuthError'],
   github: {
     token: process.env.GITHUB_TOKEN,
     log: false,
   },
   youtube: {
     enabled: true,
-    cookie: process.env.YOUTUBE_COOKIE,
     userAgent: process.env.YOUTUBE_UA,
+    client: ClientType.TV,
     cache: true,
     log: 'NONE',
   },
@@ -33,16 +33,37 @@ const client = new ForgeClient({
 reddit.commands.add({
   type: 'newRedditPost',
   code: `
-    $log[$newSubredditJson]
+    $log[$socialEventData]
   `,
 });
 
 reddit.commands.add({
   type: 'newYoutubeVideo',
   code: `
-    $log[This is the command uwu. $newSubredditJson]
+    $log[This is the command uwu. $socialEventData]
   `,
 });
+
+reddit.commands.add({
+  type: 'youtubeAuthPending',
+  code: `
+    $log[$socialEventData hi]
+  `,
+})
+
+reddit.commands.add({
+  type: 'youtubeAuth',
+  code: `
+    $log[$socialEventData hi]
+  `,
+})
+
+reddit.commands.add({
+  type: 'youtubeAuthError',
+  code: `
+    $log[$socialEventData hi]
+  `,
+})
 
 client.commands.load('./__tests__/commands');
 
