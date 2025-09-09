@@ -1,12 +1,5 @@
 # Functions
 
-## $socialEventData
-
-- **Version:** 1.0.0
-- **Description:** Returns event data for any forgesocial events
-- **Output:** Json
-- **Unwrap:** false
-
 ## $githubAddRunnerLabelsRepo
 
 - **Version:** 1.5.8
@@ -1122,6 +1115,22 @@
 - **Brackets:** true
 - **Unwrap:** true
 
+## $socialEventData
+
+- **Version:** 1.0.0
+- **Description:** Returns event data for any forgesocial events
+- **Category:** other
+- **Output:** Json
+- **Unwrap:** false
+
+## $test
+
+- **Version:** 1.0.0
+- **Description:** a test command ignore this uwu
+- **Category:** other
+- **Output:** Json
+- **Unwrap:** false
+
 ## $searchReddit
 
 - **Version:** 1.0.0
@@ -1588,6 +1597,138 @@
 - **Output:** Json
 - **Unwrap:** false
 
+## $youtubeMusicGetAlbum
+
+- **Version:** 1.5.8
+- **Description:** Get the album of YouTube music
+- **Category:** music
+- **Arguments:**
+  -  id (String, required) - The ID of the album to get information about
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $youtubeMusicGetArtist
+
+- **Version:** 1.5.8
+- **Description:** Get the artist of YouTube music
+- **Category:** music
+- **Arguments:**
+  -  id (String, required) - The ID of the artist to get information about
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $youtubeMusicGetExplore
+
+- **Version:** 1.5.8
+- **Description:** Get the explore feed of YouTube music
+- **Category:** music
+- **Output:** Json
+- **Unwrap:** false
+
+## $youtubeMusicGetHomeFeed
+
+- **Version:** 1.5.8
+- **Description:** Get the home feed of YouTube music
+- **Category:** music
+- **Output:** Json
+- **Unwrap:** false
+
+## $youtubeMusicGetInfo
+
+- **Version:** 1.5.8
+- **Description:** Get information about a YouTube music video
+- **Category:** music
+- **Arguments:**
+  -  id (String, required) - The ID of the video to get information about
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $youtubeMusicGetLibrary
+
+- **Version:** 1.5.8
+- **Description:** Get the library of YouTube music
+- **Category:** music
+- **Output:** Json
+- **Unwrap:** false
+
+## $youtubeMusicGetLyrics
+
+- **Version:** 1.5.8
+- **Description:** Get the lyrics of YouTube music
+- **Category:** music
+- **Arguments:**
+  -  id (String, required) - The ID of the lyrics to get information about
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $youtubeMusicGetPlaylist
+
+- **Version:** 1.5.8
+- **Description:** Get the playlist of YouTube music
+- **Category:** music
+- **Arguments:**
+  -  id (String, required) - The ID of the playlist to get information about
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $youtubeMusicGetRecap
+
+- **Version:** 1.5.8
+- **Description:** Retrieves the recap data for YouTube Music
+- **Category:** music
+- **Output:** Json
+- **Unwrap:** false
+
+## $youtubeMusicGetRelated
+
+- **Version:** 1.5.8
+- **Description:** Get the related of YouTube music
+- **Category:** music
+- **Arguments:**
+  -  id (String, required) - The ID of the related to get information about
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $youtubeMusicGetSearchSuggestions
+
+- **Version:** 1.5.8
+- **Description:** Retrieves the search suggestion data for YouTube Music
+- **Category:** music
+- **Arguments:**
+  -  query (String, required) - The query to get search suggestions for
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $youtubeMusicGetUpNext
+
+- **Version:** 1.5.8
+- **Description:** Get the up next of YouTube music
+- **Category:** music
+- **Arguments:**
+  -  id (String, required) - The ID of the up next to get information about
+  -  automix (Boolean) - YEA BABY!!!!!!!! AUTOMIX!!!!!!!!
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
+## $youtubeMusicSearch
+
+- **Version:** 1.5.8
+- **Description:** Search for a YouTube music video
+- **Category:** music
+- **Arguments:**
+  -  query (String, required) - The query to search for
+- **Output:** Json
+- **Brackets:** true
+- **Unwrap:** true
+
 ## $youtubeGetPlaylist
 
 - **Version:** 1.5.8
@@ -1703,6 +1844,18 @@
   -  playlistId (String, required) - The ID of the playlist to rename
   -  name (String, required) - The new name for the playlist
 - **Output:** Boolean
+- **Brackets:** true
+- **Unwrap:** true
+
+## $youtubePlaylistUpload
+
+- **Version:** 1.5.8
+- **Description:** upload a YouTube playlist
+- **Category:** playlists
+- **Arguments:**
+  -  title (String, required) - The title of the playlist
+  -  id (String, required, rest) - The ID of the playlist to get
+- **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
 

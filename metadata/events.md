@@ -20,3 +20,18 @@
 - **Version:** 1.0.0
 - **Description:** This event is called when a tracked youtube channel uploads a video
 
+## youtubeAuth
+
+- **Version:** 1.0.0
+- **Description:** This event is called when the youtube client is authenticated
+
+## youtubeAuthError
+
+- **Version:** 1.0.0
+- **Description:** This event is called when the youtube client fails to authenticate
+
+## youtubeAuthPending
+
+- **Version:** 1.0.0
+- **Description:** This event is called when the youtube client is pending authentication
+

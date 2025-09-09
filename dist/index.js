@@ -47,19 +47,25 @@ class ForgeSocial extends forgescript_1.ForgeExtension {
      * Main entrypoint. Initializes integrations, events, and polling.
      */
     async init(client) {
+        const start = Date.now();
         this.client = client;
         this.commands = new ForgeSocialCommandManager_1.ForgeSocialCommandManager(client);
-        await this.initGitHub();
-        await this.initYouTube(client);
-        this.initReddit();
         forgescript_1.EventManager.load(constants_1.ForgeSocialEventManagerName, __dirname + `/events`);
-        await (0, pollSubreddit_1.loadTrackedSubredditsFromFile)();
-        await (0, pollYoutube_1.loadTrackedChannelsFromFile)();
         if (this.options.events?.length) {
             this.client.events.load(constants_1.ForgeSocialEventManagerName, this.options.events);
         }
+        await Promise.all([
+            this.initGitHub(),
+            this.initYouTube(client),
+            this.initReddit()
+        ]);
+        await Promise.all([
+            (0, pollSubreddit_1.loadTrackedSubredditsFromFile)(),
+            (0, pollYoutube_1.loadTrackedChannelsFromFile)()
+        ]);
         await this.refreshToken();
         this.startPolling();
+        forgescript_1.Logger.debug(`ForgeSocial: Initialized in ${Date.now() - start}ms`);
     }
     /* -------------------------------------------------------------------------- */
     /*                            Integration: GitHub                             */
@@ -102,6 +108,7 @@ class ForgeSocial extends forgescript_1.ForgeExtension {
             user_agent: youtube.userAgent,
             cache: youtube.cache ? new youtubei_js_1.UniversalCache(true, './ForgeSocial/youtube-cache') : undefined,
             client_type: youtube.client,
+            po_token: youtube.poToken,
         });
         if (youtube.client === youtubei_js_1.ClientType.TV) {
             try {

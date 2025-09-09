@@ -42,7 +42,8 @@ export interface IForgeSocialOptions {
     enabled: boolean;
     cookie?: string;
     client?: ClientType;
-    userAgent: string;
+    userAgent?: string;
+    poToken?: string;
     cache?: boolean;
     log?: 'DEBUG' | 'INFO' | 'WARNING' | 'ERROR' | 'NONE';
   };
@@ -93,24 +94,29 @@ export class ForgeSocial extends ForgeExtension {
    * Main entrypoint. Initializes integrations, events, and polling.
    */
   async init(client: ForgeClient) {
+    const start = Date.now()
     this.client = client;
     this.commands = new ForgeSocialCommandManager(client);
 
-    await this.initGitHub();
-    await this.initYouTube(client);
-    this.initReddit();
-
     EventManager.load(ForgeSocialEventManagerName, __dirname + `/events`);
-
-    await loadTrackedSubredditsFromFile();
-    await loadTrackedChannelsFromFile();
-
     if (this.options.events?.length) {
       this.client.events.load(ForgeSocialEventManagerName, this.options.events);
     }
 
-    await this.refreshToken();
+    await Promise.all([
+      this.initGitHub(),
+      this.initYouTube(client),
+      this.initReddit()
+    ])
+
+    await Promise.all([
+      loadTrackedSubredditsFromFile(),
+      loadTrackedChannelsFromFile()
+    ])
+
+    await this.refreshToken()
     this.startPolling();
+    Logger.debug(`ForgeSocial: Initialized in ${Date.now() - start}ms`)
   }
 
   /* -------------------------------------------------------------------------- */
@@ -138,7 +144,6 @@ export class ForgeSocial extends ForgeExtension {
             }
           : undefined,
       });
-
       const user = await this.github.rest.users.getAuthenticated();
       Logger.info(`ForgeSocial: GitHub authenticated as ${user.data.login}`);
     } catch (err) {
@@ -159,6 +164,7 @@ export class ForgeSocial extends ForgeExtension {
       user_agent: youtube.userAgent,
       cache: youtube.cache ? new UniversalCache(true, './ForgeSocial/youtube-cache') : undefined,
       client_type: youtube.client,
+      po_token: youtube.poToken,
     });
 
     if (youtube.client === ClientType.TV) {

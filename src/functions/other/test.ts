@@ -1,5 +1,5 @@
 import { NativeFunction, ArgType } from '@tryforge/forgescript';
-import { ForgeSocial } from '../'
+import { ForgeSocial } from '../../'
 export default new NativeFunction({
   name: '$test',
   version: '1.0.0',

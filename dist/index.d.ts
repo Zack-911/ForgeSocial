@@ -21,7 +21,8 @@ export interface IForgeSocialOptions {
         enabled: boolean;
         cookie?: string;
         client?: ClientType;
-        userAgent: string;
+        userAgent?: string;
+        poToken?: string;
         cache?: boolean;
         log?: 'DEBUG' | 'INFO' | 'WARNING' | 'ERROR' | 'NONE';
     };

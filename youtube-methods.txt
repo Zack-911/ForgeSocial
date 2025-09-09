@@ -1,20 +1,4 @@
-src/functions/youtube
-├── playlists
-│   └── [upload(file, metadata = {})] innertubeUpload.ts
-├── music
-│   ├── [getInfo(target, options)] innertubeMusicGetInfo.ts
-│   ├── [search(query, filters = {})] innertubeMusicSearch.ts
-│   ├── [getHomeFeed()] innertubeMusicGetHomeFeed.ts
-│   ├── [getExplore()] innertubeMusicGetExplore.ts
-│   ├── [getLibrary()] innertubeMusicGetLibrary.ts
-│   ├── [getArtist(artist_id)] innertubeMusicGetArtist.ts
-│   ├── [getAlbum(album_id)] innertubeMusicGetAlbum.ts
-│   ├── [getPlaylist(playlist_id)] innertubeMusicGetPlaylist.ts
-│   ├── [getUpNext(video_id, automix = true)] innertubeMusicGetUpNext.ts
-│   ├── [getRelated(video_id)] innertubeMusicGetRelated.ts
-│   ├── [getLyrics(video_id)] innertubeMusicGetLyrics.ts
-│   ├── [getRecap()] innertubeMusicGetRecap.ts
-│   └── [getSearchSuggestions(input)] innertubeMusicGetSearchSuggestions.ts
+src/functions/youtube=
 ├── kids
 │   ├── [search(query)] innertubeKidsSearch.ts
 │   ├── [getInfo(video_id, options)] innertubeKidsGetInfo.ts
