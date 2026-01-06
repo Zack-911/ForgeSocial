@@ -87,9 +87,9 @@ export default new NativeFunction({
       const committerInfo =
         committerName && committerEmail
           ? {
-            name: committerName,
-            email: committerEmail,
-          }
+              name: committerName,
+              email: committerEmail,
+            }
           : undefined;
 
       const result = await github.rest.repos.createOrUpdateFileContents({

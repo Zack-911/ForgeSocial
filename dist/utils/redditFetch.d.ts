@@ -13,5 +13,10 @@
  *   - HTML error pages (parses and returns as object)
  *   - Logs invalid JSON responses to logs/redditFetch-error.log
  */
-export declare function redditFetch(pathStr: string, accessToken: string, redditUsername: string, retries?: number): Promise<any>;
+export declare function redditFetch(
+  pathStr: string,
+  accessToken: string,
+  redditUsername: string,
+  retries?: number,
+): Promise<any>;
 //# sourceMappingURL=redditFetch.d.ts.map

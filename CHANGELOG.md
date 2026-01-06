@@ -4,10 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [1.5.9](https://github.com/zack-911/forgesocial/compare/v1.5.8...v1.5.9) (2025-08-27)
 
-
 ### Documentation
 
-* update for new structure ([305c007](https://github.com/zack-911/forgesocial/commit/305c007d717df1647e2dc1f1bae85b10cb4d6b13))
+- update for new structure ([305c007](https://github.com/zack-911/forgesocial/commit/305c007d717df1647e2dc1f1bae85b10cb4d6b13))
 
 ### [1.5.8](https://github.com/zack-911/forgesocial/compare/v1.5.7...v1.5.8) (2025-08-26)
 
@@ -17,11 +16,10 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [1.5.5](https://github.com/zack-911/forgesocial/compare/v1.5.4...v1.5.5) (2025-08-26)
 
-
 ### Refactoring
 
-* Added more enums ([4ccf839](https://github.com/zack-911/forgesocial/commit/4ccf83911b14e4be2a14b698b68a40111b6bbbfb))
-* Remove some functions ([f954fbc](https://github.com/zack-911/forgesocial/commit/f954fbc5a2bb58cff7d5e0ec64bd91a8a88f9928))
+- Added more enums ([4ccf839](https://github.com/zack-911/forgesocial/commit/4ccf83911b14e4be2a14b698b68a40111b6bbbfb))
+- Remove some functions ([f954fbc](https://github.com/zack-911/forgesocial/commit/f954fbc5a2bb58cff7d5e0ec64bd91a8a88f9928))
 
 ### [1.5.4](https://github.com/zack-911/forgesocial/compare/v1.5.3...v1.5.4) (2025-08-26)
 
@@ -29,17 +27,15 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [1.5.2](https://github.com/zack-911/forgesocial/compare/v1.5.0...v1.5.2) (2025-08-26)
 
-
 ### Refactoring
 
-* make the function return true ([0566196](https://github.com/zack-911/forgesocial/commit/05661965211a91b3463a14145896ce8559499f9b))
-* now returns more info for almost every command ([15ed246](https://github.com/zack-911/forgesocial/commit/15ed2466a05d50b3343b385da53b0002df34a79e))
-
+- make the function return true ([0566196](https://github.com/zack-911/forgesocial/commit/05661965211a91b3463a14145896ce8559499f9b))
+- now returns more info for almost every command ([15ed246](https://github.com/zack-911/forgesocial/commit/15ed2466a05d50b3343b385da53b0002df34a79e))
 
 ### Chores
 
-* **ci:** update dist and metadata [skip ci] ([1e1620a](https://github.com/zack-911/forgesocial/commit/1e1620a126f65a990d835f404a2d704bfd22fb69))
-* **release:** 1.5.1 ([334bdc9](https://github.com/zack-911/forgesocial/commit/334bdc9331c48ccbb1f7496aa1ff86276e5d4ea2))
+- **ci:** update dist and metadata [skip ci] ([1e1620a](https://github.com/zack-911/forgesocial/commit/1e1620a126f65a990d835f404a2d704bfd22fb69))
+- **release:** 1.5.1 ([334bdc9](https://github.com/zack-911/forgesocial/commit/334bdc9331c48ccbb1f7496aa1ff86276e5d4ea2))
 
 ### [1.5.1](https://github.com/zack-911/forgesocial/compare/v1.5.0...v1.5.1) (2025-08-25)
 

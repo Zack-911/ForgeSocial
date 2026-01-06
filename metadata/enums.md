@@ -1,89 +1,5 @@
 # Enums
 
-## filter
-
-- latest
-- all
-
-## event
-
-- BRANCH_PROTECTION_RULE
-- CHECK_RUN
-- CHECK_SUITE
-- CREATE
-- DELETE
-- DEPLOYMENT
-- DEPLOYMENT_STATUS
-- DISCUSSION
-- DISCUSSION_COMMENT
-- FORK
-- GOLLUM
-- ISSUE_COMMENT
-- ISSUES
-- LABEL
-- MERGE_GROUP
-- MILESTONE
-- PAGE_BUILD
-- PUBLIC
-- PULL_REQUEST
-- PULL_REQUEST_COMMENT
-- PULL_REQUEST_REVIEW
-- PULL_REQUEST_REVIEW_COMMENT
-- PULL_REQUEST_TARGET
-- PUSH
-- REGISTRY_PACKAGE
-- RELEASE
-- WORKFLOW_DISPATCH
-- WORKFLOW_RUN
-
-## status
-
-- COMPLETED
-- ACTION_REQUIRED
-- CANCELLED
-- FAILURE
-- NEUTRAL
-- SKIPPED
-- STALE
-- SUCCESS
-- TIMED_OUT
-- IN_PROGRESS
-- QUEUED
-- REQUESTED
-- WAITING
-- PENDING
-
-## IssueState
-
-- OPEN
-- CLOSED
-- ALL
-
-## IssueSort
-
-- CREATED
-- UPDATED
-- COMMENTS
-
-## SortDirection
-
-- ASC
-- DESC
-
-## IssueFilter
-
-- Assigned
-- Created
-- Mentioned
-- Subscribed
-- All
-
-## ReviewSort
-
-- CREATED
-- UPDATED
-- CREATED_AT
-
 ## Permission
 
 - Pull
@@ -242,6 +158,31 @@
 - Direct
 - All
 
+## IssueState
+
+- OPEN
+- CLOSED
+- ALL
+
+## IssueSort
+
+- CREATED
+- UPDATED
+- COMMENTS
+
+## SortDirection
+
+- ASC
+- DESC
+
+## IssueFilter
+
+- Assigned
+- Created
+- Mentioned
+- Subscribed
+- All
+
 ## RepoType
 
 - All
@@ -262,6 +203,65 @@
 
 - Asc
 - Desc
+
+## ReviewSort
+
+- CREATED
+- UPDATED
+- CREATED_AT
+
+## filter
+
+- latest
+- all
+
+## event
+
+- BRANCH_PROTECTION_RULE
+- CHECK_RUN
+- CHECK_SUITE
+- CREATE
+- DELETE
+- DEPLOYMENT
+- DEPLOYMENT_STATUS
+- DISCUSSION
+- DISCUSSION_COMMENT
+- FORK
+- GOLLUM
+- ISSUE_COMMENT
+- ISSUES
+- LABEL
+- MERGE_GROUP
+- MILESTONE
+- PAGE_BUILD
+- PUBLIC
+- PULL_REQUEST
+- PULL_REQUEST_COMMENT
+- PULL_REQUEST_REVIEW
+- PULL_REQUEST_REVIEW_COMMENT
+- PULL_REQUEST_TARGET
+- PUSH
+- REGISTRY_PACKAGE
+- RELEASE
+- WORKFLOW_DISPATCH
+- WORKFLOW_RUN
+
+## status
+
+- COMPLETED
+- ACTION_REQUIRED
+- CANCELLED
+- FAILURE
+- NEUTRAL
+- SKIPPED
+- STALE
+- SUCCESS
+- TIMED_OUT
+- IN_PROGRESS
+- QUEUED
+- REQUESTED
+- WAITING
+- PENDING
 
 ## SortOrder
 
@@ -296,6 +296,11 @@
 - Repos
 - Joined
 
+## filterType
+
+- popular
+- new
+
 ## type
 
 - link
@@ -311,11 +316,6 @@
 - top
 - relevance
 - comments
-
-## filterType
-
-- popular
-- new
 
 ## CommentsSortBy
 
@@ -342,12 +342,12 @@
 
 - FLV_240p
 - FLV_270p
-- _3GP_144p
+- \_3GP_144p
 - MP4_360p
 - MP4_720p
 - FLV_360p
 - FLV_480p
-- _3GP_180p
+- \_3GP_180p
 - MP4_1080p
 - MP4_3072p
 - WebM_360p
@@ -497,4 +497,3 @@
 - HDR
 - CreativeCommons
 - VR180
-

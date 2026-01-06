@@ -19,4 +19,3 @@
 
 - **Version:** 1.0.0
 - **Description:** This event is called when a tracked youtube channel uploads a video
-

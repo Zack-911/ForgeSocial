@@ -23,7 +23,11 @@ export declare function removeSubreddit(subreddit: string): Promise<boolean>;
  * @param onNewPost - Callback invoked with each new post object
  * @returns Promise<void>
  */
-export declare function startPollingTrackedSubreddits(accessToken: string, redditUsername: string, onNewPost: (post: Record<string, unknown>) => void): Promise<void>;
+export declare function startPollingTrackedSubreddits(
+  accessToken: string,
+  redditUsername: string,
+  onNewPost: (post: Record<string, unknown>) => void,
+): Promise<void>;
 /**
  * Saves all tracked subreddits and their newest post IDs to a JSON file.
  * @returns Promise<void>
