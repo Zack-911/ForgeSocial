@@ -18,8 +18,7 @@ export default new NativeFunction({
     },
     {
       name: 'market',
-      description:
-        'An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).',
+      description: 'An [ISO 3166-1 alpha-2 country code.',
       type: ArgType.String,
 
       required: false,
@@ -28,7 +27,7 @@ export default new NativeFunction({
     {
       name: 'seed_artists',
       description:
-        'A comma separated list of [Spotify IDs](/documentation/web-api/concepts/spotify-uris-ids) for seed artists.  Up to 5 seed values may be provided in any combination of `seed_artists`, `seed_tracks` and `seed_genres`.<br/> _**Note**: only required if `seed_genres` and `seed_tracks` are not set_.',
+        'A comma separated list of Spotify IDs for seed artists.  Up to 5 seed values may be provided in any combination of `seed_artists`, `seed_tracks` and `seed_genres`.<br/> _**Note**: only required if `seed_genres` and `seed_tracks` are not set_.',
       type: ArgType.String,
 
       required: true,
@@ -37,7 +36,7 @@ export default new NativeFunction({
     {
       name: 'seed_genres',
       description:
-        'A comma separated list of any genres in the set of [available genre seeds](/documentation/web-api/reference/get-recommendation-genres). Up to 5 seed values may be provided in any combination of `seed_artists`, `seed_tracks` and `seed_genres`.<br/> _**Note**: only required if `seed_artists` and `seed_tracks` are not set_.',
+        'A comma separated list of any genres in the set of available genre seeds. Up to 5 seed values may be provided in any combination of `seed_artists`, `seed_tracks` and `seed_genres`.<br/> _**Note**: only required if `seed_artists` and `seed_tracks` are not set_.',
       type: ArgType.String,
 
       required: true,
@@ -46,7 +45,7 @@ export default new NativeFunction({
     {
       name: 'seed_tracks',
       description:
-        'A comma separated list of [Spotify IDs](/documentation/web-api/concepts/spotify-uris-ids) for a seed track.  Up to 5 seed values may be provided in any combination of `seed_artists`, `seed_tracks` and `seed_genres`.<br/> _**Note**: only required if `seed_artists` and `seed_genres` are not set_.',
+        'A comma separated list of Spotify IDs for a seed track.  Up to 5 seed values may be provided in any combination of `seed_artists`, `seed_tracks` and `seed_genres`.<br/> _**Note**: only required if `seed_artists` and `seed_genres` are not set_.',
       type: ArgType.String,
 
       required: true,

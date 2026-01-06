@@ -9,8 +9,7 @@ export default new NativeFunction({
   args: [
     {
       name: 'category_id',
-      description:
-        'The [Spotify category ID](/documentation/web-api/concepts/spotify-uris-ids) for the category.',
+      description: 'The Spotify category ID for the category.',
       type: ArgType.String,
 
       required: true,

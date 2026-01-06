@@ -145,6 +145,30 @@ reddit: {
 
 ---
 
+### 🎵 Spotify
+
+```javascript
+spotify: {
+  clientID: process.env.SPOTIFY_CLIENT_ID,
+  clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
+}
+```
+
+#### 🔑 How to Get Spotify Credentials
+
+1. Log into the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard).
+2. Click **Create An App**.
+3. Fill in the name and description.
+4. Once created, copy the **Client ID** and **Client Secret**.
+5. Add them to `.env`:
+
+   ```env
+   SPOTIFY_CLIENT_ID=your_client_id
+   SPOTIFY_CLIENT_SECRET=your_client_secret
+   ```
+
+---
+
 ### 🐙 GitHub
 
 ```javascript
@@ -184,6 +208,11 @@ github: {
 
 - Unknown
 
+### Spotify
+
+- Rolling limit based on rolling 30-second window.
+- Returns 429 Too Many Requests with `Retry-After` header (handled automatically).
+
 ### GitHub
 
 - Authenticated: 5,000 requests/hour
@@ -201,6 +230,10 @@ dotenv.config();
 
 const social = new ForgeSocial({
   events: ['newRedditPost', 'newYoutubeVideo'],
+  spotify: {
+    clientID: process.env.SPOTIFY_CLIENT_ID,
+    clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
+  },
   youtube: {
     enabled: true,
     cookie: process.env.YOUTUBE_COOKIE,

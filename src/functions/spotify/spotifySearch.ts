@@ -27,8 +27,7 @@ export default new NativeFunction({
     },
     {
       name: 'market',
-      description:
-        'An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).',
+      description: 'An [ISO 3166-1 alpha-2 country code.',
       type: ArgType.String,
 
       required: false,

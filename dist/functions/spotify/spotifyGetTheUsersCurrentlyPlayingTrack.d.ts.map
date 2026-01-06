@@ -1,1 +1,1 @@
-{"version":3,"file":"spotifyGetTheUsersCurrentlyPlayingTrack.d.ts","sourceRoot":"","sources":["../../../src/functions/spotify/spotifyGetTheUsersCurrentlyPlayingTrack.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,cAAc,EAAE,MAAM,uBAAuB,CAAC;;;;;;;;;;;;;;AAIhE,wBAgDG"}
+{"version":3,"file":"spotifyGetTheUsersCurrentlyPlayingTrack.d.ts","sourceRoot":"","sources":["../../../src/functions/spotify/spotifyGetTheUsersCurrentlyPlayingTrack.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,cAAc,EAAE,MAAM,uBAAuB,CAAC;;;;;;;;;;;;;;AAIhE,wBA+CG"}

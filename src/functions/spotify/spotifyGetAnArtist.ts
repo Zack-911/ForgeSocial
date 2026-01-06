@@ -9,8 +9,7 @@ export default new NativeFunction({
   args: [
     {
       name: 'id',
-      description:
-        'The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the artist.',
+      description: 'The Spotify ID of the artist.',
       type: ArgType.String,
 
       required: true,

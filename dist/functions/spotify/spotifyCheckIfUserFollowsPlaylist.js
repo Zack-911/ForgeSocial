@@ -9,14 +9,14 @@ exports.default = new forgescript_1.NativeFunction({
     args: [
         {
             name: 'playlist_id',
-            description: 'The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the playlist.',
+            description: 'The Spotify ID of the playlist.',
             type: forgescript_1.ArgType.String,
             required: true,
             rest: false,
         },
         {
             name: 'ids',
-            description: "**Deprecated** A single item list containing current user's [Spotify Username](/documentation/web-api/concepts/spotify-uris-ids). Maximum: 1 id.",
+            description: "**Deprecated** A single item list containing current user's Spotify Username. Maximum: 1 id.",
             type: forgescript_1.ArgType.String,
             required: false,
             rest: false,

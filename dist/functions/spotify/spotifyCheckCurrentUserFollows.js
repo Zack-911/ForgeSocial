@@ -16,7 +16,7 @@ exports.default = new forgescript_1.NativeFunction({
         },
         {
             name: 'ids',
-            description: 'A comma-separated list of the artist or the user [Spotify IDs](/documentation/web-api/concepts/spotify-uris-ids) to check. For example: `ids=74ASZWbe4lXaubB36ztrGX,08td7MxkoHQkXnWAYD8d6Q`. A maximum of 50 IDs can be sent in one request.',
+            description: 'A comma-separated list of the artist or the user Spotify IDs to check. For example: `ids=74ASZWbe4lXaubB36ztrGX,08td7MxkoHQkXnWAYD8d6Q`. A maximum of 50 IDs can be sent in one request.',
             type: forgescript_1.ArgType.String,
             required: true,
             rest: false,

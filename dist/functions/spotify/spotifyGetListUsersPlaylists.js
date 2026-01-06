@@ -9,7 +9,7 @@ exports.default = new forgescript_1.NativeFunction({
     args: [
         {
             name: 'user_id',
-            description: "The user's [Spotify user ID](/documentation/web-api/concepts/spotify-uris-ids).",
+            description: "The user's Spotify user ID.",
             type: forgescript_1.ArgType.String,
             required: true,
             rest: false,

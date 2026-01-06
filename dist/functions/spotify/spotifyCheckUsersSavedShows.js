@@ -9,7 +9,7 @@ exports.default = new forgescript_1.NativeFunction({
     args: [
         {
             name: 'ids',
-            description: 'A comma-separated list of the [Spotify IDs](/documentation/web-api/concepts/spotify-uris-ids) for the shows. Maximum: 50 IDs.',
+            description: 'A comma-separated list of the Spotify IDs for the shows. Maximum: 50 IDs.',
             type: forgescript_1.ArgType.String,
             required: true,
             rest: false,

@@ -1,1 +1,1 @@
-{"version":3,"file":"spotifyGetListUsersPlaylists.d.ts","sourceRoot":"","sources":["../../../src/functions/spotify/spotifyGetListUsersPlaylists.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,cAAc,EAAE,MAAM,uBAAuB,CAAC;;;;;;;;;;;;;;;;;;;;AAIhE,wBAuDG"}
+{"version":3,"file":"spotifyGetListUsersPlaylists.d.ts","sourceRoot":"","sources":["../../../src/functions/spotify/spotifyGetListUsersPlaylists.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,cAAc,EAAE,MAAM,uBAAuB,CAAC;;;;;;;;;;;;;;;;;;;;AAIhE,wBAsDG"}

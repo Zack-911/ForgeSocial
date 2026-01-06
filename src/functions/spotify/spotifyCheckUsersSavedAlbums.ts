@@ -9,8 +9,7 @@ export default new NativeFunction({
   args: [
     {
       name: 'ids',
-      description:
-        'A comma-separated list of the [Spotify IDs](/documentation/web-api/concepts/spotify-uris-ids) for the albums. Maximum: 20 IDs.',
+      description: 'A comma-separated list of the Spotify IDs for the albums. Maximum: 20 IDs.',
       type: ArgType.String,
 
       required: true,

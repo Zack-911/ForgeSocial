@@ -10,7 +10,7 @@ exports.default = new forgescript_1.NativeFunction({
     args: [
         {
             name: 'id',
-            description: 'The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the artist.',
+            description: 'The Spotify ID of the artist.',
             type: forgescript_1.ArgType.String,
             required: true,
             rest: false,
@@ -25,7 +25,7 @@ exports.default = new forgescript_1.NativeFunction({
         },
         {
             name: 'market',
-            description: 'An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).',
+            description: 'An ISO 3166-1 alpha-2 country code.',
             type: forgescript_1.ArgType.String,
             required: false,
             rest: false,

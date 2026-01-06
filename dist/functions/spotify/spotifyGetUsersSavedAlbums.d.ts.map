@@ -1,1 +1,1 @@
-{"version":3,"file":"spotifyGetUsersSavedAlbums.d.ts","sourceRoot":"","sources":["../../../src/functions/spotify/spotifyGetUsersSavedAlbums.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,cAAc,EAAE,MAAM,uBAAuB,CAAC;;;;;;;;;;;;;;;;;;;;AAIhE,wBAyDG"}
+{"version":3,"file":"spotifyGetUsersSavedAlbums.d.ts","sourceRoot":"","sources":["../../../src/functions/spotify/spotifyGetUsersSavedAlbums.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,cAAc,EAAE,MAAM,uBAAuB,CAAC;;;;;;;;;;;;;;;;;;;;AAIhE,wBAwDG"}

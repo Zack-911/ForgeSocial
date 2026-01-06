@@ -9,7 +9,7 @@ exports.default = new forgescript_1.NativeFunction({
     args: [
         {
             name: 'category_id',
-            description: 'The [Spotify category ID](/documentation/web-api/concepts/spotify-uris-ids) for the category.',
+            description: 'The Spotify category ID for the category.',
             type: forgescript_1.ArgType.String,
             required: true,
             rest: false,

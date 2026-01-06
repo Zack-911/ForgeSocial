@@ -1335,7 +1335,7 @@
 - **Category:** spotify
 - **Arguments:**
   -  type (String, required) - The ID type: either `artist` or `user`.
-  -  ids (String, required) - A comma-separated list of the artist or the user [Spotify IDs](/documentation/web-api/concepts/spotify-uris-ids) to check. For example: `ids=74ASZWbe4lXaubB36ztrGX,08td7MxkoHQkXnWAYD8d6Q`. A maximum of 50 IDs can be sent in one request.
+  -  ids (String, required) - A comma-separated list of the artist or the user Spotify IDs to check. For example: `ids=74ASZWbe4lXaubB36ztrGX,08td7MxkoHQkXnWAYD8d6Q`. A maximum of 50 IDs can be sent in one request.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1346,8 +1346,8 @@
 - **Description:** Check if Current User Follows Playlist
 - **Category:** spotify
 - **Arguments:**
-  -  playlist_id (String, required) - The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the playlist.
-  -  ids (String) - **Deprecated** A single item list containing current user's [Spotify Username](/documentation/web-api/concepts/spotify-uris-ids). Maximum: 1 id.
+  -  playlist_id (String, required) - The Spotify ID of the playlist.
+  -  ids (String) - **Deprecated** A single item list containing current user's Spotify Username. Maximum: 1 id.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1358,7 +1358,7 @@
 - **Description:** Check User's Saved Albums
 - **Category:** spotify
 - **Arguments:**
-  -  ids (String, required) - A comma-separated list of the [Spotify IDs](/documentation/web-api/concepts/spotify-uris-ids) for the albums. Maximum: 20 IDs.
+  -  ids (String, required) - A comma-separated list of the Spotify IDs for the albums. Maximum: 20 IDs.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1369,7 +1369,7 @@
 - **Description:** Check User's Saved Audiobooks
 - **Category:** spotify
 - **Arguments:**
-  -  ids (String, required) - A comma-separated list of the [Spotify IDs](/documentation/web-api/concepts/spotify-uris-ids). For example: `ids=18yVqkdbdRvS24c0Ilj2ci,1HGw3J3NxZO1TP1BTtVhpZ`. Maximum: 50 IDs.
+  -  ids (String, required) - A comma-separated list of the Spotify IDs. For example: `ids=18yVqkdbdRvS24c0Ilj2ci,1HGw3J3NxZO1TP1BTtVhpZ`. Maximum: 50 IDs.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1380,7 +1380,7 @@
 - **Description:** Check User's Saved Episodes
 - **Category:** spotify
 - **Arguments:**
-  -  ids (String, required) - A comma-separated list of the [Spotify IDs](/documentation/web-api/concepts/spotify-uris-ids) for the episodes. Maximum: 50 IDs.
+  -  ids (String, required) - A comma-separated list of the Spotify IDs for the episodes. Maximum: 50 IDs.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1391,7 +1391,7 @@
 - **Description:** Check User's Saved Shows
 - **Category:** spotify
 - **Arguments:**
-  -  ids (String, required) - A comma-separated list of the [Spotify IDs](/documentation/web-api/concepts/spotify-uris-ids) for the shows. Maximum: 50 IDs.
+  -  ids (String, required) - A comma-separated list of the Spotify IDs for the shows. Maximum: 50 IDs.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1402,7 +1402,7 @@
 - **Description:** Check User's Saved Tracks
 - **Category:** spotify
 - **Arguments:**
-  -  ids (String, required) - A comma-separated list of the [Spotify IDs](/documentation/web-api/concepts/spotify-uris-ids). For example: `ids=4iV5W9uYEdYUVa79Axb7Rh,1301WleyT98MSxVHPZCA6M`. Maximum: 50 IDs.
+  -  ids (String, required) - A comma-separated list of the Spotify IDs. For example: `ids=4iV5W9uYEdYUVa79Axb7Rh,1301WleyT98MSxVHPZCA6M`. Maximum: 50 IDs.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1413,7 +1413,7 @@
 - **Description:** Get Category's Playlists
 - **Category:** spotify
 - **Arguments:**
-  -  category_id (String, required) - The [Spotify category ID](/documentation/web-api/concepts/spotify-uris-ids) for the category.
+  -  category_id (String, required) - The Spotify category ID for the category.
   -  limit (Number) - The maximum number of items to return. Default: 20. Minimum: 1. Maximum: 50.
   -  offset (Number) - The index of the first item to return. Default: 0 (the first item). Use with limit to get the next set of items.
 - **Output:** Json
@@ -1426,8 +1426,8 @@
 - **Description:** Get Single Browse Category
 - **Category:** spotify
 - **Arguments:**
-  -  category_id (String, required) - The [Spotify category ID](/documentation/web-api/concepts/spotify-uris-ids) for the category.
-  -  locale (String) - The desired language, consisting of an [ISO 639-1](http://en.wikipedia.org/wiki/ISO_639-1) language code and an [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2), joined by an underscore. For example: `es_MX`, meaning &quot;Spanish (Mexico)&quot;. Provide this parameter if you want the category strings returned in a particular language.<br/> _**Note**: if `locale` is not supplied, or if the specified language is not available, the category strings returned will be in the Spotify default language (American English)._
+  -  category_id (String, required) - The Spotify category ID for the category.
+  -  locale (String) - The desired language, consisting of an ISO 639-1 language code and an ISO 3166-1 alpha-2 country code, joined by an underscore. For example: `es_MX`, meaning &quot;Spanish (Mexico)&quot;. Provide this parameter if you want the category strings returned in a particular language.<br/> _**Note**: if `locale` is not supplied, or if the specified language is not available, the category strings returned will be in the Spotify default language (American English)._
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1438,8 +1438,8 @@
 - **Description:** Get a Chapter
 - **Category:** spotify
 - **Arguments:**
-  -  id (String, required) - The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids)
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+  -  id (String, required) - The Spotify ID
+  -  market (String) - An ISO 3166-1 alpha-2 country code.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1462,8 +1462,8 @@
 - **Description:** Get Show
 - **Category:** spotify
 - **Arguments:**
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-  -  id (String, required) - The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids)
+  -  market (String) - An [ISO 3166-1 alpha-2 country code.
+  -  id (String, required) - The Spotify ID
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1474,8 +1474,8 @@
 - **Description:** Get Show Episodes
 - **Category:** spotify
 - **Arguments:**
-  -  id (String, required) - The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids)
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+  -  id (String, required) - The Spotify ID
+  -  market (String) - An ISO 3166-1 alpha-2 country code.
   -  limit (Number) - The maximum number of items to return. Default: 20. Minimum: 1. Maximum: 50.
   -  offset (Number) - The index of the first item to return. Default: 0 (the first item). Use with limit to get the next set of items.
 - **Output:** Json
@@ -1497,8 +1497,8 @@
 - **Description:** Get Album
 - **Category:** spotify
 - **Arguments:**
-  -  id (String, required) - The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the album.
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+  -  id (String, required) - The Spotify ID of the album.
+  -  market (String) - An ISO 3166-1 alpha-2 country code.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1509,8 +1509,8 @@
 - **Description:** Get Album Tracks
 - **Category:** spotify
 - **Arguments:**
-  -  id (String, required) - The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the album.
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+  -  id (String, required) - The Spotify ID of the album.
+  -  market (String) - An ISO 3166-1 alpha-2 country code.
   -  limit (Number) - The maximum number of items to return. Default: 20. Minimum: 1. Maximum: 50.
   -  offset (Number) - The index of the first item to return. Default: 0 (the first item). Use with limit to get the next set of items.
 - **Output:** Json
@@ -1523,7 +1523,7 @@
 - **Description:** Get Artist
 - **Category:** spotify
 - **Arguments:**
-  -  id (String, required) - The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the artist.
+  -  id (String, required) - The Spotify ID of the artist.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1534,9 +1534,9 @@
 - **Description:** Get Artist's Albums
 - **Category:** spotify
 - **Arguments:**
-  -  id (String, required) - The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the artist.
+  -  id (String, required) - The Spotify ID of the artist.
   -  include_groups (Enum): [album, single, appears_on, compilation] - A comma-separated list of keywords that will be used to filter the response. If not supplied, all album types will be returned. <br/>
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+  -  market (String) - An ISO 3166-1 alpha-2 country code.
   -  limit (Number) - The maximum number of items to return. Default: 20. Minimum: 1. Maximum: 50.
   -  offset (Number) - The index of the first item to return. Default: 0 (the first item). Use with limit to get the next set of items.
 - **Output:** Json
@@ -1549,7 +1549,7 @@
 - **Description:** Get Artist's Related Artists
 - **Category:** spotify
 - **Arguments:**
-  -  id (String, required) - The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the artist.
+  -  id (String, required) - The Spotify ID of the artist.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1560,8 +1560,8 @@
 - **Description:** Get Artist's Top Tracks
 - **Category:** spotify
 - **Arguments:**
-  -  id (String, required) - The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the artist.
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+  -  id (String, required) - The Spotify ID of the artist.
+  -  market (String) - An ISO 3166-1 alpha-2 country code.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1572,8 +1572,8 @@
 - **Description:** Get an Audiobook
 - **Category:** spotify
 - **Arguments:**
-  -  id (String, required) - The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids)
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+  -  id (String, required) - The Spotify ID
+  -  market (String) - An ISO 3166-1 alpha-2 country code.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1584,8 +1584,8 @@
 - **Description:** Get Episode
 - **Category:** spotify
 - **Arguments:**
-  -  id (String, required) - The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) for the episode.
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+  -  id (String, required) - The Spotify ID for the episode.
+  -  market (String) - An ISO 3166-1 alpha-2 country code.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1596,7 +1596,7 @@
 - **Description:** Get Track's Audio Analysis
 - **Category:** spotify
 - **Arguments:**
-  -  id (String, required) - The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids)
+  -  id (String, required) - The Spotify ID
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1607,7 +1607,7 @@
 - **Description:** Get Track's Audio Features
 - **Category:** spotify
 - **Arguments:**
-  -  id (String, required) - The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) for the track.
+  -  id (String, required) - The Spotify ID for the track.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1618,8 +1618,8 @@
 - **Description:** Get Audiobook Chapters
 - **Category:** spotify
 - **Arguments:**
-  -  id (String, required) - The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids)
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+  -  id (String, required) - The Spotify ID
+  -  market (String) - An ISO 3166-1 alpha-2 country code.
   -  limit (Number) - The maximum number of items to return. Default: 20. Minimum: 1. Maximum: 50.
   -  offset (Number) - The index of the first item to return. Default: 0 (the first item). Use with limit to get the next set of items.
 - **Output:** Json
@@ -1641,7 +1641,7 @@
 - **Description:** Get Several Browse Categories
 - **Category:** spotify
 - **Arguments:**
-  -  locale (String) - The desired language, consisting of an [ISO 639-1](http://en.wikipedia.org/wiki/ISO_639-1) language code and an [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2), joined by an underscore. For example: `es_MX`, meaning &quot;Spanish (Mexico)&quot;. Provide this parameter if you want the category strings returned in a particular language.<br/> _**Note**: if `locale` is not supplied, or if the specified language is not available, the category strings returned will be in the Spotify default language (American English)._
+  -  locale (String) - The desired language, consisting of an [ISO 639-1 language code and an ISO 3166-1 alpha-2 country code, joined by an underscore. For example: `es_MX`, meaning &quot;Spanish (Mexico)&quot;. Provide this parameter if you want the category strings returned in a particular language.<br/> _**Note**: if `locale` is not supplied, or if the specified language is not available, the category strings returned will be in the Spotify default language (American English)._
   -  limit (Number) - The maximum number of items to return. Default: 20. Minimum: 1. Maximum: 50.
   -  offset (Number) - The index of the first item to return. Default: 0 (the first item). Use with limit to get the next set of items.
 - **Output:** Json
@@ -1663,7 +1663,7 @@
 - **Description:** Get Featured Playlists
 - **Category:** spotify
 - **Arguments:**
-  -  locale (String) - The desired language, consisting of an [ISO 639-1](http://en.wikipedia.org/wiki/ISO_639-1) language code and an [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2), joined by an underscore. For example: `es_MX`, meaning &quot;Spanish (Mexico)&quot;. Provide this parameter if you want the category strings returned in a particular language.<br/> _**Note**: if `locale` is not supplied, or if the specified language is not available, the category strings returned will be in the Spotify default language (American English)._
+  -  locale (String) - The desired language, consisting of an [ISO 639-1 language code and an ISO 3166-1 alpha-2 country code, joined by an underscore. For example: `es_MX`, meaning &quot;Spanish (Mexico)&quot;. Provide this parameter if you want the category strings returned in a particular language.<br/> _**Note**: if `locale` is not supplied, or if the specified language is not available, the category strings returned will be in the Spotify default language (American English)._
   -  limit (Number) - The maximum number of items to return. Default: 20. Minimum: 1. Maximum: 50.
   -  offset (Number) - The index of the first item to return. Default: 0 (the first item). Use with limit to get the next set of items.
 - **Output:** Json
@@ -1689,7 +1689,7 @@
 - **Description:** Get Playback State
 - **Category:** spotify
 - **Arguments:**
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+  -  market (String) - An [ISO 3166-1 alpha-2 country code.
   -  additional_types (String) - A comma-separated list of item types that your client supports besides the default `track` type. Valid types are: `track` and `episode`.<br/>
 - **Output:** Json
 - **Brackets:** true
@@ -1701,7 +1701,7 @@
 - **Description:** Get User's Playlists
 - **Category:** spotify
 - **Arguments:**
-  -  user_id (String, required) - The user's [Spotify user ID](/documentation/web-api/concepts/spotify-uris-ids).
+  -  user_id (String, required) - The user's Spotify user ID.
   -  limit (Number) - The maximum number of items to return. Default: 20. Minimum: 1. Maximum: 50.
   -  offset (Number) - The index of the first playlist to return. Default:
 - **Output:** Json
@@ -1714,8 +1714,8 @@
 - **Description:** Get Several Albums
 - **Category:** spotify
 - **Arguments:**
-  -  ids (String, required) - A comma-separated list of the [Spotify IDs](/documentation/web-api/concepts/spotify-uris-ids) for the albums. Maximum: 20 IDs.
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+  -  ids (String, required) - A comma-separated list of the Spotify IDs for the albums. Maximum: 20 IDs.
+  -  market (String) - An ISO 3166-1 alpha-2 country code.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1726,7 +1726,7 @@
 - **Description:** Get Several Artists
 - **Category:** spotify
 - **Arguments:**
-  -  ids (String, required) - A comma-separated list of the [Spotify IDs](/documentation/web-api/concepts/spotify-uris-ids) for the artists. Maximum: 50 IDs.
+  -  ids (String, required) - A comma-separated list of the Spotify IDs for the artists. Maximum: 50 IDs.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1737,8 +1737,8 @@
 - **Description:** Get Several Audiobooks
 - **Category:** spotify
 - **Arguments:**
-  -  ids (String, required) - A comma-separated list of the [Spotify IDs](/documentation/web-api/concepts/spotify-uris-ids). For example: `ids=18yVqkdbdRvS24c0Ilj2ci,1HGw3J3NxZO1TP1BTtVhpZ`. Maximum: 50 IDs.
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+  -  ids (String, required) - A comma-separated list of the Spotify IDs. For example: `ids=18yVqkdbdRvS24c0Ilj2ci,1HGw3J3NxZO1TP1BTtVhpZ`. Maximum: 50 IDs.
+  -  market (String) - An ISO 3166-1 alpha-2 country code.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1749,8 +1749,8 @@
 - **Description:** Get Several Episodes
 - **Category:** spotify
 - **Arguments:**
-  -  ids (String, required) - A comma-separated list of the [Spotify IDs](/documentation/web-api/concepts/spotify-uris-ids) for the episodes. Maximum: 50 IDs.
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+  -  ids (String, required) - A comma-separated list of the Spotify IDs for the episodes. Maximum: 50 IDs.
+  -  market (String) - An ISO 3166-1 alpha-2 country code.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1761,8 +1761,8 @@
 - **Description:** Get Several Shows
 - **Category:** spotify
 - **Arguments:**
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-  -  ids (String, required) - A comma-separated list of the [Spotify IDs](/documentation/web-api/concepts/spotify-uris-ids) for the shows. Maximum: 50 IDs.
+  -  market (String) - An [ISO 3166-1 alpha-2 country code.
+  -  ids (String, required) - A comma-separated list of the Spotify IDs for the shows. Maximum: 50 IDs.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1785,8 +1785,8 @@
 - **Description:** Get Playlist
 - **Category:** spotify
 - **Arguments:**
-  -  playlist_id (String, required) - The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the playlist.
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+  -  playlist_id (String, required) - The Spotify ID of the playlist.
+  -  market (String) - An ISO 3166-1 alpha-2 country code.
   -  fields (String) - Filters for the query: a comma-separated list of the
   -  additional_types (String) - A comma-separated list of item types that your client supports besides the default `track` type. Valid types are: `track` and `episode`.<br/>
 - **Output:** Json
@@ -1799,7 +1799,7 @@
 - **Description:** Get Playlist Cover Image
 - **Category:** spotify
 - **Arguments:**
-  -  playlist_id (String, required) - The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the playlist.
+  -  playlist_id (String, required) - The Spotify ID of the playlist.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1810,8 +1810,8 @@
 - **Description:** Get Playlist Items
 - **Category:** spotify
 - **Arguments:**
-  -  playlist_id (String, required) - The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the playlist.
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+  -  playlist_id (String, required) - The Spotify ID of the playlist.
+  -  market (String) - An ISO 3166-1 alpha-2 country code.
   -  fields (String) - Filters for the query: a comma-separated list of the
   -  limit (Number) - The maximum number of items to return. Default: 20. Minimum: 1. Maximum: 50.
   -  offset (Number) - The index of the first item to return. Default: 0 (the first item). Use with limit to get the next set of items.
@@ -1858,10 +1858,10 @@
 - **Category:** spotify
 - **Arguments:**
   -  limit (Number) - The target size of the list of recommended tracks. For seeds with unusually small pools or when highly restrictive filtering is applied, it may be impossible to generate the requested number of recommended tracks. Debugging information for such cases is available in the response. Default: 20. Minimum: 1. Maximum: 100.
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-  -  seed_artists (String, required) - A comma separated list of [Spotify IDs](/documentation/web-api/concepts/spotify-uris-ids) for seed artists.  Up to 5 seed values may be provided in any combination of `seed_artists`, `seed_tracks` and `seed_genres`.<br/> _**Note**: only required if `seed_genres` and `seed_tracks` are not set_.
-  -  seed_genres (String, required) - A comma separated list of any genres in the set of [available genre seeds](/documentation/web-api/reference/get-recommendation-genres). Up to 5 seed values may be provided in any combination of `seed_artists`, `seed_tracks` and `seed_genres`.<br/> _**Note**: only required if `seed_artists` and `seed_tracks` are not set_.
-  -  seed_tracks (String, required) - A comma separated list of [Spotify IDs](/documentation/web-api/concepts/spotify-uris-ids) for a seed track.  Up to 5 seed values may be provided in any combination of `seed_artists`, `seed_tracks` and `seed_genres`.<br/> _**Note**: only required if `seed_artists` and `seed_genres` are not set_.
+  -  market (String) - An [ISO 3166-1 alpha-2 country code.
+  -  seed_artists (String, required) - A comma separated list of Spotify IDs for seed artists.  Up to 5 seed values may be provided in any combination of `seed_artists`, `seed_tracks` and `seed_genres`.<br/> _**Note**: only required if `seed_genres` and `seed_tracks` are not set_.
+  -  seed_genres (String, required) - A comma separated list of any genres in the set of available genre seeds. Up to 5 seed values may be provided in any combination of `seed_artists`, `seed_tracks` and `seed_genres`.<br/> _**Note**: only required if `seed_artists` and `seed_tracks` are not set_.
+  -  seed_tracks (String, required) - A comma separated list of Spotify IDs for a seed track.  Up to 5 seed values may be provided in any combination of `seed_artists`, `seed_tracks` and `seed_genres`.<br/> _**Note**: only required if `seed_artists` and `seed_genres` are not set_.
   -  min_acousticness (Number) - For each tunable track attribute, a hard floor on the selected track attribute’s value can be provided. See tunable track attributes below for the list of available options. For example, `min_tempo=140` would restrict results to only those tracks with a tempo of greater than 140 beats per minute.
   -  max_acousticness (Number) - For each tunable track attribute, a hard ceiling on the selected track attribute’s value can be provided. See tunable track attributes below for the list of available options. For example, `max_instrumentalness=0.35` would filter out most tracks that are likely to be instrumental.
   -  target_acousticness (Number) - For each of the tunable track attributes (below) a target value may be provided. Tracks with the attribute values nearest to the target values will be preferred. For example, you might request `target_energy=0.6` and `target_danceability=0.8`. All target values will be weighed equally in ranking results.
@@ -1914,7 +1914,7 @@
 - **Description:** Get Several Tracks' Audio Features
 - **Category:** spotify
 - **Arguments:**
-  -  ids (String, required) - A comma-separated list of the [Spotify IDs](/documentation/web-api/concepts/spotify-uris-ids)
+  -  ids (String, required) - A comma-separated list of the Spotify IDs
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1925,8 +1925,8 @@
 - **Description:** Get Several Chapters
 - **Category:** spotify
 - **Arguments:**
-  -  ids (String, required) - A comma-separated list of the [Spotify IDs](/documentation/web-api/concepts/spotify-uris-ids). For example: `ids=0IsXVP0JmcB2adSE338GkK,3ZXb8FKZGU0EHALYX6uCzU`. Maximum: 50 IDs.
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+  -  ids (String, required) - A comma-separated list of the Spotify IDs. For example: `ids=0IsXVP0JmcB2adSE338GkK,3ZXb8FKZGU0EHALYX6uCzU`. Maximum: 50 IDs.
+  -  market (String) - An ISO 3166-1 alpha-2 country code.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1937,8 +1937,8 @@
 - **Description:** Get Several Tracks
 - **Category:** spotify
 - **Arguments:**
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-  -  ids (String, required) - A comma-separated list of the [Spotify IDs](/documentation/web-api/concepts/spotify-uris-ids). For example: `ids=4iV5W9uYEdYUVa79Axb7Rh,1301WleyT98MSxVHPZCA6M`. Maximum: 50 IDs.
+  -  market (String) - An [ISO 3166-1 alpha-2 country code.
+  -  ids (String, required) - A comma-separated list of the Spotify IDs. For example: `ids=4iV5W9uYEdYUVa79Axb7Rh,1301WleyT98MSxVHPZCA6M`. Maximum: 50 IDs.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1949,7 +1949,7 @@
 - **Description:** Get Currently Playing Track
 - **Category:** spotify
 - **Arguments:**
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+  -  market (String) - An [ISO 3166-1 alpha-2 country code.
   -  additional_types (String) - A comma-separated list of item types that your client supports besides the default `track` type. Valid types are: `track` and `episode`.<br/>
 - **Output:** Json
 - **Brackets:** true
@@ -1961,8 +1961,8 @@
 - **Description:** Get Track
 - **Category:** spotify
 - **Arguments:**
-  -  id (String, required) - The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids)
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+  -  id (String, required) - The Spotify ID
+  -  market (String) - An ISO 3166-1 alpha-2 country code.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1973,7 +1973,7 @@
 - **Description:** Get User's Profile
 - **Category:** spotify
 - **Arguments:**
-  -  user_id (String, required) - The user's [Spotify user ID](/documentation/web-api/concepts/spotify-uris-ids).
+  -  user_id (String, required) - The user's Spotify user ID.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -1986,7 +1986,7 @@
 - **Arguments:**
   -  limit (Number) - The maximum number of items to return. Default: 20. Minimum: 1. Maximum: 50.
   -  offset (Number) - The index of the first item to return. Default: 0 (the first item). Use with limit to get the next set of items.
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+  -  market (String) - An [ISO 3166-1 alpha-2 country code.
 - **Output:** Json
 - **Brackets:** true
 - **Unwrap:** true
@@ -2009,7 +2009,7 @@
 - **Description:** Get User's Saved Episodes
 - **Category:** spotify
 - **Arguments:**
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+  -  market (String) - An [ISO 3166-1 alpha-2 country code.
   -  limit (Number) - The maximum number of items to return. Default: 20. Minimum: 1. Maximum: 50.
   -  offset (Number) - The index of the first item to return. Default: 0 (the first item). Use with limit to get the next set of items.
 - **Output:** Json
@@ -2034,7 +2034,7 @@
 - **Description:** Get User's Saved Tracks
 - **Category:** spotify
 - **Arguments:**
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+  -  market (String) - An [ISO 3166-1 alpha-2 country code.
   -  limit (Number) - The maximum number of items to return. Default: 20. Minimum: 1. Maximum: 50.
   -  offset (Number) - The index of the first item to return. Default: 0 (the first item). Use with limit to get the next set of items.
 - **Output:** Json
@@ -2063,7 +2063,7 @@
 - **Arguments:**
   -  q (String, required) - Your search query.
   -  type (Enum, required): [album, artist, playlist, track, show, episode, audiobook] - A comma-separated list of item types to search across. Search results include hits
-  -  market (String) - An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+  -  market (String) - An [ISO 3166-1 alpha-2 country code.
   -  limit (Number) - The maximum number of results to return in each item type.
   -  offset (Number) - The index of the first result to return. Use
   -  include_external (String) - If `include_external=audio` is specified it signals that the client can play externally hosted audio content, and marks

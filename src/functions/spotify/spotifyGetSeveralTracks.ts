@@ -9,8 +9,7 @@ export default new NativeFunction({
   args: [
     {
       name: 'market',
-      description:
-        'An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).',
+      description: 'An [ISO 3166-1 alpha-2 country code.',
       type: ArgType.String,
 
       required: false,
@@ -19,7 +18,7 @@ export default new NativeFunction({
     {
       name: 'ids',
       description:
-        'A comma-separated list of the [Spotify IDs](/documentation/web-api/concepts/spotify-uris-ids). For example: `ids=4iV5W9uYEdYUVa79Axb7Rh,1301WleyT98MSxVHPZCA6M`. Maximum: 50 IDs.',
+        'A comma-separated list of the Spotify IDs. For example: `ids=4iV5W9uYEdYUVa79Axb7Rh,1301WleyT98MSxVHPZCA6M`. Maximum: 50 IDs.',
       type: ArgType.String,
 
       required: true,
