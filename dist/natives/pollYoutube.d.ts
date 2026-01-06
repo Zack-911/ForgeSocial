@@ -17,7 +17,10 @@ export declare function removeChannel(channelId: string): Promise<boolean>;
  * @param _ext - unused placeholder to match existing call sites
  * @param onNewVideo - callback invoked whenever a new video is detected
  */
-export declare function startPollingTrackedChannels(_ext: any, onNewVideo: (video: Record<string, unknown>) => void): void;
+export declare function startPollingTrackedChannels(
+  _ext: any,
+  onNewVideo: (video: Record<string, unknown>) => void,
+): void;
 /**
  * Persist tracker state to disk.
  */
