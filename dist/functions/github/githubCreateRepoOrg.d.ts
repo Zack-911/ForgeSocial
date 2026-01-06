@@ -1,116 +1,97 @@
 import { ArgType, NativeFunction } from '@tryforge/forgescript';
 import { GitignoreTemplate, LicenseTemplate } from '../../utils/githubEnums';
-declare const _default: NativeFunction<
-  [
-    {
-      name: string;
-      description: string;
-      required: true;
-      rest: false;
-      type: ArgType.String;
-    },
-    {
-      name: string;
-      description: string;
-      required: true;
-      rest: false;
-      type: ArgType.String;
-    },
-    {
-      name: string;
-      description: string;
-      required: false;
-      rest: false;
-      type: ArgType.String;
-    },
-    {
-      name: string;
-      description: string;
-      required: false;
-      rest: false;
-      type: ArgType.String;
-    },
-    {
-      name: string;
-      description: string;
-      required: false;
-      rest: false;
-      type: ArgType.Boolean;
-    },
-    {
-      name: string;
-      description: string;
-      required: false;
-      rest: false;
-      type: ArgType.Boolean;
-    },
-    {
-      name: string;
-      description: string;
-      required: false;
-      rest: false;
-      type: ArgType.Boolean;
-    },
-    {
-      name: string;
-      description: string;
-      required: false;
-      rest: false;
-      type: ArgType.Boolean;
-    },
-    {
-      name: string;
-      description: string;
-      required: false;
-      rest: false;
-      type: ArgType.Number;
-    },
-    {
-      name: string;
-      description: string;
-      required: false;
-      rest: false;
-      type: ArgType.Boolean;
-    },
-    {
-      name: string;
-      description: string;
-      required: false;
-      rest: false;
-      type: ArgType.Enum;
-      enum: typeof GitignoreTemplate;
-    },
-    {
-      name: string;
-      description: string;
-      required: false;
-      rest: false;
-      type: ArgType.Enum;
-      enum: typeof LicenseTemplate;
-    },
-    {
-      name: string;
-      description: string;
-      required: false;
-      rest: false;
-      type: ArgType.Boolean;
-    },
-    {
-      name: string;
-      description: string;
-      required: false;
-      rest: false;
-      type: ArgType.Boolean;
-    },
-    {
-      name: string;
-      description: string;
-      required: false;
-      rest: false;
-      type: ArgType.Boolean;
-    },
-  ],
-  true
->;
+declare const _default: NativeFunction<[{
+    name: string;
+    description: string;
+    required: true;
+    rest: false;
+    type: ArgType.String;
+}, {
+    name: string;
+    description: string;
+    required: true;
+    rest: false;
+    type: ArgType.String;
+}, {
+    name: string;
+    description: string;
+    required: false;
+    rest: false;
+    type: ArgType.String;
+}, {
+    name: string;
+    description: string;
+    required: false;
+    rest: false;
+    type: ArgType.String;
+}, {
+    name: string;
+    description: string;
+    required: false;
+    rest: false;
+    type: ArgType.Boolean;
+}, {
+    name: string;
+    description: string;
+    required: false;
+    rest: false;
+    type: ArgType.Boolean;
+}, {
+    name: string;
+    description: string;
+    required: false;
+    rest: false;
+    type: ArgType.Boolean;
+}, {
+    name: string;
+    description: string;
+    required: false;
+    rest: false;
+    type: ArgType.Boolean;
+}, {
+    name: string;
+    description: string;
+    required: false;
+    rest: false;
+    type: ArgType.Number;
+}, {
+    name: string;
+    description: string;
+    required: false;
+    rest: false;
+    type: ArgType.Boolean;
+}, {
+    name: string;
+    description: string;
+    required: false;
+    rest: false;
+    type: ArgType.Enum;
+    enum: typeof GitignoreTemplate;
+}, {
+    name: string;
+    description: string;
+    required: false;
+    rest: false;
+    type: ArgType.Enum;
+    enum: typeof LicenseTemplate;
+}, {
+    name: string;
+    description: string;
+    required: false;
+    rest: false;
+    type: ArgType.Boolean;
+}, {
+    name: string;
+    description: string;
+    required: false;
+    rest: false;
+    type: ArgType.Boolean;
+}, {
+    name: string;
+    description: string;
+    required: false;
+    rest: false;
+    type: ArgType.Boolean;
+}], true>;
 export default _default;
 //# sourceMappingURL=githubCreateRepoOrg.d.ts.map

@@ -21,6 +21,10 @@ const reddit = new ForgeSocial({
     clientID: process.env.REDDIT_CLIENT_ID,
     clientSecret: process.env.REDDIT_CLIENT_SECRET,
   },
+  spotify: {
+    clientID: process.env.SPOTIFY_CLIENT_ID,
+    clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
+  }
 });
 
 const client = new ForgeClient({
@@ -46,4 +50,4 @@ reddit.commands.add({
 
 client.commands.load('./__tests__/commands');
 
-client.login(process.env.TOKEN);
+client.login(process.env.BOT_TOKEN);

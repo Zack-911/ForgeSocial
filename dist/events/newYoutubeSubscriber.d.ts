@@ -1,4 +1,4 @@
 import { ForgeSocialEventHandler } from '../structures/ForgeSocialEventHandlers';
-declare const _default: ForgeSocialEventHandler<'newYoutubeSubscriber'>;
+declare const _default: ForgeSocialEventHandler<"newYoutubeSubscriber">;
 export default _default;
 //# sourceMappingURL=newYoutubeSubscriber.d.ts.map

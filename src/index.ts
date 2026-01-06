@@ -37,6 +37,10 @@ export interface IForgeSocialOptions {
     cache?: boolean;
     log?: 'DEBUG' | 'INFO' | 'WARNING' | 'ERROR' | 'NONE';
   };
+  spotify?: {
+    clientID: string;
+    clientSecret: string;
+  };
 }
 
 /**
@@ -60,9 +64,13 @@ export class ForgeSocial extends ForgeExtension {
   public github?: Octokit;
   private emitter = new TypedEmitter<TransformEvents<IForgeSocialEvents>>();
 
-  private accessToken: string = '';
-  private tokenExpiresAt: number = 0;
-  private tokenRefreshInterval: NodeJS.Timeout | null = null;
+  private redditAccessToken: string = '';
+  private redditTokenExpiresAt: number = 0;
+  private redditTokenRefreshInterval: NodeJS.Timeout | null = null;
+
+  private spotifyAccessToken: string = '';
+  private spotifyTokenExpiresAt: number = 0;
+  private spotifyTokenRefreshInterval: NodeJS.Timeout | null = null;
 
   public commands!: any;
 
@@ -130,6 +138,10 @@ export class ForgeSocial extends ForgeExtension {
       this.load(__dirname + `/functions/reddit`);
     }
 
+    if (this.options.spotify) {
+      this.load(__dirname + `/functions/spotify`);
+    }
+
     EventManager.load(ForgeSocialEventManagerName, __dirname + `/events`);
 
     await loadTrackedSubredditsFromFile();
@@ -138,34 +150,51 @@ export class ForgeSocial extends ForgeExtension {
     if (this.options.events?.length) {
       this.client.events.load(ForgeSocialEventManagerName, this.options.events);
     }
-    await this.refreshToken();
+    await this.refreshRedditToken();
+    await this.refreshSpotifyToken();
     this.startPolling();
   }
 
   /**
    * Gets the current Reddit OAuth access token.
    */
-  public async getAccessToken(): Promise<string | null> {
+  public async getRedditAccessToken(): Promise<string | null> {
     const { reddit } = this.options;
     const allProvided = !!reddit?.clientID && !!reddit?.clientSecret && !!reddit?.redditUsername;
     const allNull = !reddit?.clientID && !reddit?.clientSecret && !reddit?.redditUsername;
     if (!allProvided && !allNull) {
       Logger.error(
-        'ForgeSocial: If one of clientID, clientSecret, or redditUsername is provided, all must be provided. Returning null for access token.',
+        'ForgeSocial: If one of clientID, clientSecret, or redditUsername is provided, all must be provided. Returning null for Reddit access token.',
       );
       return null;
     }
     if (!allProvided) {
-      Logger.warn('ForgeSocial: Missing Reddit credentials. Returning null for access token.');
+      Logger.warn(
+        'ForgeSocial: Missing Reddit credentials. Returning null for Reddit access token.',
+      );
       return null;
     }
-    return this.accessToken;
+    return this.redditAccessToken;
+  }
+
+  /**
+   * Gets the current Spotify OAuth access token.
+   */
+  public async getSpotifyAccessToken(): Promise<string | null> {
+    const { spotify } = this.options;
+    const allProvided = !!spotify?.clientID && !!spotify?.clientSecret;
+    if (!allProvided) {
+      Logger.warn(
+        'ForgeSocial: Missing Spotify credentials. Returning null for Spotify access token.',
+      );
+      return null;
+    }
+    return this.spotifyAccessToken;
   }
 
   /**
    * Emits a new subreddit or YouTube post event.
    */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public async newPost(event: keyof IForgeSocialEvents, args: any) {
     return this.emitter.emit(event, args);
   }
@@ -194,9 +223,11 @@ export class ForgeSocial extends ForgeExtension {
     this._pollingStarted = true;
 
     // Reddit polling
-    if (this.accessToken && this.options.reddit?.redditUsername) {
-      startPollingTrackedSubreddits(this.accessToken, this.options.reddit?.redditUsername, (post) =>
-        this.newPost('newRedditPost', post),
+    if (this.redditAccessToken && this.options.reddit?.redditUsername) {
+      startPollingTrackedSubreddits(
+        this.redditAccessToken,
+        this.options.reddit?.redditUsername,
+        (post) => this.newPost('newRedditPost', post),
       );
     }
 
@@ -207,18 +238,18 @@ export class ForgeSocial extends ForgeExtension {
   /**
    * Refreshes the Reddit OAuth access token and schedules periodic refreshes.
    */
-  private async refreshToken() {
+  private async refreshRedditToken() {
     const { reddit } = this.options;
     const allProvided = !!reddit?.clientID && !!reddit?.clientSecret && !!reddit?.redditUsername;
     const allNull = !reddit?.clientID && !reddit?.clientSecret && !reddit?.redditUsername;
     if (!allProvided && !allNull) {
       Logger.error(
-        'ForgeSocial: If one of clientID, clientSecret, or redditUsername is provided, all must be provided. Skipping token refresh.',
+        'ForgeSocial: If one of clientID, clientSecret, or redditUsername is provided, all must be provided. Skipping Reddit token refresh.',
       );
       return;
     }
     if (!allProvided) {
-      Logger.warn('ForgeSocial: Missing Reddit credentials. Skipping token refresh.');
+      Logger.warn('ForgeSocial: Missing Reddit credentials. Skipping Reddit token refresh.');
       return;
     }
 
@@ -265,15 +296,73 @@ export class ForgeSocial extends ForgeExtension {
       },
     );
 
-    this.accessToken = tokenData.access_token;
-    this.tokenExpiresAt = Date.now() + tokenData.expires_in * 1000;
-    Logger.info('ForgeSocial: Access token refreshed:\n' + this.accessToken);
+    this.redditAccessToken = tokenData.access_token;
+    this.redditTokenExpiresAt = Date.now() + tokenData.expires_in * 1000;
+    Logger.info('ForgeSocial: Reddit access token refreshed:\n' + this.redditAccessToken);
 
-    if (this.tokenRefreshInterval) clearInterval(this.tokenRefreshInterval);
+    if (this.redditTokenRefreshInterval) clearInterval(this.redditTokenRefreshInterval);
 
-    this.tokenRefreshInterval = setInterval(() => {
-      if (Date.now() >= this.tokenExpiresAt - 5 * 60 * 1000) {
-        this.refreshToken().catch(console.error);
+    this.redditTokenRefreshInterval = setInterval(() => {
+      if (Date.now() >= this.redditTokenExpiresAt - 5 * 60 * 1000) {
+        this.refreshRedditToken().catch(console.error);
+      }
+    }, 60 * 1000);
+  }
+
+  /**
+   * Refreshes the Spotify OAuth access token and schedules periodic refreshes.
+   */
+  private async refreshSpotifyToken() {
+    const { spotify } = this.options;
+    if (!spotify?.clientID || !spotify?.clientSecret) {
+      Logger.warn('ForgeSocial: Missing Spotify credentials. Skipping Spotify token refresh.');
+      return;
+    }
+
+    const body = new URLSearchParams({ grant_type: 'client_credentials' });
+    const creds = Buffer.from(`${spotify.clientID}:${spotify.clientSecret}`).toString('base64');
+
+    const tokenData = await new Promise<{ access_token: string; expires_in: number }>(
+      (resolve, reject) => {
+        const req = https.request(
+          {
+            method: 'POST',
+            hostname: 'accounts.spotify.com',
+            path: '/api/token',
+            headers: {
+              Authorization: `Basic ${creds}`,
+              'Content-Type': 'application/x-www-form-urlencoded',
+              'Content-Length': body.toString().length,
+            },
+          },
+          (res) => {
+            let data = '';
+            res.on('data', (chunk) => (data += chunk));
+            res.on('end', () => {
+              try {
+                resolve(JSON.parse(data));
+              } catch (err) {
+                reject(err);
+              }
+            });
+          },
+        );
+
+        req.on('error', reject);
+        req.write(body.toString());
+        req.end();
+      },
+    );
+
+    this.spotifyAccessToken = tokenData.access_token;
+    this.spotifyTokenExpiresAt = Date.now() + tokenData.expires_in * 1000;
+    Logger.info('ForgeSocial: Spotify access token refreshed:\n' + this.spotifyAccessToken);
+
+    if (this.spotifyTokenRefreshInterval) clearInterval(this.spotifyTokenRefreshInterval);
+
+    this.spotifyTokenRefreshInterval = setInterval(() => {
+      if (Date.now() >= this.spotifyTokenExpiresAt - 5 * 60 * 1000) {
+        this.refreshSpotifyToken().catch(console.error);
       }
     }, 60 * 1000);
   }

@@ -1,55 +1,46 @@
 import { NativeFunction, ArgType } from '@tryforge/forgescript';
 declare enum SearchRepoSort {
-  Stars = 'stars',
-  Forks = 'forks',
-  HelpWantedIssues = 'help-wanted-issues',
-  Updated = 'updated',
+    Stars = "stars",
+    Forks = "forks",
+    HelpWantedIssues = "help-wanted-issues",
+    Updated = "updated"
 }
 declare enum SortOrder {
-  Asc = 'asc',
-  Desc = 'desc',
+    Asc = "asc",
+    Desc = "desc"
 }
-declare const _default: NativeFunction<
-  [
-    {
-      name: string;
-      description: string;
-      type: ArgType.String;
-      required: true;
-      rest: false;
-    },
-    {
-      name: string;
-      description: string;
-      type: ArgType.Enum;
-      enum: typeof SearchRepoSort;
-      required: true;
-      rest: false;
-    },
-    {
-      name: string;
-      description: string;
-      type: ArgType.Enum;
-      enum: typeof SortOrder;
-      required: true;
-      rest: false;
-    },
-    {
-      name: string;
-      description: string;
-      type: ArgType.Number;
-      required: true;
-      rest: false;
-    },
-    {
-      name: string;
-      description: string;
-      type: ArgType.Number;
-      required: true;
-      rest: false;
-    },
-  ],
-  true
->;
+declare const _default: NativeFunction<[{
+    name: string;
+    description: string;
+    type: ArgType.String;
+    required: true;
+    rest: false;
+}, {
+    name: string;
+    description: string;
+    type: ArgType.Enum;
+    enum: typeof SearchRepoSort;
+    required: true;
+    rest: false;
+}, {
+    name: string;
+    description: string;
+    type: ArgType.Enum;
+    enum: typeof SortOrder;
+    required: true;
+    rest: false;
+}, {
+    name: string;
+    description: string;
+    type: ArgType.Number;
+    required: true;
+    rest: false;
+}, {
+    name: string;
+    description: string;
+    type: ArgType.Number;
+    required: true;
+    rest: false;
+}], true>;
 export default _default;
 //# sourceMappingURL=githubSearchRepo.d.ts.map
