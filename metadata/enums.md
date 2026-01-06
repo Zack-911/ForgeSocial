@@ -317,6 +317,29 @@
 - relevance
 - comments
 
+## IncludeGroups
+
+- album
+- single
+- appears_on
+- compilation
+
+## TimeRange
+
+- long_term
+- medium_term
+- short_term
+
+## SearchType
+
+- album
+- artist
+- playlist
+- track
+- show
+- episode
+- audiobook
+
 ## CommentsSortBy
 
 - NewestFirst
@@ -342,12 +365,12 @@
 
 - FLV_240p
 - FLV_270p
-- \_3GP_144p
+- _3GP_144p
 - MP4_360p
 - MP4_720p
 - FLV_360p
 - FLV_480p
-- \_3GP_180p
+- _3GP_180p
 - MP4_1080p
 - MP4_3072p
 - WebM_360p
@@ -471,14 +494,6 @@
 - Medium
 - Long
 
-## SearchType
-
-- Video
-- Channel
-- Playlist
-- Movie
-- All
-
 ## SortBy
 
 - Relevance
@@ -497,3 +512,4 @@
 - HDR
 - CreativeCommons
 - VR180
+
