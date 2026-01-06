@@ -1,5 +1,4 @@
 import { ForgeClient, ForgeExtension } from '@tryforge/forgescript';
-import { ForgeSocialCommandManager } from './structures/ForgeSocialCommandManager';
 import { IForgeSocialEvents } from './structures/ForgeSocialEventHandlers';
 import { Innertube } from 'youtubei.js';
 import { Octokit } from '@octokit/rest';
@@ -50,7 +49,7 @@ export declare class ForgeSocial extends ForgeExtension {
     private accessToken;
     private tokenExpiresAt;
     private tokenRefreshInterval;
-    commands: ForgeSocialCommandManager;
+    commands: any;
     private _pollingStarted;
     /**
      * Constructs a new ForgeSocial extension instance.

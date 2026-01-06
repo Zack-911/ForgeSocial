@@ -1,1 +1,0 @@
-{"version":3,"file":"githubSearchUsers.d.ts","sourceRoot":"","sources":["../../../../src/functions/github/utility/githubSearchUsers.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,cAAc,EAAE,OAAO,EAAE,MAAM,uBAAuB,CAAC;AAIhE,aAAK,eAAe;IAClB,SAAS,cAAc;IACvB,KAAK,iBAAiB;IACtB,MAAM,WAAW;CAClB;AAED,aAAK,SAAS;IACZ,GAAG,QAAQ;IACX,IAAI,SAAS;CACd;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAED,wBAiEG"}
