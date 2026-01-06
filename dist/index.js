@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ForgeSocial = void 0;
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const forgescript_1 = require("@tryforge/forgescript");
 const constants_1 = require("./constants");
 const ForgeSocialCommandManager_1 = require("./structures/ForgeSocialCommandManager");
